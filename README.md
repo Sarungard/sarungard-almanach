@@ -23,6 +23,14 @@ Targets **dnd5e 6.x on Foundry v14** (what The Forge runs when kept on the newes
    - Plutonium asks for a Shamanic Focus at level 1 and a Fighting Style at level 3.
 4. Import the shaman spells you want with Plutonium's Spell importer. Transmogrify and Erratic Wisp come from the same file. The other spells come from the official books.
 
+### Updating
+
+Plutonium keeps its own stored copy of the homebrew. It only pulls a new version when the file's `_meta.dateLastModified` has increased; every build stamps the current time there. If an import errors with "Could not find entity…" after an update:
+
+1. Remove **every** copy of "Shaman Class (Sarungard)" from Plutonium's homebrew list.
+2. Reload Foundry (F5).
+3. Add the URL once and import again.
+
 ## How spell slots work
 
 Foundry has no "two-thirds caster" progression, so the module adds a **Shaman** progression:

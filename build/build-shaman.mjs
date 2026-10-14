@@ -3,6 +3,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const SRC = "SarungardShaman";
+const BREW_VERSION = "1.2.0";
+const PUBLISHED_AT = Math.floor(Date.now() / 1000);
 const CLASS = "Shaman";
 const OUT_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "Sarungard; Shaman.json");
 
@@ -198,7 +200,7 @@ const meta = {
     full: "Shaman Class (Sarungard)",
     authors: ["Sarungard"],
     convertedBy: ["Claudius"],
-    version: "1.0.0",
+    version: BREW_VERSION,
     color: "4f6b2f"
   }],
   edition: "classic",
@@ -208,7 +210,7 @@ const meta = {
     "SF:SHM": "Shamanic Focus"
   },
   dateAdded: Date.UTC(2026, 9, 13) / 1000,
-  dateLastModified: Date.UTC(2026, 9, 13) / 1000
+  dateLastModified: PUBLISHED_AT
 };
 
 const classFluff = {
