@@ -18,6 +18,7 @@
 		"edition": "classic",
 		"dependencies": {
 			"optionalfeature": [
+				"TCE",
 				"UALightDarkUnderdark"
 			]
 		},

@@ -86,7 +86,7 @@ const meta = {
     color: "4f6b2f"
   }],
   edition: "classic",
-  dependencies: { optionalfeature: ["UALightDarkUnderdark"] },
+  dependencies: { optionalfeature: ["TCE", "UALightDarkUnderdark"] },
   optionalFeatureTypes: {
     "FS:SHM": "Fighting Style; Shaman",
     "SF:SHM": "Shamanic Focus"

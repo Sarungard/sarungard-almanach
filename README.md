@@ -68,7 +68,7 @@ The class item's Spellcasting Progression should read "Shaman (own table, 2/3 wh
 - **Resonance:** says "You can use your Resonance once" at 3rd level, matching the table's "Resonance(x1)".
 - **Not included:** the WIP **Ritualistic** background (its "Endurance" skill doesn't exist and its Ideals have no text) and the unfinished Council of Omens.
 - **Multiclass proficiencies:** the PDF doesn't say what you gain when multiclassing *into* Shaman. As decided: light armor, shields, and one musical instrument.
-- **Fighting styles:** Blind Fighting and Interception (*Tasha's Cauldron of Everything*) and Tunnel Fighter (UA: *Light, Dark, Underdark!*) are not reproduced here. They are `_copy` links to the official entries. Tunnel Fighter is declared as a dependency on the `UALightDarkUnderdark` source, which 5etools' loader looks up in its homebrew and UA indexes. Great Weapon Fighting, Protection and Two-Weapon Fighting are SRD 5.1 text.
+- **Fighting styles:** Blind Fighting and Interception (*Tasha's Cauldron of Everything*) and Tunnel Fighter (UA: *Light, Dark, Underdark!*) are not reproduced here. They are `_copy` links to the official entries. The file declares `TCE` and `UALightDarkUnderdark` as `optionalfeature` dependencies. Without those, Plutonium can't find the entries to copy. `UALightDarkUnderdark` is fetched from the 5etools UA repository. Great Weapon Fighting, Protection and Two-Weapon Fighting are SRD 5.1 text.
 
 ## License
 
