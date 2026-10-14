@@ -52,6 +52,7 @@ The class item's Spellcasting Progression should read "Shaman (own table, 2/3 wh
   - Soulstorm's incapacitated and frightened conditions.
   - Deliberate Defenses (dodging).
 - **Always-prepared spells:** Find Familiar (Elements), Hex and Bestow Curse (Harvest), and the Council of Shrouds spell table.
+- **Spellbook:** when you reach a shaman level that unlocks a new spell level (2, 4, 6, 9, 12, 15 and 18), Plutonium adds every shaman spell of that level to the sheet. They arrive **marked prepared**, so untick them down to your limit (Wisdom modifier + half your shaman level). Plutonium's usual spell picker can't be used here: it depends on a standard caster progression, which would also overwrite the Shaman slot table.
 
 ## Known approximations
 

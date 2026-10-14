@@ -51,29 +51,145 @@ const SLOT_ROWS = [
 
 const PSIONIC_POINTS = { 2: 2, 5: 4, 10: 6, 14: 8, 17: 10 };
 
-const CLASS_SPELLS = {
-  PHB: ["Alarm","Burning Hands","Comprehend Languages","Create or Destroy Water","Cure Wounds","Detect Evil and Good","Detect Magic","Ensnaring Strike","Entangle","Fog Cloud","Grease","Identify","Jump","Longstrider","Protection from Evil and Good","Thunderwave","Unseen Servant",
-    "Aid","Animal Messenger","Augury","Barkskin","Beast Sense","Continual Flame","Enhance Ability","Enlarge/Reduce","Flame Blade","Flaming Sphere","Gust of Wind","Locate Animals or Plants","Magic Weapon","Misty Step","Shatter","Silence","Spike Growth",
-    "Call Lightning","Daylight","Elemental Weapon","Fireball","Gaseous Form","Haste","Lightning Arrow","Lightning Bolt","Meld into Stone","Plant Growth","Remove Curse","Speak with Plants","Water Breathing","Water Walk","Wind Wall",
-    "Conjure Minor Elementals","Conjure Woodland Beings","Control Water","Divination","Fire Shield","Freedom of Movement","Grasping Vine","Ice Storm","Stone Shape","Stoneskin","Wall of Fire",
-    "Commune","Commune with Nature","Cone of Cold","Conjure Elemental","Contact Other Plane","Dispel Evil and Good","Flame Strike","Tree Stride","Wall of Stone",
-    "Chain Lightning","Flesh to Stone","Move Earth","Wall of Ice","Wall of Thorns","Wind Walk",
-    "Fire Storm","Plane Shift","Regenerate"],
-  XGE: ["Absorb Elements","Earth Tremor","Ice Knife","Snare","Zephyr Strike",
-    "Dust Devil","Earthbind","Skywrite","Warding Wind",
-    "Erupting Earth","Flame Arrows","Thunder Step","Tidal Wave","Wall of Sand","Wall of Water",
-    "Elemental Bane","Guardian of Nature","Storm Sphere","Watery Sphere",
-    "Dawn","Far Step","Immolation","Maelstrom","Steel Wind Strike","Transmute Rock","Wrath of Nature",
-    "Bones of the Earth","Investiture of Flame","Investiture of Ice","Investiture of Stone","Investiture of Wind","Primordial Ward",
-    "Whirlwind"],
-  TCE: ["Summon Elemental"],
-  IDRotF: ["Frost Fingers"],
-  UAStarterSpells: ["Wild Cunning (UA)"],
-  [SRC]: ["Transmogrify", "Erratic Wisp"]
+const SHAMAN_SPELLS_BY_LEVEL = {
+  1: [
+    "absorb elements|xge",
+    "alarm",
+    "burning hands",
+    "comprehend languages",
+    "create or destroy water",
+    "cure wounds",
+    "detect evil and good",
+    "detect magic",
+    "earth tremor|xge",
+    "ensnaring strike",
+    "entangle",
+    "fog cloud",
+    "frost fingers|idrotf",
+    "grease",
+    "ice knife|xge",
+    "identify",
+    "jump",
+    "longstrider",
+    "protection from evil and good",
+    "snare|xge",
+    "thunderwave",
+    "unseen servant",
+    "wild cunning (ua)|uastarterspells",
+    "zephyr strike|xge"
+  ],
+  2: [
+    "aid",
+    "animal messenger",
+    "augury",
+    "barkskin",
+    "beast sense",
+    "continual flame",
+    "dust devil|xge",
+    "earthbind|xge",
+    "enhance ability",
+    "enlarge/reduce",
+    "flame blade",
+    "flaming sphere",
+    "gust of wind",
+    "locate animals or plants",
+    "magic weapon",
+    "misty step",
+    "shatter",
+    "silence",
+    "skywrite|xge",
+    "spike growth",
+    "transmogrify|sarungardshaman",
+    "warding wind|xge"
+  ],
+  3: [
+    "call lightning",
+    "daylight",
+    "elemental weapon",
+    "erratic wisp|sarungardshaman",
+    "erupting earth|xge",
+    "fireball",
+    "flame arrows|xge",
+    "gaseous form",
+    "haste",
+    "lightning arrow",
+    "lightning bolt",
+    "meld into stone",
+    "plant growth",
+    "remove curse",
+    "speak with plants",
+    "thunder step|xge",
+    "tidal wave|xge",
+    "wall of sand|xge",
+    "wall of water|xge",
+    "water breathing",
+    "water walk",
+    "wind wall"
+  ],
+  4: [
+    "conjure minor elementals",
+    "conjure woodland beings",
+    "control water",
+    "divination",
+    "elemental bane|xge",
+    "fire shield",
+    "freedom of movement",
+    "grasping vine",
+    "guardian of nature|xge",
+    "ice storm",
+    "stone shape",
+    "stoneskin",
+    "storm sphere|xge",
+    "summon elemental|tce",
+    "wall of fire",
+    "watery sphere|xge"
+  ],
+  5: [
+    "commune",
+    "commune with nature",
+    "cone of cold",
+    "conjure elemental",
+    "contact other plane",
+    "dawn|xge",
+    "dispel evil and good",
+    "far step|xge",
+    "flame strike",
+    "immolation|xge",
+    "maelstrom|xge",
+    "steel wind strike|xge",
+    "transmute rock|xge",
+    "tree stride",
+    "wall of stone",
+    "wrath of nature|xge"
+  ],
+  6: [
+    "bones of the earth|xge",
+    "chain lightning",
+    "flesh to stone",
+    "investiture of flame|xge",
+    "investiture of ice|xge",
+    "investiture of stone|xge",
+    "investiture of wind|xge",
+    "move earth",
+    "primordial ward|xge",
+    "wall of ice",
+    "wall of thorns",
+    "wind walk"
+  ],
+  7: [
+    "fire storm",
+    "plane shift",
+    "regenerate",
+    "whirlwind|xge"
+  ]
 };
 
-const spellUid = (name, source) => (source === "PHB" ? name : `${name}|${source}`).toLowerCase();
-const classSpellRefs = () => Object.entries(CLASS_SPELLS).flatMap(([source, names]) => names.map(name => spellUid(name, source)));
+const firstLevelWithSlot = spellLevel => SLOT_ROWS.findIndex(row => row[spellLevel - 1] > 0) + 1;
+const classSpellRefs = () => Object.values(SHAMAN_SPELLS_BY_LEVEL).flat();
+const spellsLearnedAsSlotsUnlock = () => [{
+  name: "Shaman Spells",
+  known: Object.fromEntries(Object.entries(SHAMAN_SPELLS_BY_LEVEL).map(([spellLevel, uids]) => [firstLevelWithSlot(Number(spellLevel)), uids]))
+}];
 
 const meta = {
   sources: [{
@@ -144,10 +260,10 @@ const shamanClass = {
     weaponProficiencies: [{ simple: true, "battleaxe|phb": true, "longsword|phb": true }],
     tools: ["One {@item musical instrument|phb} of your choice"],
     toolProficiencies: [{ anyMusicalInstrument: 1 }],
-    skills: [
-      { nature: true },
-      { choose: { from: ["arcana", "athletics", "investigation", "medicine", "perception", "performance", "survival"], count: 1 } }
-    ]
+    skills: [{
+      nature: true,
+      choose: { from: ["arcana", "athletics", "investigation", "medicine", "perception", "performance", "survival"], count: 1 }
+    }]
   },
   startingEquipment: {
     additionalFromBackground: true,
@@ -206,6 +322,7 @@ const shamanClass = {
   ],
   subclassTitle: "Ancient Council",
   classSpells: classSpellRefs(),
+  additionalSpells: spellsLearnedAsSlotsUnlock(),
   fluff: classFluff,
   foundrySystem: {
     identifier: "shaman",
@@ -233,6 +350,17 @@ const FOCUS_SPIRITUAL = {
   weaponic: "You can cast {@spell magic weapon} at 2nd level as an action without expending a spell slot once per long rest."
 };
 
+const FOCUS_OPTIONS = ["Instrumental Focus", "Mnemonic Focus", "Totemic Focus", "Weaponic Focus"];
+const FIGHTING_STYLES = ["Blind Fighting", "Great Weapon Fighting", "Interception", "Protection", "Tunnel Fighter", "Two-Weapon Fighting"];
+const FOCUS_INTRO = "At 1st level, you choose an object as your shamanic focus, which helps you communicate with the spirits of this world. Unless stated otherwise, your focus can be a tool or just a small trinket, but not a weapon, a piece of armor, or a shield.";
+const FOCUS_REBOND = "If you lose your focus, you can perform a 1-hour ceremony to bond with another item. This ceremony can be performed during a short or long rest, and it destroys the previous focus.";
+const FIGHTING_STYLE_INTRO = "At 3rd level, you adopt a particular style of fighting as your specialty.";
+const FIGHTING_STYLE_ONCE = "You can't take a Fighting Style option more than once, even if you later get to choose again.";
+const optionRefs = names => ({
+  type: "options", count: 1,
+  entries: names.map(name => ({ type: "refOptionalfeature", optionalfeature: `${name}|${SRC}` }))
+});
+
 const classFeatures = [
   {
     name: "Natural Armor", source: SRC, page: 4, className: CLASS, classSource: SRC, level: 1,
@@ -240,14 +368,7 @@ const classFeatures = [
   },
   {
     name: "Shamanic Focus", source: SRC, page: 4, className: CLASS, classSource: SRC, level: 1,
-    entries: [
-      "At 1st level, you choose an object as your shamanic focus, which helps you communicate with the spirits of this world. Unless stated otherwise, your focus can be a tool or just a small trinket, but not a weapon, a piece of armor, or a shield. Select one of the following options:",
-      {
-        type: "options", count: 1,
-        entries: ["Instrumental Focus", "Mnemonic Focus", "Totemic Focus", "Weaponic Focus"].map(name => ({ type: "refOptionalfeature", optionalfeature: `${name}|${SRC}` }))
-      },
-      "If you lose your focus, you can perform a 1-hour ceremony to bond with another item. This ceremony can be performed during a short or long rest, and it destroys the previous focus."
-    ]
+    entries: [`${FOCUS_INTRO} Select one of the following options:`, optionRefs(FOCUS_OPTIONS), FOCUS_REBOND]
   },
   {
     name: "Ancient Council", source: SRC, page: 4, className: CLASS, classSource: SRC, level: 2,
@@ -283,14 +404,7 @@ const classFeatures = [
   },
   {
     name: "Fighting Style", source: SRC, page: 5, className: CLASS, classSource: SRC, level: 3,
-    entries: [
-      "At 3rd level, you adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.",
-      {
-        type: "options", count: 1,
-        entries: ["Blind Fighting", "Great Weapon Fighting", "Interception", "Protection", "Tunnel Fighter", "Two-Weapon Fighting"]
-          .map(name => ({ type: "refOptionalfeature", optionalfeature: `${name}|${SRC}` }))
-      }
-    ]
+    entries: [`${FIGHTING_STYLE_INTRO} Choose one of the following options. ${FIGHTING_STYLE_ONCE}`, optionRefs(FIGHTING_STYLES)]
   },
   {
     name: "Resonance", source: SRC, page: 5, className: CLASS, classSource: SRC, level: 3,
@@ -742,6 +856,12 @@ const stanceActivity = (name, foundryId, minLevel) => ({
 });
 
 const foundryClassFeature = [
+  classSide("Shamanic Focus", 1, {
+    entries: [`${FOCUS_INTRO} You choose one Shamanic Focus option when you gain this feature.`, FOCUS_REBOND]
+  }),
+  classSide("Fighting Style", 3, {
+    entries: [`${FIGHTING_STYLE_INTRO} ${FIGHTING_STYLE_ONCE}`]
+  }),
   classSide("Natural Armor", 1, {
     effects: [{
       name: "Natural Armor", transfer: true,
