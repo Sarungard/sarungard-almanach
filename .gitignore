@@ -1,0 +1,3 @@
+# Release artifacts (attached to GitHub releases, not committed)
+*.zip
+dist/

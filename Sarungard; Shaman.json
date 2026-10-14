@@ -1,0 +1,4486 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "SarungardShaman",
+				"abbreviation": "SHMN",
+				"full": "Shaman Class (Sarungard)",
+				"authors": [
+					"Sarungard"
+				],
+				"convertedBy": [
+					"Claudius"
+				],
+				"version": "1.0.0",
+				"color": "4f6b2f"
+			}
+		],
+		"edition": "classic",
+		"dependencies": {
+			"optionalfeature": [
+				"UALightDarkUnderdark"
+			]
+		},
+		"optionalFeatureTypes": {
+			"FS:SHM": "Fighting Style; Shaman",
+			"SF:SHM": "Shamanic Focus"
+		},
+		"dateAdded": 1791849600,
+		"dateLastModified": 1791849600
+	},
+	"class": [
+		{
+			"name": "Shaman",
+			"source": "SarungardShaman",
+			"page": 3,
+			"edition": "classic",
+			"hd": {
+				"number": 1,
+				"faces": 8
+			},
+			"proficiency": [
+				"wis",
+				"cha"
+			],
+			"spellcastingAbility": "wis",
+			"preparedSpells": "<$level$> / 2 + <$wis_mod$>",
+			"preparedSpellsChange": "restLong",
+			"optionalfeatureProgression": [
+				{
+					"name": "Shamanic Focus",
+					"featureType": [
+						"SF:SHM"
+					],
+					"progression": {
+						"1": 1
+					}
+				},
+				{
+					"name": "Fighting Style",
+					"featureType": [
+						"FS:SHM"
+					],
+					"progression": {
+						"3": 1
+					}
+				}
+			],
+			"startingProficiencies": {
+				"armor": [
+					"light",
+					"shield"
+				],
+				"armorProficiencies": [
+					{
+						"light": true,
+						"shield": true
+					}
+				],
+				"weapons": [
+					"simple",
+					"{@item battleaxe|phb|battleaxes}",
+					"{@item longsword|phb|longswords}"
+				],
+				"weaponProficiencies": [
+					{
+						"simple": true,
+						"battleaxe|phb": true,
+						"longsword|phb": true
+					}
+				],
+				"tools": [
+					"One {@item musical instrument|phb} of your choice"
+				],
+				"toolProficiencies": [
+					{
+						"anyMusicalInstrument": 1
+					}
+				],
+				"skills": [
+					{
+						"nature": true
+					},
+					{
+						"choose": {
+							"from": [
+								"arcana",
+								"athletics",
+								"investigation",
+								"medicine",
+								"perception",
+								"performance",
+								"survival"
+							],
+							"count": 1
+						}
+					}
+				]
+			},
+			"startingEquipment": {
+				"additionalFromBackground": true,
+				"default": [
+					"(a) a {@item shield|phb} and a {@item club|phb}, (b) a {@item longsword|phb}, or (c) a {@item battleaxe|phb}",
+					"(a) a {@item shortbow|phb} and {@item arrows (20)|phb|20 arrows} or (b) two {@filter simple weapons|items|source=phb|category=basic|type=simple weapon}",
+					"(a) an {@item explorer's pack|phb} or (b) a {@item dungeoneer's pack|phb}",
+					"{@item Leather armor|phb} and a {@item quarterstaff|phb}"
+				],
+				"defaultData": [
+					{
+						"a": [
+							"shield|phb",
+							"club|phb"
+						],
+						"b": [
+							"longsword|phb"
+						],
+						"c": [
+							"battleaxe|phb"
+						]
+					},
+					{
+						"a": [
+							"shortbow|phb",
+							"arrows (20)|phb"
+						],
+						"b": [
+							{
+								"equipmentType": "weaponSimple",
+								"quantity": 2
+							}
+						]
+					},
+					{
+						"a": [
+							"explorer's pack|phb"
+						],
+						"b": [
+							"dungeoneer's pack|phb"
+						]
+					},
+					{
+						"_": [
+							"leather armor|phb",
+							"quarterstaff|phb"
+						]
+					}
+				]
+			},
+			"multiclassing": {
+				"requirements": {
+					"str": 13,
+					"wis": 13
+				},
+				"proficienciesGained": {
+					"armor": [
+						"light",
+						"shield"
+					],
+					"armorProficiencies": [
+						{
+							"light": true,
+							"shield": true
+						}
+					],
+					"tools": [
+						"One {@item musical instrument|phb} of your choice"
+					],
+					"toolProficiencies": [
+						{
+							"anyMusicalInstrument": 1
+						}
+					]
+				},
+				"entries": [
+					"If you multiclass into another spellcasting class, add two-thirds of your shaman levels (rounded down) to your levels in your other spellcasting classes to determine your available spell slots. For example, a shaman 3/wizard 4 counts as a 6th-level caster for determining spell slots."
+				]
+			},
+			"classTableGroups": [
+				{
+					"title": "Spell Slots per Spell Level",
+					"colLabels": [
+						"{@filter 1st|spells|level=1|class=Shaman}",
+						"{@filter 2nd|spells|level=2|class=Shaman}",
+						"{@filter 3rd|spells|level=3|class=Shaman}",
+						"{@filter 4th|spells|level=4|class=Shaman}",
+						"{@filter 5th|spells|level=5|class=Shaman}",
+						"{@filter 6th|spells|level=6|class=Shaman}",
+						"{@filter 7th|spells|level=7|class=Shaman}"
+					],
+					"rowsSpellProgression": [
+						[
+							0,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							2,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							2,
+							0,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							2,
+							1,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							2,
+							1,
+							0,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							2,
+							1,
+							1,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							1,
+							1,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							2,
+							1,
+							0,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							2,
+							1,
+							1,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							2,
+							1,
+							1,
+							0,
+							0,
+							0
+						],
+						[
+							3,
+							2,
+							2,
+							1,
+							0,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							2,
+							1,
+							1,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							2,
+							2,
+							1,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							2,
+							1,
+							0,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							2,
+							1,
+							1,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							1,
+							1,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							1,
+							0
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							1,
+							1
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							1,
+							1
+						],
+						[
+							4,
+							3,
+							3,
+							3,
+							2,
+							1,
+							1
+						]
+					]
+				}
+			],
+			"classFeatures": [
+				"Natural Armor|Shaman|SarungardShaman|1",
+				"Shamanic Focus|Shaman|SarungardShaman|1",
+				{
+					"classFeature": "Ancient Council|Shaman|SarungardShaman|2",
+					"gainSubclassFeature": true
+				},
+				"Spellcasting|Shaman|SarungardShaman|2",
+				"Fighting Style|Shaman|SarungardShaman|3",
+				"Resonance|Shaman|SarungardShaman|3",
+				"Ability Score Improvement|Shaman|SarungardShaman|4",
+				{
+					"classFeature": "Council Heritage Feature|Shaman|SarungardShaman|5",
+					"gainSubclassFeature": true
+				},
+				"Resonance (x2)|Shaman|SarungardShaman|6",
+				"Improved Focus|Shaman|SarungardShaman|7",
+				"Ability Score Improvement|Shaman|SarungardShaman|8",
+				{
+					"classFeature": "Council Heritage Feature|Shaman|SarungardShaman|9",
+					"gainSubclassFeature": true
+				},
+				"Resonance (x3)|Shaman|SarungardShaman|12",
+				"Ability Score Improvement|Shaman|SarungardShaman|12",
+				{
+					"classFeature": "Council Heritage Feature|Shaman|SarungardShaman|14",
+					"gainSubclassFeature": true
+				},
+				"Spiritual Focus|Shaman|SarungardShaman|14",
+				"Ability Score Improvement|Shaman|SarungardShaman|16",
+				"Harmony|Shaman|SarungardShaman|17",
+				"Ability Score Improvement|Shaman|SarungardShaman|19",
+				{
+					"classFeature": "Council Heritage Feature|Shaman|SarungardShaman|20",
+					"gainSubclassFeature": true
+				}
+			],
+			"subclassTitle": "Ancient Council",
+			"classSpells": [
+				"alarm",
+				"burning hands",
+				"comprehend languages",
+				"create or destroy water",
+				"cure wounds",
+				"detect evil and good",
+				"detect magic",
+				"ensnaring strike",
+				"entangle",
+				"fog cloud",
+				"grease",
+				"identify",
+				"jump",
+				"longstrider",
+				"protection from evil and good",
+				"thunderwave",
+				"unseen servant",
+				"aid",
+				"animal messenger",
+				"augury",
+				"barkskin",
+				"beast sense",
+				"continual flame",
+				"enhance ability",
+				"enlarge/reduce",
+				"flame blade",
+				"flaming sphere",
+				"gust of wind",
+				"locate animals or plants",
+				"magic weapon",
+				"misty step",
+				"shatter",
+				"silence",
+				"spike growth",
+				"call lightning",
+				"daylight",
+				"elemental weapon",
+				"fireball",
+				"gaseous form",
+				"haste",
+				"lightning arrow",
+				"lightning bolt",
+				"meld into stone",
+				"plant growth",
+				"remove curse",
+				"speak with plants",
+				"water breathing",
+				"water walk",
+				"wind wall",
+				"conjure minor elementals",
+				"conjure woodland beings",
+				"control water",
+				"divination",
+				"fire shield",
+				"freedom of movement",
+				"grasping vine",
+				"ice storm",
+				"stone shape",
+				"stoneskin",
+				"wall of fire",
+				"commune",
+				"commune with nature",
+				"cone of cold",
+				"conjure elemental",
+				"contact other plane",
+				"dispel evil and good",
+				"flame strike",
+				"tree stride",
+				"wall of stone",
+				"chain lightning",
+				"flesh to stone",
+				"move earth",
+				"wall of ice",
+				"wall of thorns",
+				"wind walk",
+				"fire storm",
+				"plane shift",
+				"regenerate",
+				"absorb elements|xge",
+				"earth tremor|xge",
+				"ice knife|xge",
+				"snare|xge",
+				"zephyr strike|xge",
+				"dust devil|xge",
+				"earthbind|xge",
+				"skywrite|xge",
+				"warding wind|xge",
+				"erupting earth|xge",
+				"flame arrows|xge",
+				"thunder step|xge",
+				"tidal wave|xge",
+				"wall of sand|xge",
+				"wall of water|xge",
+				"elemental bane|xge",
+				"guardian of nature|xge",
+				"storm sphere|xge",
+				"watery sphere|xge",
+				"dawn|xge",
+				"far step|xge",
+				"immolation|xge",
+				"maelstrom|xge",
+				"steel wind strike|xge",
+				"transmute rock|xge",
+				"wrath of nature|xge",
+				"bones of the earth|xge",
+				"investiture of flame|xge",
+				"investiture of ice|xge",
+				"investiture of stone|xge",
+				"investiture of wind|xge",
+				"primordial ward|xge",
+				"whirlwind|xge",
+				"summon elemental|tce",
+				"frost fingers|idrotf",
+				"wild cunning (ua)|uastarterspells",
+				"transmogrify|sarungardshaman",
+				"erratic wisp|sarungardshaman"
+			],
+			"fluff": {
+				"entries": [
+					{
+						"type": "entries",
+						"name": "Shaman",
+						"entries": [
+							"As the tattooed man stands still with his weapon in hand and cold eyes, a gentle breeze broods over the scene. For a moment, he is in the way of an ogre's club; in the next, a chilling gust of wind displaces him behind his target, and with one precise strike, he strikes it down.",
+							"Storm rages and lightning strikes the earth as a small group of wood elves tries to defend their home and family. An embercat leaps forward, dancing through the invading hordes of goblins, causing chaos and covering the place in the smell of burnt flesh. Strong winds blow toward the goblins to keep their arrows at bay.",
+							"Ships skim the waves at full sail as a hulking orc raises his flag. As he starts chanting, his fleet falls into a strange state of fury; they don't wait to reach the shore, but throw themselves into the tides and swim ashore, tearing and biting at the waves as they charge the defenders.",
+							"A strange figure cloaked in black is gathering plants with her sickle. An aura of bizarre energies emanates from her; her touch causes the plants to wither, and animals whimper and whine as she reaches them, then die. As she looks at you, even her mere presence causes unease, and a voice from within pleads with you to flee.",
+							"Whether calling ancient primordials, entrapping deceased souls, or using their own essence to empower their allies, shamans gather fundamental power through forgotten techniques and ask ancestral spirits for aid. Once the connection is set and those spirits answer, there is only so much one can do against them.",
+							"Be it combat or sacred rituals, they wield weapons and magic with equal deadliness.",
+							{
+								"type": "entries",
+								"name": "Ancient Rituals",
+								"entries": [
+									"Shamans are the mediums between the spirit world and the material plane. They often serve as the hosts of supernatural creatures, and only they know how to communicate with them.",
+									"Whether those beings are elder elementals, distant ancestors of people, or some extraplanar entity, the ritual is often kept secret, and only certain members of different councils have the knowledge to accomplish it. To become a shaman, one must learn about the world around and beyond us just as deeply as a wizard learns about magic; it takes years of dedication and an understanding of the fundamentals of nature and of our surroundings.",
+									"Shamans often rely on the power of their bound spirit; they can unleash destructive elemental spells, perform rituals in a pinch, enter a battle trance that guides them through combat, or even embody an incarnation of something vile beyond our understanding."
+								]
+							},
+							{
+								"type": "entries",
+								"name": "Hosts of the Supernatural",
+								"entries": [
+									"For most shamans, the spirit world is their mental home. They often delve deep and form bonds with beings that have ever existed, whether from the Material Plane or not. Elder primordials and their own ancestors are just as likely to contact them as otherworldly beings. To that extent, what a shaman is capable of is mysterious, often fearsome, and powerful."
+								]
+							},
+							{
+								"type": "entries",
+								"name": "Creating a Shaman",
+								"entries": [
+									"When creating a shaman, consider your allegiances. What spirits are you communicating with? Do you and the elementals only try to preserve nature in its own sanctity? Do your ancestors guide you to protect your consecrated ground from defilers? Or are you calling bloodthirsty spirits and enraging others into a mindless fury to destroy? Whom do you serve? Who serves you?",
+									"Shamans tend to be reclusive individuals, communing with the elements and living off the land. There are, however, many reasons why a shaman would join a group of adventurers or require the resources of towns. Perhaps they want friends, perhaps they need traveling companions, or maybe they require sacrifices for a less than reputable elemental.",
+									{
+										"type": "entries",
+										"name": "Quick Build",
+										"entries": [
+											"You can make a shaman quickly by following these suggestions. First, Wisdom should be your highest ability score, followed by either Strength or Constitution. Second, choose the {@background hermit} or ritualistic background."
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			"foundrySystem": {
+				"identifier": "shaman",
+				"spellcasting.progression": "shaman",
+				"spellcasting.ability": "wis",
+				"spellcasting.preparation.formula": "max(1, @abilities.wis.mod + floor(@classes.shaman.levels / 2))"
+			},
+			"foundryAdvancement": [
+				{
+					"type": "ScaleValue",
+					"title": "Resonance Uses",
+					"configuration": {
+						"identifier": "resonance",
+						"type": "number",
+						"scale": {
+							"3": {
+								"value": 1
+							},
+							"6": {
+								"value": 2
+							},
+							"12": {
+								"value": 3
+							}
+						}
+					}
+				}
+			]
+		}
+	],
+	"subclass": [
+		{
+			"name": "Council of Blood",
+			"shortName": "Blood",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"page": 6,
+			"edition": "classic",
+			"subclassFeatures": [
+				"Council of Blood|Shaman|SarungardShaman|Blood|SarungardShaman|2",
+				"Commanded Sanguinity|Shaman|SarungardShaman|Blood|SarungardShaman|5",
+				"Bloodlust|Shaman|SarungardShaman|Blood|SarungardShaman|9",
+				"Blood Harvest|Shaman|SarungardShaman|Blood|SarungardShaman|14",
+				"Embodiment of Wrath|Shaman|SarungardShaman|Blood|SarungardShaman|20"
+			],
+			"foundrySystem": {
+				"identifier": "blood"
+			},
+			"foundryAdvancement": [
+				{
+					"type": "ScaleValue",
+					"title": "Sanguinity Hit Dice",
+					"configuration": {
+						"identifier": "sanguinity",
+						"type": "number",
+						"scale": {
+							"5": {
+								"value": 2
+							},
+							"11": {
+								"value": 3
+							},
+							"17": {
+								"value": 4
+							}
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Council of Elements",
+			"shortName": "Elements",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"page": 6,
+			"edition": "classic",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"2": [
+							"find familiar|phb"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Council of Elements|Shaman|SarungardShaman|Elements|SarungardShaman|2",
+				"Destructive Resonance|Shaman|SarungardShaman|Elements|SarungardShaman|5",
+				"Elemental Resonance|Shaman|SarungardShaman|Elements|SarungardShaman|9",
+				"Improved Elemental Familiar|Shaman|SarungardShaman|Elements|SarungardShaman|14",
+				"Archon of Fundaments|Shaman|SarungardShaman|Elements|SarungardShaman|20"
+			],
+			"foundrySystem": {
+				"identifier": "elements"
+			}
+		},
+		{
+			"name": "Council of Harvest",
+			"shortName": "Harvest",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"page": 7,
+			"edition": "classic",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"2": [
+							"hex|phb"
+						],
+						"8": [
+							"bestow curse|phb"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Council of Harvest|Shaman|SarungardShaman|Harvest|SarungardShaman|2",
+				"Grim Echoes|Shaman|SarungardShaman|Harvest|SarungardShaman|5",
+				"Undying Servitude|Shaman|SarungardShaman|Harvest|SarungardShaman|9",
+				"Festival of Immortals|Shaman|SarungardShaman|Harvest|SarungardShaman|14",
+				"Soulstorm|Shaman|SarungardShaman|Harvest|SarungardShaman|20"
+			],
+			"foundrySystem": {
+				"identifier": "harvest"
+			}
+		},
+		{
+			"name": "Council of Shrouds",
+			"shortName": "Shrouds",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"page": 8,
+			"edition": "classic",
+			"additionalSpells": [
+				{
+					"prepared": {
+						"2": [
+							"shield|phb",
+							"tasha's hideous laughter|phb"
+						],
+						"4": [
+							"mind spike|xge",
+							"tasha's mind whip|tce"
+						],
+						"6": [
+							"blink|phb",
+							"pulse wave|egw"
+						],
+						"9": [
+							"banishment|phb",
+							"phantasmal killer|phb"
+						],
+						"12": [
+							"synaptic static|xge",
+							"temporal shunt|egw"
+						]
+					}
+				}
+			],
+			"subclassTableGroups": [
+				{
+					"subclasses": [
+						{
+							"name": "Council of Shrouds",
+							"source": "SarungardShaman"
+						}
+					],
+					"colLabels": [
+						"Psionic Points"
+					],
+					"rows": [
+						[
+							0
+						],
+						[
+							2
+						],
+						[
+							2
+						],
+						[
+							2
+						],
+						[
+							4
+						],
+						[
+							4
+						],
+						[
+							4
+						],
+						[
+							4
+						],
+						[
+							4
+						],
+						[
+							6
+						],
+						[
+							6
+						],
+						[
+							6
+						],
+						[
+							6
+						],
+						[
+							8
+						],
+						[
+							8
+						],
+						[
+							8
+						],
+						[
+							10
+						],
+						[
+							10
+						],
+						[
+							10
+						],
+						[
+							10
+						]
+					]
+				}
+			],
+			"subclassFeatures": [
+				"Council of Shrouds|Shaman|SarungardShaman|Shrouds|SarungardShaman|2",
+				"Empowered Psionics|Shaman|SarungardShaman|Shrouds|SarungardShaman|5",
+				"Dissimilate|Shaman|SarungardShaman|Shrouds|SarungardShaman|9",
+				"Take into the Veil|Shaman|SarungardShaman|Shrouds|SarungardShaman|14",
+				"Surface the Shroud|Shaman|SarungardShaman|Shrouds|SarungardShaman|20"
+			],
+			"foundrySystem": {
+				"identifier": "shrouds"
+			},
+			"foundryAdvancement": [
+				{
+					"type": "ScaleValue",
+					"title": "Psionic Points",
+					"configuration": {
+						"identifier": "psionic-points",
+						"type": "number",
+						"scale": {
+							"2": {
+								"value": 2
+							},
+							"5": {
+								"value": 4
+							},
+							"10": {
+								"value": 6
+							},
+							"14": {
+								"value": 8
+							},
+							"17": {
+								"value": 10
+							}
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Council of Traditions",
+			"shortName": "Traditions",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"page": 9,
+			"edition": "classic",
+			"subclassFeatures": [
+				"Council of Traditions|Shaman|SarungardShaman|Traditions|SarungardShaman|2",
+				"Battle Meditation|Shaman|SarungardShaman|Traditions|SarungardShaman|5",
+				"Emboldening Trance|Shaman|SarungardShaman|Traditions|SarungardShaman|9",
+				"Relentless Trance|Shaman|SarungardShaman|Traditions|SarungardShaman|14",
+				"Ancient Teachings|Shaman|SarungardShaman|Traditions|SarungardShaman|20"
+			],
+			"foundrySystem": {
+				"identifier": "traditions"
+			}
+		}
+	],
+	"classFeature": [
+		{
+			"name": "Natural Armor",
+			"source": "SarungardShaman",
+			"page": 4,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 1,
+			"entries": [
+				"When you are wearing armor, you can use your Constitution modifier instead of your Dexterity modifier when calculating your Armor Class."
+			]
+		},
+		{
+			"name": "Shamanic Focus",
+			"source": "SarungardShaman",
+			"page": 4,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 1,
+			"entries": [
+				"At 1st level, you choose an object as your shamanic focus, which helps you communicate with the spirits of this world. Unless stated otherwise, your focus can be a tool or just a small trinket, but not a weapon, a piece of armor, or a shield. Select one of the following options:",
+				{
+					"type": "options",
+					"count": 1,
+					"entries": [
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Instrumental Focus|SarungardShaman"
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Mnemonic Focus|SarungardShaman"
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Totemic Focus|SarungardShaman"
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Weaponic Focus|SarungardShaman"
+						}
+					]
+				},
+				"If you lose your focus, you can perform a 1-hour ceremony to bond with another item. This ceremony can be performed during a short or long rest, and it destroys the previous focus."
+			]
+		},
+		{
+			"name": "Ancient Council",
+			"source": "SarungardShaman",
+			"page": 4,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 2,
+			"entries": [
+				"At 2nd level, you choose to identify with a council of shamans: the {@subclass Council of Blood|Shaman|SarungardShaman|Blood|SarungardShaman}, the {@subclass Council of Elements|Shaman|SarungardShaman|Elements|SarungardShaman}, the {@subclass Council of Harvest|Shaman|SarungardShaman|Harvest|SarungardShaman}, the {@subclass Council of Shrouds|Shaman|SarungardShaman|Shrouds|SarungardShaman}, or the {@subclass Council of Traditions|Shaman|SarungardShaman|Traditions|SarungardShaman}. Your choice grants you features at 2nd level and again at 5th, 9th, 14th, and 20th level.",
+				{
+					"type": "entries",
+					"name": "Ancient Councils",
+					"entries": [
+						"Though shamans are often members of small tribes or larger hordes, they are also part of another society. This society spans the land, ignoring political borders, and connects shamans through their rituals and thus through the spirits. At a local scale, shamans are organized into councils, Ancient Councils that share and preserve the same heritage over generations."
+					]
+				}
+			]
+		},
+		{
+			"name": "Spellcasting",
+			"source": "SarungardShaman",
+			"page": 4,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 2,
+			"entries": [
+				"Harnessing the pure spiritual essence of abiding spirits themselves, you can cast spells to shape that power to your will. See {@filter the shaman spell list|spells|class=Shaman} below for the spells available to you.",
+				{
+					"type": "entries",
+					"name": "Preparing and Casting Spells",
+					"entries": [
+						"The Shaman table shows how many spell slots you have to cast your shaman spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.",
+						"You prepare the list of shaman spells that are available for you to cast, choosing from the shaman spell list. When you do so, choose a number of shaman spells equal to your Wisdom modifier + half your shaman level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.",
+						"For example, if you are a 4th-level shaman, you have two 1st-level and one 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include five spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell {@spell cure wounds}, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.",
+						"You can change your list of prepared spells when you finish a long rest. Preparing a new list of shaman spells requires time spent in meditation: at least 1 minute per spell level for each spell on your list."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spellcasting Ability",
+					"entries": [
+						"Wisdom is your spellcasting ability for your shaman spells, since your magic draws upon ancient techniques practiced in secret by different councils and relies on understanding how rituals invoke the power of spirits. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a shaman spell you cast and when making an attack roll with one.",
+						{
+							"type": "abilityDc",
+							"name": "Spell",
+							"attributes": [
+								"wis"
+							]
+						},
+						{
+							"type": "abilityAttackMod",
+							"name": "Spell",
+							"attributes": [
+								"wis"
+							]
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Ritual Casting",
+					"entries": [
+						"You can cast a shaman spell as a ritual if that spell has the ritual tag and you have the spell prepared."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Multiclassing",
+					"entries": [
+						"If you multiclass into another spellcasting class, add two-thirds of your shaman levels (rounded down) to your levels in your other spellcasting classes to determine your available spell slots. For example, a shaman 3/wizard 4 counts as a 6th-level caster for determining spell slots."
+					]
+				}
+			]
+		},
+		{
+			"name": "Fighting Style",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 3,
+			"entries": [
+				"At 3rd level, you adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.",
+				{
+					"type": "options",
+					"count": 1,
+					"entries": [
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Blind Fighting|SarungardShaman"
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Great Weapon Fighting|SarungardShaman"
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Interception|SarungardShaman"
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Protection|SarungardShaman"
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Tunnel Fighter|SarungardShaman"
+						},
+						{
+							"type": "refOptionalfeature",
+							"optionalfeature": "Two-Weapon Fighting|SarungardShaman"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Resonance",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 3,
+			"entries": [
+				"Your link with the spirit realm helps you when you draw power from it.",
+				"Starting at 3rd level, whenever you cast a shaman spell as a ritual, you can use your Resonance to finish it as a full-round action instead, as the spirits of nature help you deliver your magic. You can use your Resonance once.",
+				"Beginning at 6th level, you can use your Resonance twice between rests, and beginning at 12th level, you can use it three times between rests. When you finish a long rest, you regain your expended uses."
+			]
+		},
+		{
+			"name": "Ability Score Improvement",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 4,
+			"entries": [
+				"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+			]
+		},
+		{
+			"name": "Ability Score Improvement",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 8,
+			"entries": [
+				"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+			]
+		},
+		{
+			"name": "Ability Score Improvement",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 12,
+			"entries": [
+				"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+			]
+		},
+		{
+			"name": "Ability Score Improvement",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 16,
+			"entries": [
+				"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+			]
+		},
+		{
+			"name": "Ability Score Improvement",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 19,
+			"entries": [
+				"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+			]
+		},
+		{
+			"name": "Council Heritage Feature",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 5,
+			"entries": [
+				"At 5th level, you gain a feature granted by your Ancient Council."
+			]
+		},
+		{
+			"name": "Council Heritage Feature",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 9,
+			"entries": [
+				"At 9th level, you gain a feature granted by your Ancient Council."
+			]
+		},
+		{
+			"name": "Council Heritage Feature",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 14,
+			"entries": [
+				"At 14th level, you gain a feature granted by your Ancient Council."
+			]
+		},
+		{
+			"name": "Council Heritage Feature",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 20,
+			"entries": [
+				"At 20th level, you gain a feature granted by your Ancient Council."
+			]
+		},
+		{
+			"name": "Resonance (x2)",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 6,
+			"entries": [
+				"Beginning at 6th level, you can use your {@classFeature Resonance|Shaman|SarungardShaman|3} twice between long rests."
+			]
+		},
+		{
+			"name": "Improved Focus",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 7,
+			"entries": [
+				"Beginning at 7th level, you learn advanced uses of your focus as you bond with it.",
+				{
+					"type": "list",
+					"items": [
+						{
+							"type": "item",
+							"name": "Instrumental Focus.",
+							"entries": [
+								"Creatures who can hear your song during the short rest can forgo up to two Hit Dice rolls instead of one to regain the maximum instead."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Mnemonic Focus.",
+							"entries": [
+								"Once per short rest, whenever you cast a spell using your focus, you can have one of the creatures the spell targets roll its saving throw with disadvantage."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Totemic Focus.",
+							"entries": [
+								"The wearer of the talisman can add the {@dice d4} to its AC if an attack would hit it. In addition, your talisman can be used twice instead of once per short rest."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Weaponic Focus.",
+							"entries": [
+								"Whenever you take the {@action Attack} action while wielding a shaman weapon, you can attack twice instead of once."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Resonance (x3)",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 12,
+			"entries": [
+				"Beginning at 12th level, you can use your {@classFeature Resonance|Shaman|SarungardShaman|3} three times between long rests."
+			]
+		},
+		{
+			"name": "Spiritual Focus",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 14,
+			"entries": [
+				"Starting at 14th level, you can invoke a spirit bound to your focus:",
+				{
+					"type": "list",
+					"items": [
+						{
+							"type": "item",
+							"name": "Instrumental Focus.",
+							"entries": [
+								"You can cast {@spell healing spirit|XGE} at 2nd level as an action without expending a spell slot once per long rest."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Mnemonic Focus.",
+							"entries": [
+								"You can cast {@spell hold person} at 2nd level as an action without expending a spell slot once per long rest."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Totemic Focus.",
+							"entries": [
+								"You can cast {@spell enhance ability} at 2nd level as an action without expending a spell slot once per long rest."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Weaponic Focus.",
+							"entries": [
+								"You can cast {@spell magic weapon} at 2nd level as an action without expending a spell slot once per long rest."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Harmony",
+			"source": "SarungardShaman",
+			"page": 5,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 17,
+			"entries": [
+				"At 17th level, you reach perfect harmony with your inner nature and the world around you. Once per day, when you finish a short rest and you have no uses of your {@classFeature Resonance|Shaman|SarungardShaman|3} remaining, you can regain one use."
+			]
+		}
+	],
+	"subclassFeature": [
+		{
+			"name": "Council of Blood",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"entries": [
+				"You see the goblin as he draws his scimitar, eyes bloodshot, emitting inarticulate cries of fury as he starts the massacre. His babbling lingers as the battle rages and only later calms down, never realizing that what caused his rage was the work of their shaman, a member of the Council of Blood. These shamans often use their own essence to infuriate their allies, driving them into a fearless berserk fury and causing carnage.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Imposing Chant|Shaman|SarungardShaman|Blood|SarungardShaman|2"
+				}
+			]
+		},
+		{
+			"name": "Imposing Chant",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"At 2nd level, during your turn, you can use a bonus action to expend one of your Hit Dice and roll it. If you do, a target creature you can see within 30 feet of you can move a number of feet up to the number rolled without provoking opportunity attacks.",
+				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a short rest."
+			]
+		},
+		{
+			"name": "Commanded Sanguinity",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 5,
+			"entries": [
+				"Starting at 5th level, whenever a creature you can see within 30 feet of you makes a melee attack, you can expend up to two of your Hit Dice and roll them. You grant that creature a bonus to the attack's damage roll equal to the result, and both of you take that much necrotic damage. You can't use this feature if you don't have available Hit Dice.",
+				"The maximum number of Hit Dice you can roll at once increases by one when you reach 11th level (3) and 17th level (4)."
+			]
+		},
+		{
+			"name": "Bloodlust",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"entries": [
+				"Starting at 9th level, whenever you hit a creature with a melee weapon attack, if that creature is missing any of its hit points, you can expend and roll up to two of your Hit Dice to deal that much extra necrotic damage to it."
+			]
+		},
+		{
+			"name": "Blood Harvest",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 14,
+			"entries": [
+				"When you reach 14th level, you gain the ability to channel your life force toward other creatures, corrupting their essence and driving them into a mad fury.",
+				"Choose any number of creatures other than you that can hear you within 60 feet of you, up to your proficiency bonus. Expend and roll that many Hit Dice; you take necrotic damage equal to the result, and your hit point maximum is reduced by that amount until you finish a long rest. The chosen creatures have an additional action on their next turn.",
+				"When you use this feature, you can't do so again until you finish a long rest."
+			]
+		},
+		{
+			"name": "Embodiment of Wrath",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"entries": [
+				"When you reach 20th level, you embody the wrath that boils in the blood of both the fallen and the living.",
+				"As an action, you can undergo a transformation. For 1 minute, you gain the following benefits:",
+				{
+					"type": "list",
+					"items": [
+						"You emanate an aura of fury in a 30-foot radius. Whenever a friendly creature other than you makes a weapon attack, you can use your reaction to make that creature move a number of feet equal to the number of your expended Hit Dice without provoking opportunity attacks, then make another attack as part of that action. You can use your reaction this way even if you have already expended your reaction this round, but not if you have already used your reaction this turn.",
+						"Whenever you roll one or more Hit Dice, a creature of your choice within 60 feet of you takes necrotic damage equal to the result rolled."
+					]
+				},
+				"The transformation ends early if you are incapacitated or if you die, and you can't use it again until you finish a long rest."
+			]
+		},
+		{
+			"name": "Council of Elements",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Elements",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"entries": [
+				"Shamans practicing in the Council of Elements are amazed by the sheer power of the ancient primordials and often seek to understand them. Their rituals summon elemental familiars who are ready to help them channel destructive energies on those who threaten their sacred nodes of power.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Elemental Familiar|Shaman|SarungardShaman|Elements|SarungardShaman|2"
+				}
+			]
+		},
+		{
+			"name": "Elemental Familiar",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Elements",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"Starting at 2nd level, you learn the {@spell find familiar} spell, and it counts as a shaman spell for you. You always have it prepared, and it doesn't count against the number of spells you can prepare.",
+				"In addition, when you cast the {@spell find familiar} spell, you can choose for your familiar to be an elemental instead of a celestial, fey, or fiend. If you do, choose one of the following:",
+				{
+					"type": "list",
+					"items": [
+						{
+							"type": "item",
+							"name": "Air Elemental.",
+							"entries": [
+								"Your familiar gains extra movement speed equal to five times your proficiency bonus."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Earth Elemental.",
+							"entries": [
+								"Your familiar gains temporary hit points equal to your shaman level."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Fire Elemental.",
+							"entries": [
+								"If your familiar is reduced to 0 hit points, it deals fire damage equal to your shaman level in a 5-foot radius around it."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Water Elemental.",
+							"entries": [
+								"Your familiar gains a bonus to its AC equal to your proficiency bonus."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Destructive Resonance",
+			"source": "SarungardShaman",
+			"page": 6,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Elements",
+			"subclassSource": "SarungardShaman",
+			"level": 5,
+			"entries": [
+				"At 5th level, you gain the ability to channel the destructive forces of nature through your spells while resonating with the elemental spirits around you.",
+				"Whenever you cast a spell that deals cold, fire, lightning, or thunder damage, you can expend any number of uses of your {@classFeature Resonance|Shaman|SarungardShaman|3} to make that spell ignore resistance to the damage types listed above. The spell's level can't be higher than twice the number of Resonance uses you expended."
+			]
+		},
+		{
+			"name": "Elemental Resonance",
+			"source": "SarungardShaman",
+			"page": 7,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Elements",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"entries": [
+				"At 9th level, you can expend two uses of your {@classFeature Resonance|Shaman|SarungardShaman|3} to cast the {@spell find familiar} spell. If you cast the spell this way, you can cast it as a ritual and finish it as a full-round action, and you can choose for your familiar to appear in the form of an {@creature air elemental}, an {@creature earth elemental}, a {@creature fire elemental}, or a {@creature water elemental}. While in this form, your familiar can attack as if it were one of those elementals.",
+				"Your familiar stays in this form for 2 hours before it changes back to its original form."
+			]
+		},
+		{
+			"name": "Improved Elemental Familiar",
+			"source": "SarungardShaman",
+			"page": 7,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Elements",
+			"subclassSource": "SarungardShaman",
+			"level": 14,
+			"entries": [
+				"Starting at 14th level, your connection with the spirits of the elements strengthens. When you cast {@spell find familiar} and choose for it to be an elemental, you can choose one of the following:",
+				{
+					"type": "list",
+					"items": [
+						{
+							"type": "item",
+							"name": "Fiery Malice.",
+							"entries": [
+								"If you chose Fire Elemental as your Elemental Familiar, it can use its action to attack normally, as represented on the creature's stat block; otherwise, it deals fire damage equal to your shaman level in a 5-foot radius around it if it's reduced to 0 hit points."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Magmatic Sturdiness.",
+							"entries": [
+								"If you chose Earth Elemental as your Elemental Familiar, it gains resistance to nonmagical attacks; otherwise, it gains temporary hit points equal to your shaman level."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Storm's Tempest.",
+							"entries": [
+								"If you chose Air Elemental as your Elemental Familiar, it gains a flying speed equal to its movement speed and can hover; otherwise, it gains extra movement speed equal to five times your proficiency bonus."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Tidal Furor.",
+							"entries": [
+								"If you chose Water Elemental as your Elemental Familiar, it can use its reaction to take damage instead of you if you are within 30 feet of each other; otherwise, it gains a bonus to its AC equal to your proficiency bonus."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Archon of Fundaments",
+			"source": "SarungardShaman",
+			"page": 7,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Elements",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"entries": [
+				"When you reach 20th level, you gain the ability to dissolve your physical body into the four fundamental elements of the world. As an action, you can undergo a transformation to split into four creatures: an {@creature air elemental}, an {@creature earth elemental}, a {@creature fire elemental}, and a {@creature water elemental}, and you gain the following effects:",
+				{
+					"type": "list",
+					"items": [
+						"You can't concentrate on spells, and if you were concentrating on one, the spell immediately ends.",
+						"For the duration, your body is nonexistent and your mind can't be affected; however, you perceive the world through the senses of all four of them.",
+						"In combat, they share your initiative count, but you take their turns separately, as if you were each of them. You decide in which order they act when entering combat.",
+						"When one of them is reduced to 0 hit points, it disappears. If all of them are killed, you appear in the position of the last one, reduced to 0 hit points and dying."
+					]
+				},
+				"This transformation lasts for 1 hour or until you end it as an action, and then you appear in the place of one of them of your choice. Then you gain one level of {@condition exhaustion}.",
+				"Once used, you can't use this feature again for {@dice 1d8} days."
+			]
+		},
+		{
+			"name": "Council of Harvest",
+			"source": "SarungardShaman",
+			"page": 7,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"entries": [
+				"There are shamans who seek power through the spirits of the deceased. Those bound to the Council of Harvest are often considered evil by others. Their goal is to gather power by enslaving the souls of fallen people and using them as weapons of destruction. They are not necessarily ill-intentioned, but they are certainly fascinated by the sheer power the dead can provide, and when the opportunity arises, these twisted mediums don't shy away from using souls as their instruments of destruction.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Bounded Spirits|Shaman|SarungardShaman|Harvest|SarungardShaman|2"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Soul Drain|Shaman|SarungardShaman|Harvest|SarungardShaman|2"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Harvester's Grimoire|Shaman|SarungardShaman|Harvest|SarungardShaman|2"
+				}
+			]
+		},
+		{
+			"name": "Bounded Spirits",
+			"source": "SarungardShaman",
+			"page": 7,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"At 2nd level, when you align with this council, you learn how to bind creatures to your Shamanic Focus. Whenever you kill a creature, you can enslave its soul and store it inside your focus.",
+				"You can't enslave the souls of undead, constructs, or creatures with a challenge rating higher than your proficiency bonus, and you can store a number of souls up to your Wisdom modifier (minimum of 1)."
+			]
+		},
+		{
+			"name": "Soul Drain",
+			"source": "SarungardShaman",
+			"page": 7,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"At 2nd level, you can consume one soul from your shamanic focus and make a ranged spell attack against a creature you can see within 60 feet of you. If the attack hits, the target takes poison damage equal to your shaman level + {@dice 1d6}, a number of times equal to the challenge rating the consumed soul had (minimum of 1)."
+			]
+		},
+		{
+			"name": "Harvester's Grimoire",
+			"source": "SarungardShaman",
+			"page": 7,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"Also at 2nd level, you learn the {@spell hex} spell and always have it prepared. It counts as a shaman spell for you.",
+				"At 8th level, you also learn the {@spell bestow curse} spell and always have it prepared. It counts as a shaman spell for you."
+			]
+		},
+		{
+			"name": "Grim Echoes",
+			"source": "SarungardShaman",
+			"page": 7,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 5,
+			"entries": [
+				"Starting at 5th level, when you deal damage with a shaman spell, you can consume a soul from your shamanic focus and add its challenge rating to the damage."
+			]
+		},
+		{
+			"name": "Undying Servitude",
+			"source": "SarungardShaman",
+			"page": 7,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"entries": [
+				"Starting at 9th level, whenever you are subjected to a saving throw to maintain concentration on a shaman spell, you can use your reaction to consume a soul and add its challenge rating to the roll. You can do this only before you roll.",
+				"In addition, whenever a creature dies, if it was affected by your {@spell hex} or {@spell bestow curse} spell, you enslave its soul even if you did not kill it."
+			]
+		},
+		{
+			"name": "Festival of Immortals",
+			"source": "SarungardShaman",
+			"page": 7,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 14,
+			"entries": [
+				"At 14th level, you can use your stored souls to twist their spirits and force them to obey your bidding. As an action, you can consume one soul from your shamanic focus and summon a number of {@creature specter|mm|specters} equal to the consumed creature's challenge rating (minimum of 1). In combat, they share your initiative and take their turns after yours. They remain by your side until they die or you finish a long rest.",
+				"Once used, you can't use this feature again until you finish a long rest."
+			]
+		},
+		{
+			"name": "Soulstorm",
+			"source": "SarungardShaman",
+			"page": 8,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"entries": [
+				"At 20th level, if your shamanic focus is full of souls, you can release your captured souls at once, creating a soulstorm centered on a point you can see within 60 feet of you. Each creature in a 20-foot radius must make a Dexterity, a Constitution, and a Wisdom saving throw against your shaman spell save DC.",
+				{
+					"type": "list",
+					"items": [
+						"On a failed Dexterity save, a creature takes {@damage 4d6} necrotic damage for each soul released, or half as much on a successful one.",
+						"On a failed Constitution save, a creature gains 2 levels of {@condition exhaustion}, or one level on a successful one.",
+						"On a failed Wisdom save, a creature is {@condition incapacitated} for 1 minute, or {@condition frightened} of you on a successful one."
+					]
+				},
+				"Once used, your shamanic focus goes dormant and can't store souls again until you finish a long rest."
+			]
+		},
+		{
+			"name": "Council of Shrouds",
+			"source": "SarungardShaman",
+			"page": 8,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"entries": [
+				"Not all shamans are fascinated by the spirits of their world. Those who seek beings beyond the veil are affiliated with the Council of Shrouds. Seekers of the truth they are, and their minds have often been twisted by aberrant creatures like mind flayers. They gain psionic powers as they serve as hosts of spirits from the Astral Plane. Often considered outcasts by other shamans, members of the Council of Shrouds are proud of their powers, which are feared by many, as they can enhance their own mortal husk. Legends say that some who delved too deep into the mysteries of the Astral Plane ended up as the host of an aberration. Forever.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Council Spells|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Psionic Reserves|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Veiled Powers|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+				}
+			]
+		},
+		{
+			"name": "Council Spells",
+			"source": "SarungardShaman",
+			"page": 8,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"When you align with this council, and later at 4th, 6th, 9th, and 12th level, you gain access to the spells listed for that level in the Council of Shrouds Spells table. Once you gain access to one of these spells, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the shaman spell list, the spell is nonetheless a shaman spell for you.",
+				{
+					"type": "table",
+					"caption": "Council of Shrouds Spells",
+					"colLabels": [
+						"Shaman Level",
+						"Spells"
+					],
+					"colStyles": [
+						"col-3 text-center",
+						"col-9"
+					],
+					"rows": [
+						[
+							"2nd",
+							"{@spell shield}, {@spell Tasha's hideous laughter}"
+						],
+						[
+							"4th",
+							"{@spell mind spike|XGE}, {@spell Tasha's mind whip|TCE}"
+						],
+						[
+							"6th",
+							"{@spell blink}, {@spell pulse wave|EGW}"
+						],
+						[
+							"9th",
+							"{@spell banishment}, {@spell phantasmal killer}"
+						],
+						[
+							"12th",
+							"{@spell synaptic static|XGE}, {@spell temporal shunt|EGW}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"name": "Psionic Reserves",
+			"source": "SarungardShaman",
+			"page": 8,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"At 2nd level, when you align with this council, you gain two psionic points. These are used to fuel your council heritage abilities, and you regain all expended psionic points when you finish a long rest.",
+				"You gain two additional psionic points when you reach 5th level and again at 10th, 14th, and 17th level."
+			]
+		},
+		{
+			"name": "Veiled Powers",
+			"source": "SarungardShaman",
+			"page": 8,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"Also at 2nd level, you gain three uses of your psionic reserves:",
+				{
+					"type": "list",
+					"items": [
+						{
+							"type": "item",
+							"name": "Lay on Minds.",
+							"entries": [
+								"You can spend two psionic points as an action to end one of the following conditions on a creature you touch: {@condition blinded}, {@condition charmed}, {@condition deafened}, or {@condition frightened}."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Deliberate Defenses.",
+							"entries": [
+								"You can spend one psionic point as a bonus action to take the {@action Dodge} action."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Psionic Emboldening.",
+							"entries": [
+								"When a creature other than you within 30 feet of you fails a saving throw or ability check, you can use your reaction to spend one psionic point and make that creature reroll the roll. It must use the new roll."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Empowered Psionics",
+			"source": "SarungardShaman",
+			"page": 8,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 5,
+			"entries": [
+				"Starting at 5th level, when you roll psychic or force damage for any of your shaman spells or features, you can reroll any of those damage dice that roll a 1, but you must use the new roll."
+			]
+		},
+		{
+			"name": "Dissimilate",
+			"source": "SarungardShaman",
+			"page": 8,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"entries": [
+				"Starting at 9th level, you can use your bonus action and spend 2 psionic points to vanish from your current plane of existence and appear in the Ethereal Plane. At the start of your next turn, if you are on the Ethereal Plane, you return to an unoccupied space of your choice that you can see within 30 feet of the space you vanished from. Then each creature within a 15-foot radius must succeed on a Dexterity saving throw against your shaman spell save DC or take force damage equal to {@damage 3d6} + your shaman level, or half as much on a successful one.",
+				"Once you use this feature, you can't use it again until you finish a short rest."
+			]
+		},
+		{
+			"name": "Take into the Veil",
+			"source": "SarungardShaman",
+			"page": 8,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 14,
+			"entries": [
+				"At 14th level, your understanding of the Astral Plane strengthens as you grasp more of the strange connection you share with the spirits dwelling there, granting you the following benefits:",
+				{
+					"type": "list",
+					"items": [
+						{
+							"type": "item",
+							"name": "Mind's Eye.",
+							"entries": [
+								"You can use your action and spend 4 psionic points to bolster the senses of a creature within 30 feet of you. For 1 hour, that creature has advantage on Wisdom ({@skill Perception}) checks that rely on hearing or sight and can see normally in darkness, both magical and nonmagical, to a distance of 60 feet."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Mute Flesh.",
+							"entries": [
+								"You can use your action and spend 4 psionic points to touch a creature. For the next 10 minutes, having 0 hit points or fewer does not knock that creature {@condition unconscious}, as your psionic powers mute its physical body and it doesn't feel pain. It still must make death saving throws, and it suffers the normal effects of taking damage while at 0 hit points; as such, it can still die."
+							]
+						}
+					]
+				},
+				"Only one of these effects can be active at a time, and once you use one, you can use it again only after its effect has faded."
+			]
+		},
+		{
+			"name": "Surface the Shroud",
+			"source": "SarungardShaman",
+			"page": 9,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"entries": [
+				"At 20th level, you can undergo a transformation, and your body becomes the host of a spirit from the Astral Plane. As an action, you can spend 5 psionic points to gain the following benefits:",
+				{
+					"type": "list",
+					"items": [
+						"You can't be {@condition blinded}, {@condition charmed}, {@condition deafened}, or {@condition frightened}.",
+						"You gain a flying speed equal to your movement speed, and you can hover.",
+						"You gain resistance to all damage except psychic damage or damage dealt by magical sources.",
+						"You can use your action to spend 1 psionic point to deal {@damage 3d10} psychic damage to a target creature you can see within 60 feet of you."
+					]
+				},
+				"You remain in this form for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action."
+			]
+		},
+		{
+			"name": "Council of Traditions",
+			"source": "SarungardShaman",
+			"page": 9,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"entries": [
+				"Shamans who often seek guidance from their ancestors are the members of the Council of Traditions. They preserve sacred pleas and ancient teachings of combat mastery passed down for generations. These shamans often enter a trance when their predecessors claim their body and guide them through the fights they are forced to take, leaving devastated enemies behind. For each defeated enemy and each fallen ancestor, they get runes tattooed over their body.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Council Martial Training|Shaman|SarungardShaman|Traditions|SarungardShaman|2"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Battle Trance|Shaman|SarungardShaman|Traditions|SarungardShaman|2"
+				}
+			]
+		},
+		{
+			"name": "Council Martial Training",
+			"source": "SarungardShaman",
+			"page": 9,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"At 2nd level, when you align with this council, you gain proficiency with medium armor and one martial melee weapon of your choice. That weapon counts as a shaman weapon for you, as if you had chosen it as your shamanic focus."
+			]
+		},
+		{
+			"name": "Battle Trance",
+			"source": "SarungardShaman",
+			"page": 9,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"Also at 2nd level, you learn the ability to immerse yourself in a forced meditative state, where your instincts act instead of your senses. As a bonus action, you enter the trance and choose one of the following benefits:",
+				{
+					"type": "list",
+					"items": [
+						{
+							"type": "item",
+							"name": "Overwhelming Stance.",
+							"entries": [
+								"When you attack with a shaman weapon, you add your proficiency bonus to the damage dealt."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Parrying Stance.",
+							"entries": [
+								"While in the trance, you can use your reaction to give an attack against you disadvantage if it does not have advantage."
+							]
+						},
+						{
+							"type": "item",
+							"name": "Agile Stance.",
+							"entries": [
+								"While in the trance, you can use your bonus action to take the {@action Dash} or {@action Disengage} action."
+							]
+						}
+					]
+				},
+				"Your Battle Trance lasts for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action. Once you use this feature, you can't use it again until you finish a short rest."
+			]
+		},
+		{
+			"name": "Battle Meditation",
+			"source": "SarungardShaman",
+			"page": 9,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 5,
+			"entries": [
+				"Starting at 5th level, you can use your Battle Trance to help you focus your concentration on a spell you cast. You gain the following option to choose from when entering your trance:",
+				{
+					"type": "list",
+					"items": [
+						{
+							"type": "item",
+							"name": "Meditative Stance.",
+							"entries": [
+								"If you cast a shaman spell that requires concentration during your Battle Trance, you maintain your concentration even if you take damage, but the spell immediately ends when your trance ends."
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Emboldening Trance",
+			"source": "SarungardShaman",
+			"page": 9,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"entries": [
+				"Starting at 9th level, when you use the {@action Attack} action while your Battle Trance is active, you can make one weapon attack as a bonus action."
+			]
+		},
+		{
+			"name": "Relentless Trance",
+			"source": "SarungardShaman",
+			"page": 9,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 14,
+			"entries": [
+				"Starting at 14th level, whenever you kill a creature while your Battle Trance is active, you can use a bonus action to reset the duration of your Battle Trance as if you had just used the feature this turn. If you reset the duration this way, you can't choose another stance."
+			]
+		},
+		{
+			"name": "Ancient Teachings",
+			"source": "SarungardShaman",
+			"page": 9,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"entries": [
+				"At 20th level, through practicing the ancient traditions, you find your revelation and embrace the teachings of an ancient warrior. Your Strength and Wisdom scores increase by 2. Your maximum for those scores is now 22.",
+				"In addition, you gain the following benefits while your Battle Trance is active:",
+				{
+					"type": "list",
+					"items": [
+						"You gain a bonus to your AC equal to your Wisdom modifier (minimum of +1).",
+						"You apply all stances; you don't have to choose between them."
+					]
+				}
+			]
+		}
+	],
+	"optionalfeature": [
+		{
+			"name": "Instrumental Focus",
+			"source": "SarungardShaman",
+			"page": 4,
+			"featureType": [
+				"SF:SHM"
+			],
+			"entries": [
+				"Your shamanic focus is an instrument of calm. During a short rest, you can play this focus. If you do, each ally who can hear it and spends at least one Hit Die during this rest can forgo one roll and instead regain the maximum number of hit points the die can restore. This instrument must be an instrument you are proficient with.",
+				{
+					"type": "entries",
+					"name": "Improved Focus (7th Level)",
+					"entries": [
+						"Creatures who can hear your song during the short rest can forgo up to two Hit Dice rolls instead of one to regain the maximum instead."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spiritual Focus (14th Level)",
+					"entries": [
+						"You can cast {@spell healing spirit|XGE} at 2nd level as an action without expending a spell slot once per long rest."
+					]
+				}
+			],
+			"foundryActivities": [
+				{
+					"name": "Spiritual Focus: Healing Spirit",
+					"type": "cast",
+					"activation": {
+						"type": "action",
+						"override": true
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1",
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						]
+					},
+					"spell": {
+						"uuid": "@spell[healing spirit|xge]",
+						"level": 2
+					},
+					"visibility": {
+						"identifier": "shaman",
+						"level": {
+							"min": 14
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Mnemonic Focus",
+			"source": "SarungardShaman",
+			"page": 4,
+			"featureType": [
+				"SF:SHM"
+			],
+			"entries": [
+				"Your shamanic focus is an object of remembrance. You can use this focus as a spellcasting focus for your shaman spells.",
+				{
+					"type": "entries",
+					"name": "Improved Focus (7th Level)",
+					"entries": [
+						"Once per short rest, whenever you cast a spell using your focus, you can have one of the creatures the spell targets roll its saving throw with disadvantage."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spiritual Focus (14th Level)",
+					"entries": [
+						"You can cast {@spell hold person} at 2nd level as an action without expending a spell slot once per long rest."
+					]
+				}
+			],
+			"foundryActivities": [
+				{
+					"name": "Improved Focus: Disadvantage on Save",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "When you cast a spell using your focus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1",
+						"recovery": [
+							{
+								"period": "sr",
+								"type": "recoverAll"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"visibility": {
+						"identifier": "shaman",
+						"level": {
+							"min": 7
+						}
+					}
+				},
+				{
+					"name": "Spiritual Focus: Hold Person",
+					"type": "cast",
+					"activation": {
+						"type": "action",
+						"override": true
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1",
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						]
+					},
+					"spell": {
+						"uuid": "@spell[hold person|phb]",
+						"level": 2
+					},
+					"visibility": {
+						"identifier": "shaman",
+						"level": {
+							"min": 14
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Totemic Focus",
+			"source": "SarungardShaman",
+			"page": 4,
+			"featureType": [
+				"SF:SHM"
+			],
+			"entries": [
+				"Your shamanic focus is a totem of willpower, a piece of jewelry of some sort. Once per short rest, you can bolster a creature by giving it your totem to reinforce its resolve. If it fails an ability check while in possession of your totem, it can add a {@dice d4} to the roll, potentially turning the roll into a success.",
+				{
+					"type": "entries",
+					"name": "Improved Focus (7th Level)",
+					"entries": [
+						"The wearer of the talisman can add the {@dice d4} to its AC if an attack would hit it. In addition, your talisman can be used twice instead of once per short rest."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spiritual Focus (14th Level)",
+					"entries": [
+						"You can cast {@spell enhance ability} at 2nd level as an action without expending a spell slot once per long rest."
+					]
+				}
+			],
+			"foundrySystem": {
+				"uses.max": "1 + min(1, floor(@classes.shaman.levels / 7))",
+				"uses.recovery": [
+					{
+						"period": "sr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"foundryActivities": [
+				{
+					"name": "Bolster",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "Give your totem to a creature"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"roll": {
+						"formula": "1d4",
+						"name": "Totem Die",
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "shamanTotem00000"
+						}
+					]
+				},
+				{
+					"name": "Spiritual Focus: Enhance Ability",
+					"type": "cast",
+					"activation": {
+						"type": "action",
+						"override": true
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1",
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						]
+					},
+					"spell": {
+						"uuid": "@spell[enhance ability|phb]",
+						"level": 2
+					},
+					"visibility": {
+						"identifier": "shaman",
+						"level": {
+							"min": 14
+						}
+					}
+				}
+			],
+			"foundryEffects": [
+				{
+					"foundryId": "shamanTotem00000",
+					"name": "Shaman's Totem",
+					"description": "While holding the shaman's totem, when this creature fails an ability check it can add a d4 to the roll, potentially turning it into a success. If the shaman is 7th level or higher, the holder can instead add the d4 to its AC when an attack would hit it."
+				}
+			]
+		},
+		{
+			"name": "Weaponic Focus",
+			"source": "SarungardShaman",
+			"page": 4,
+			"featureType": [
+				"SF:SHM"
+			],
+			"entries": [
+				"Your shamanic focus is a tool of warfare: a melee weapon you are proficient with that has the versatile or two-handed property but lacks the heavy and special properties. It counts as a shaman weapon for you, and when you wield this weapon, you can add your Wisdom modifier to the first damage roll you make with it each turn.",
+				{
+					"type": "entries",
+					"name": "Improved Focus (7th Level)",
+					"entries": [
+						"Whenever you take the {@action Attack} action while wielding a shaman weapon, you can attack twice instead of once."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Spiritual Focus (14th Level)",
+					"entries": [
+						"You can cast {@spell magic weapon} at 2nd level as an action without expending a spell slot once per long rest."
+					]
+				}
+			],
+			"foundryActivities": [
+				{
+					"name": "Spiritual Focus: Magic Weapon",
+					"type": "cast",
+					"activation": {
+						"type": "action",
+						"override": true
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "activityUses",
+								"value": "1"
+							}
+						]
+					},
+					"uses": {
+						"max": "1",
+						"recovery": [
+							{
+								"period": "lr",
+								"type": "recoverAll"
+							}
+						]
+					},
+					"spell": {
+						"uuid": "@spell[magic weapon|phb]",
+						"level": 2
+					},
+					"visibility": {
+						"identifier": "shaman",
+						"level": {
+							"min": 14
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Blind Fighting",
+			"source": "SarungardShaman",
+			"page": 5,
+			"featureType": [
+				"FS:SHM"
+			],
+			"_copy": {
+				"name": "Blind Fighting",
+				"source": "TCE"
+			},
+			"foundryEffects": [
+				{
+					"name": "Blind Fighting",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.attributes.senses.ranges.blindsight",
+							"mode": "UPGRADE",
+							"value": "10"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Great Weapon Fighting",
+			"source": "SarungardShaman",
+			"page": 5,
+			"featureType": [
+				"FS:SHM"
+			],
+			"entries": [
+				"When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit."
+			]
+		},
+		{
+			"name": "Interception",
+			"source": "SarungardShaman",
+			"page": 5,
+			"featureType": [
+				"FS:SHM"
+			],
+			"_copy": {
+				"name": "Interception",
+				"source": "TCE"
+			},
+			"foundryActivities": [
+				{
+					"name": "Intercept",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "A creature you can see hits a target other than you within 5 feet of you"
+					},
+					"range": {
+						"value": "5",
+						"units": "ft"
+					},
+					"target": {
+						"affects": {
+							"type": "ally",
+							"count": "1"
+						}
+					},
+					"roll": {
+						"formula": "1d10 + @prof",
+						"name": "Damage Reduction",
+						"visible": true
+					}
+				}
+			]
+		},
+		{
+			"name": "Protection",
+			"source": "SarungardShaman",
+			"page": 5,
+			"featureType": [
+				"FS:SHM"
+			],
+			"entries": [
+				"When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield."
+			],
+			"foundryActivities": [
+				{
+					"name": "Protect",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "A creature you can see attacks a target other than you within 5 feet of you"
+					},
+					"range": {
+						"value": "5",
+						"units": "ft"
+					},
+					"target": {
+						"affects": {
+							"type": "ally",
+							"count": "1"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Tunnel Fighter",
+			"source": "SarungardShaman",
+			"page": 5,
+			"featureType": [
+				"FS:SHM"
+			],
+			"_copy": {
+				"name": "Tunnel Fighter",
+				"source": "UALightDarkUnderdark"
+			},
+			"foundryActivities": [
+				{
+					"name": "Defensive Stance",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"duration": {
+						"value": "1",
+						"units": "round"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "tunnelFighterSta"
+						}
+					]
+				}
+			],
+			"foundryEffects": [
+				{
+					"foundryId": "tunnelFighterSta",
+					"name": "Defensive Stance",
+					"duration": {
+						"rounds": 1
+					},
+					"description": "Tunnel Fighter stance is active until your next turn starts. See the Tunnel Fighter feature for its rules."
+				}
+			]
+		},
+		{
+			"name": "Two-Weapon Fighting",
+			"source": "SarungardShaman",
+			"page": 5,
+			"featureType": [
+				"FS:SHM"
+			],
+			"entries": [
+				"When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack."
+			]
+		}
+	],
+	"spell": [
+		{
+			"name": "Transmogrify",
+			"source": "SarungardShaman",
+			"page": 13,
+			"level": 2,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "reaction",
+					"condition": "which you take when you see a creature within 60 feet of you casting a spell that deals damage"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"Your spell twists the original spell's energy. If the creature is casting a spell of 2nd level or lower, choose acid, cold, fire, lightning, or thunder. The spell deals damage of the chosen type instead of its original type. If the spell deals more than one type of damage, the first type to occur is replaced.",
+				"If it is casting a spell of 3rd level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a success, choose acid, cold, fire, lightning, or thunder. The spell deals damage of the chosen type instead of its original type. If the spell deals more than one type of damage, the first type to occur is replaced."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 3rd level or higher, the interrupted spell has its first damage type changed if its level is less than or equal to the level of the spell slot you used."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"miscTags": [
+				"SGT"
+			]
+		},
+		{
+			"name": "Erratic Wisp",
+			"source": "SarungardShaman",
+			"page": 13,
+			"level": 3,
+			"school": "T",
+			"time": [
+				{
+					"number": 1,
+					"unit": "bonus"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a pinch of moth dust"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You touch a willing creature and make its body unstable, swirling in clouds. For the duration, after the target takes damage, it teleports to a random spot around itself. To determine the direction, roll a {@dice d8} and assign a direction to each die face. To determine the distance, roll a {@dice d6} and multiply it by 5, then choose the closest unoccupied space in the given direction and distance. The chosen space must be on a surface or in a liquid that can support the target without the target having to squeeze.",
+				"The target can dismiss this spell as an action."
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					}
+				]
+			},
+			"miscTags": [
+				"TP"
+			]
+		}
+	],
+	"foundryClassFeature": [
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Natural Armor",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 1,
+			"effects": [
+				{
+					"name": "Natural Armor",
+					"transfer": true,
+					"description": "Requires the Shaman Class Support module: adds the armored-only AC calculation 'armor + Constitution modifier (capped by the armor's Dexterity cap)'. dnd5e uses it whenever it beats the normal armored calculation.",
+					"changes": [
+						{
+							"key": "system.attributes.ac.calcs",
+							"mode": "ADD",
+							"value": "shamanNatural"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Resonance",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 3,
+			"system": {
+				"uses.max": "@scale.shaman.resonance",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Quick Ritual",
+					"type": "utility",
+					"activation": {
+						"type": "action",
+						"condition": "Finish a shaman ritual spell as a full-round action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					}
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Harmony",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"level": 17,
+			"system": {
+				"uses.max": "1",
+				"uses.recovery": [
+					{
+						"period": "day",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Regain Resonance",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "When you finish a short rest with no Resonance uses remaining"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							},
+							{
+								"type": "itemUses",
+								"value": "-1",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Resonance|Shaman|SarungardShaman|3"
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					}
+				}
+			]
+		}
+	],
+	"foundrySubclassFeature": [
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Imposing Chant",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"system": {
+				"uses.max": "@prof",
+				"uses.recovery": [
+					{
+						"period": "sr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Imposing Chant",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							},
+							{
+								"type": "hitDice",
+								"target": "d8",
+								"value": "1"
+							}
+						]
+					},
+					"range": {
+						"value": "30",
+						"units": "ft"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"roll": {
+						"formula": "1d8",
+						"name": "Feet of Free Movement",
+						"visible": true
+					}
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Commanded Sanguinity",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 5,
+			"activities": [
+				{
+					"name": "Commanded Sanguinity",
+					"type": "damage",
+					"activation": {
+						"type": "special",
+						"condition": "A creature you can see within 30 feet of you makes a melee attack"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"target": "d8",
+								"value": "1",
+								"scaling": {
+									"mode": "amount",
+									"formula": "1"
+								}
+							}
+						],
+						"scaling": {
+							"allowed": true,
+							"max": "@scale.blood.sanguinity - 1"
+						}
+					},
+					"range": {
+						"value": "30",
+						"units": "ft"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 8,
+								"types": [
+									"necrotic"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					},
+					"descriptionChat": "Add the result to the creature's damage roll. The creature and the shaman each take that much necrotic damage."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Bloodlust",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"activities": [
+				{
+					"name": "Bloodlust",
+					"type": "damage",
+					"activation": {
+						"type": "special",
+						"condition": "You hit a creature that is missing hit points with a melee weapon attack"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"target": "d8",
+								"value": "1",
+								"scaling": {
+									"mode": "amount",
+									"formula": "1"
+								}
+							}
+						],
+						"scaling": {
+							"allowed": true,
+							"max": "1"
+						}
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 8,
+								"types": [
+									"necrotic"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Blood Harvest",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 14,
+			"system": {
+				"uses.max": "1",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Blood Harvest",
+					"type": "damage",
+					"activation": {
+						"type": "special"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							},
+							{
+								"type": "hitDice",
+								"target": "d8",
+								"value": "1",
+								"scaling": {
+									"mode": "amount",
+									"formula": "1"
+								}
+							}
+						],
+						"scaling": {
+							"allowed": true,
+							"max": "@prof - 1"
+						}
+					},
+					"range": {
+						"value": "60",
+						"units": "ft"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "@prof",
+							"choice": true
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 1,
+								"denomination": 8,
+								"types": [
+									"necrotic"
+								],
+								"scaling": {
+									"mode": "whole",
+									"number": 1
+								}
+							}
+						]
+					},
+					"descriptionChat": "Scale up once per extra creature chosen. The shaman takes the rolled necrotic damage and their hit point maximum is reduced by the same amount until a long rest. Each chosen creature has an additional action on its next turn."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Embodiment of Wrath",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Blood",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"system": {
+				"uses.max": "1",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Embody Wrath",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"duration": {
+						"value": "1",
+						"units": "minute"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						},
+						"template": {
+							"type": "radius",
+							"size": "30",
+							"units": "ft"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "embodimentOfWrat"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "embodimentOfWrat",
+					"name": "Embodiment of Wrath",
+					"duration": {
+						"seconds": 60,
+						"rounds": 10
+					},
+					"description": "Aura of fury (30 ft): when a friendly creature makes a weapon attack, use your reaction to let it move feet equal to your expended Hit Dice without provoking opportunity attacks, then make another attack. Whenever you roll Hit Dice, a creature of your choice within 60 feet takes necrotic damage equal to the result."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Elemental Familiar",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Elements",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"activities": [
+				{
+					"name": "Fire Familiar Burst",
+					"type": "damage",
+					"activation": {
+						"type": "special",
+						"condition": "Your fire elemental familiar is reduced to 0 hit points"
+					},
+					"target": {
+						"template": {
+							"type": "radius",
+							"size": "5",
+							"units": "ft"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "@classes.shaman.levels"
+								},
+								"types": [
+									"fire"
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Destructive Resonance",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Elements",
+			"subclassSource": "SarungardShaman",
+			"level": 5,
+			"activities": [
+				{
+					"name": "Destructive Resonance",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "You cast a spell that deals cold, fire, lightning, or thunder damage"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Resonance|Shaman|SarungardShaman|3"
+								}
+							}
+						],
+						"scaling": {
+							"allowed": true,
+							"max": "@scale.shaman.resonance - 1"
+						}
+					},
+					"descriptionChat": "The spell ignores resistance to cold, fire, lightning, and thunder damage. The spell's level can't exceed twice the Resonance uses expended."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Elemental Resonance",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Elements",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"activities": [
+				{
+					"name": "Elemental Resonance",
+					"type": "cast",
+					"activation": {
+						"type": "action",
+						"override": true,
+						"condition": "Cast as a ritual, finished as a full-round action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "2",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Resonance|Shaman|SarungardShaman|3"
+								}
+							}
+						]
+					},
+					"spell": {
+						"uuid": "@spell[find familiar|phb]"
+					}
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Archon of Fundaments",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Elements",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"system": {
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"name": "Dissolve into the Elements",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"duration": {
+						"value": "1",
+						"units": "hour"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"formula": "1d8",
+						"name": "Days Until You Can Use This Again",
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "archonOfFundamen"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "archonOfFundamen",
+					"name": "Archon of Fundaments",
+					"duration": {
+						"seconds": 3600
+					},
+					"description": "You are split into an air, earth, fire, and water elemental. You can't concentrate on spells. When the transformation ends, you gain one level of exhaustion. Restore this feature's use manually after the rolled number of days."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Bounded Spirits",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"system": {
+				"uses.max": "max(1, @abilities.wis.mod)"
+			},
+			"activities": [
+				{
+					"name": "Enslave Soul",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "You kill a creature (not undead or construct) with CR no higher than your proficiency bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "-1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					}
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Soul Drain",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"activities": [
+				{
+					"name": "Soul Drain",
+					"type": "attack",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Bounded Spirits|Shaman|SarungardShaman|Harvest|SarungardShaman|2"
+								}
+							}
+						],
+						"scaling": {
+							"allowed": true,
+							"max": "@prof - 1"
+						}
+					},
+					"range": {
+						"value": "60",
+						"units": "ft"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"attack": {
+						"ability": "spellcasting",
+						"type": {
+							"value": "ranged",
+							"classification": "spell"
+						}
+					},
+					"damage": {
+						"includeBase": false,
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(@scaling)d6 + (@scaling * @classes.shaman.levels)"
+								},
+								"types": [
+									"poison"
+								]
+							}
+						]
+					},
+					"descriptionChat": "Scale up to the consumed soul's challenge rating (minimum 1): the damage is your shaman level + 1d6, once per point of CR."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Grim Echoes",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 5,
+			"activities": [
+				{
+					"name": "Grim Echoes",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "You deal damage with a shaman spell"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Bounded Spirits|Shaman|SarungardShaman|Harvest|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"descriptionChat": "Add the consumed soul's challenge rating to the spell's damage."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Undying Servitude",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"activities": [
+				{
+					"name": "Undying Servitude",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "Before you roll a concentration save for a shaman spell"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Bounded Spirits|Shaman|SarungardShaman|Harvest|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"descriptionChat": "Add the consumed soul's challenge rating to the concentration saving throw."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Festival of Immortals",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 14,
+			"system": {
+				"uses.max": "1",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Festival of Immortals",
+					"type": "summon",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							},
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Bounded Spirits|Shaman|SarungardShaman|Harvest|SarungardShaman|2"
+								}
+							}
+						],
+						"scaling": {
+							"allowed": true,
+							"max": "@prof - 1"
+						}
+					},
+					"target": {
+						"affects": {
+							"type": "space"
+						}
+					},
+					"profiles": [
+						{
+							"uuid": "@creature[specter|mm]",
+							"count": "@scaling"
+						}
+					],
+					"descriptionChat": "Scale up to the consumed soul's challenge rating (minimum 1) to summon that many specters. They share your initiative and act after you until they die or you finish a long rest."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Soulstorm",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Harvest",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"activities": [
+				{
+					"name": "Soulstorm: Dexterity",
+					"type": "save",
+					"activation": {
+						"type": "action",
+						"condition": "Your shamanic focus is full of souls"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "max(1, @abilities.wis.mod)",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Bounded Spirits|Shaman|SarungardShaman|Harvest|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"range": {
+						"value": "60",
+						"units": "ft"
+					},
+					"target": {
+						"template": {
+							"type": "radius",
+							"size": "20",
+							"units": "ft"
+						}
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						}
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(4 * max(1, @abilities.wis.mod))d6"
+								},
+								"types": [
+									"necrotic"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "Soulstorm: Constitution",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "Part of Soulstorm"
+					},
+					"target": {
+						"template": {
+							"type": "radius",
+							"size": "20",
+							"units": "ft"
+						}
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						}
+					},
+					"descriptionChat": "Failed save: 2 levels of exhaustion. Successful save: 1 level of exhaustion."
+				},
+				{
+					"name": "Soulstorm: Wisdom",
+					"type": "save",
+					"activation": {
+						"type": "special",
+						"condition": "Part of Soulstorm"
+					},
+					"target": {
+						"template": {
+							"type": "radius",
+							"size": "20",
+							"units": "ft"
+						}
+					},
+					"save": {
+						"ability": [
+							"wis"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "soulstormIncapac"
+						},
+						{
+							"foundryId": "soulstormFrighte",
+							"onSave": true
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "soulstormIncapac",
+					"name": "Soulstorm: Incapacitated",
+					"statuses": [
+						"incapacitated"
+					],
+					"duration": {
+						"seconds": 60,
+						"rounds": 10
+					}
+				},
+				{
+					"foundryId": "soulstormFrighte",
+					"name": "Soulstorm: Frightened",
+					"statuses": [
+						"frightened"
+					],
+					"description": "Frightened of the shaman (successful Wisdom save against Soulstorm)."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Psionic Reserves",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"system": {
+				"uses.max": "@scale.shrouds.psionic-points",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			}
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Veiled Powers",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"activities": [
+				{
+					"name": "Lay on Minds",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "2",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Psionic Reserves|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"range": {
+						"units": "touch"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"descriptionChat": "End one condition on the creature: blinded, charmed, deafened, or frightened."
+				},
+				{
+					"name": "Deliberate Defenses",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Psionic Reserves|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"duration": {
+						"value": "1",
+						"units": "round"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "deliberateDefens"
+						}
+					]
+				},
+				{
+					"name": "Psionic Emboldening",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "A creature other than you within 30 feet fails a saving throw or ability check"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Psionic Reserves|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"range": {
+						"value": "30",
+						"units": "ft"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"descriptionChat": "The creature rerolls the failed roll and must use the new roll."
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "deliberateDefens",
+					"name": "Dodging",
+					"statuses": [
+						"dodging"
+					],
+					"duration": {
+						"rounds": 1
+					}
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Dissimilate",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"system": {
+				"uses.max": "1",
+				"uses.recovery": [
+					{
+						"period": "sr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Dissimilate",
+					"type": "save",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							},
+							{
+								"type": "itemUses",
+								"value": "2",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Psionic Reserves|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"target": {
+						"template": {
+							"type": "radius",
+							"size": "15",
+							"units": "ft"
+						}
+					},
+					"save": {
+						"ability": [
+							"dex"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						}
+					},
+					"damage": {
+						"onSave": "half",
+						"parts": [
+							{
+								"number": 3,
+								"denomination": 6,
+								"bonus": "@classes.shaman.levels",
+								"types": [
+									"force"
+								]
+							}
+						]
+					},
+					"descriptionChat": "Roll the damage when you return from the Ethereal Plane at the start of your next turn."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Take into the Veil",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 14,
+			"activities": [
+				{
+					"name": "Mind's Eye",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "4",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Psionic Reserves|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"duration": {
+						"value": "1",
+						"units": "hour"
+					},
+					"range": {
+						"value": "30",
+						"units": "ft"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "mindsEye00000000"
+						}
+					]
+				},
+				{
+					"name": "Mute Flesh",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "4",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Psionic Reserves|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"duration": {
+						"value": "10",
+						"units": "minute"
+					},
+					"range": {
+						"units": "touch"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "muteFlesh0000000"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "mindsEye00000000",
+					"name": "Mind's Eye",
+					"duration": {
+						"seconds": 3600
+					},
+					"description": "Advantage on Wisdom (Perception) checks that rely on hearing or sight; sees normally in magical and nonmagical darkness to 60 feet.",
+					"changes": [
+						{
+							"key": "system.skills.prc.roll.mode",
+							"mode": "ADD",
+							"value": "1"
+						},
+						{
+							"key": "system.attributes.senses.ranges.darkvision",
+							"mode": "UPGRADE",
+							"value": "60"
+						}
+					]
+				},
+				{
+					"foundryId": "muteFlesh0000000",
+					"name": "Mute Flesh",
+					"duration": {
+						"seconds": 600
+					},
+					"description": "Having 0 hit points does not knock this creature unconscious. It still makes death saving throws and suffers the normal effects of taking damage at 0 hit points, so it can still die."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Surface the Shroud",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Shrouds",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"activities": [
+				{
+					"name": "Surface the Shroud",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "5",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Psionic Reserves|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"duration": {
+						"value": "1",
+						"units": "minute"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "surfaceTheShroud"
+						}
+					]
+				},
+				{
+					"name": "Astral Blast",
+					"type": "damage",
+					"activation": {
+						"type": "action",
+						"condition": "While Surface the Shroud is active"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Psionic Reserves|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"range": {
+						"value": "60",
+						"units": "ft"
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"number": 3,
+								"denomination": 10,
+								"types": [
+									"psychic"
+								]
+							}
+						]
+					}
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "surfaceTheShroud",
+					"name": "Surface the Shroud",
+					"duration": {
+						"seconds": 60,
+						"rounds": 10
+					},
+					"description": "Immune to blinded, charmed, deafened, and frightened. Flying speed equal to your walking speed, and you can hover. Resistance to all damage except psychic damage and damage from magical sources (only nonmagical bludgeoning, piercing, and slashing is automated; apply other nonmagical resistances by hand).",
+					"changes": [
+						{
+							"key": "system.traits.ci.value",
+							"mode": "ADD",
+							"value": "blinded"
+						},
+						{
+							"key": "system.traits.ci.value",
+							"mode": "ADD",
+							"value": "charmed"
+						},
+						{
+							"key": "system.traits.ci.value",
+							"mode": "ADD",
+							"value": "deafened"
+						},
+						{
+							"key": "system.traits.ci.value",
+							"mode": "ADD",
+							"value": "frightened"
+						},
+						{
+							"key": "system.attributes.movement.speeds.fly",
+							"mode": "OVERRIDE",
+							"value": "@attributes.movement.speeds.walk"
+						},
+						{
+							"key": "system.attributes.movement.hover",
+							"mode": "OVERRIDE",
+							"value": "true"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "bludgeoning"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "piercing"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "slashing"
+						},
+						{
+							"key": "system.traits.dr.bypasses",
+							"mode": "ADD",
+							"value": "mgc"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Council Martial Training",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"entryData": {
+				"armorProficiencies": [
+					{
+						"medium": true
+					}
+				],
+				"weaponProficiencies": [
+					{
+						"choose": {
+							"fromFilter": "type=martial weapon|miscellaneous=mundane|property=melee weapon",
+							"count": 1
+						}
+					}
+				]
+			}
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Battle Trance",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"system": {
+				"uses.max": "1",
+				"uses.recovery": [
+					{
+						"period": "sr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Overwhelming Stance",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"duration": {
+						"value": "1",
+						"units": "minute"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "overwhelmingStan"
+						}
+					]
+				},
+				{
+					"name": "Parrying Stance",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"duration": {
+						"value": "1",
+						"units": "minute"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "parryingStance00"
+						}
+					]
+				},
+				{
+					"name": "Agile Stance",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"duration": {
+						"value": "1",
+						"units": "minute"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "agileStance00000"
+						}
+					]
+				},
+				{
+					"name": "Meditative Stance",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"duration": {
+						"value": "1",
+						"units": "minute"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "meditativeStance"
+						}
+					],
+					"visibility": {
+						"identifier": "shaman",
+						"level": {
+							"min": 5
+						}
+					}
+				},
+				{
+					"name": "All Stances (Ancient Teachings)",
+					"type": "utility",
+					"activation": {
+						"type": "bonus"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"duration": {
+						"value": "1",
+						"units": "minute"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "ancientTeachTran"
+						}
+					],
+					"visibility": {
+						"identifier": "shaman",
+						"level": {
+							"min": 20
+						}
+					}
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "overwhelmingStan",
+					"name": "Battle Trance: Overwhelming Stance",
+					"description": "Add your proficiency bonus to damage when you attack with a shaman weapon (automated for all melee weapon attacks; remove it by hand for non-shaman weapons).",
+					"duration": {
+						"seconds": 60,
+						"rounds": 10
+					},
+					"changes": [
+						{
+							"key": "system.rolls.damage.mwak.bonus",
+							"mode": "ADD",
+							"value": "+@prof"
+						}
+					]
+				},
+				{
+					"foundryId": "parryingStance00",
+					"name": "Battle Trance: Parrying Stance",
+					"description": "Use your reaction to give an attack against you disadvantage if it does not have advantage.",
+					"duration": {
+						"seconds": 60,
+						"rounds": 10
+					}
+				},
+				{
+					"foundryId": "agileStance00000",
+					"name": "Battle Trance: Agile Stance",
+					"description": "Use your bonus action to take the Dash or Disengage action.",
+					"duration": {
+						"seconds": 60,
+						"rounds": 10
+					}
+				},
+				{
+					"foundryId": "meditativeStance",
+					"name": "Battle Trance: Meditative Stance",
+					"description": "Concentration on a shaman spell cast during the trance is not broken by damage, but the spell ends when the trance ends.",
+					"duration": {
+						"seconds": 60,
+						"rounds": 10
+					}
+				},
+				{
+					"foundryId": "ancientTeachTran",
+					"name": "Battle Trance: All Stances",
+					"description": "All stances apply at once, and you gain a bonus to AC equal to your Wisdom modifier (minimum +1).",
+					"duration": {
+						"seconds": 60,
+						"rounds": 10
+					},
+					"changes": [
+						{
+							"key": "system.rolls.damage.mwak.bonus",
+							"mode": "ADD",
+							"value": "+@prof"
+						},
+						{
+							"key": "system.attributes.ac.bonus",
+							"mode": "ADD",
+							"value": "+max(1, @abilities.wis.mod)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Relentless Trance",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 14,
+			"activities": [
+				{
+					"name": "Reset Battle Trance",
+					"type": "utility",
+					"activation": {
+						"type": "bonus",
+						"condition": "You kill a creature while your Battle Trance is active"
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"descriptionChat": "Reset the Battle Trance duration to 1 minute (reapply the same stance effect). You can't choose another stance."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Ancient Teachings",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Traditions",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"effects": [
+				{
+					"name": "Ancient Teachings",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.abilities.str.value",
+							"mode": "ADD",
+							"value": "2"
+						},
+						{
+							"key": "system.abilities.wis.value",
+							"mode": "ADD",
+							"value": "2"
+						},
+						{
+							"key": "system.abilities.str.max",
+							"mode": "UPGRADE",
+							"value": "22"
+						},
+						{
+							"key": "system.abilities.wis.max",
+							"mode": "UPGRADE",
+							"value": "22"
+						}
+					]
+				}
+			]
+		}
+	]
+}
