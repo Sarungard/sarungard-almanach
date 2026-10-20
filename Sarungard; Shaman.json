@@ -11,7 +11,7 @@
 				"convertedBy": [
 					"Claudius"
 				],
-				"version": "2.0.0",
+				"version": "2.0.1",
 				"color": "4f6b2f"
 			}
 		],
@@ -27,7 +27,7 @@
 			"SF:SHM": "Shamanic Focus"
 		},
 		"dateAdded": 1791849600,
-		"dateLastModified": 1792480736
+		"dateLastModified": 1792481416
 	},
 	"class": [
 		{
@@ -3094,7 +3094,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6}, and the target is stunned until the end of your next turn."
+						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@scaledamage 3d6|1-9|1d6} for each slot level above 1st, and the target is stunned until the end of your next turn."
 					]
 				}
 			],
@@ -3169,7 +3169,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@dice 1d8}."
+						"When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@scaledamage 3d8|3-9|1d8} for each slot level above 3rd."
 					]
 				}
 			],
@@ -3241,7 +3241,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6}."
+						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@scaledamage 2d6|1-9|1d6} for each slot level above 1st."
 					]
 				}
 			],
@@ -3313,7 +3313,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 7th level or higher, the damage increases by {@dice 1d8}."
+						"When you cast this spell using a spell slot of 7th level or higher, the damage increases by {@scaledamage 8d8|6-9|1d8} for each slot level above 6th."
 					]
 				}
 			],
@@ -3388,7 +3388,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d6}."
+						"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@scaledamage 2d6|2-9|1d6} for each slot level above 2nd."
 					]
 				}
 			],
@@ -3455,7 +3455,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d8}."
+						"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@scaledamage 3d8|2-9|1d8} for each slot level above 2nd."
 					]
 				}
 			],
@@ -3521,7 +3521,7 @@
 					"type": "entries",
 					"name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d8}."
+						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@scaledamage 2d8|1-9|1d8} for each slot level above 1st."
 					]
 				}
 			],

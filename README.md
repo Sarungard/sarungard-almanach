@@ -78,7 +78,7 @@ The class item's Spellcasting Progression should read "Shaman (own table, 2/3 wh
 - **Commanded Sanguinity:** the source is missing a word. The bonus goes to the attack's **damage roll**.
 - **Resonance:** says "You can use your Resonance once" at 3rd level, matching the table's "Resonance(x1)".
 - **Council of Omens:** its Council Spells text pointed at the "Council of Shrouds Spells table"; it now points at the Omens table. "Divinitation" is read as Divination.
-- **Spells as written:** Electric Discharge, Vacuum Touch, Blinding Radiance, Closed Circuit, Blinding Squall, Fossil Strike and Decaying Touch say the damage "increases by 1dX" at higher levels without "for each slot level"; that is kept literally. Closed Circuit and Blinding Squall list an unspecified material component.
+- **Higher-level damage:** Electric Discharge, Vacuum Touch, Blinding Radiance, Closed Circuit, Blinding Squall, Fossil Strike and Decaying Touch increase their damage by 1dX **for each slot level** above the spell's level (the brew text omitted "for each slot level"; confirmed by Sarungard). Closed Circuit and Blinding Squall list an unspecified material component.
 - **Fossil Strike** is on the 2nd-level shaman list, following its own "Spell lists" line.
 - **Not included yet:** Slow Current (its text is a copy of Hail Strike), the Council of Torture (placeholder), and the Ritualistic background (its "Endurance" skill doesn't exist in 5e).
 - **Multiclass proficiencies:** the source doesn't say what you gain when multiclassing *into* Shaman. As decided: light armor, shields, and one musical instrument.

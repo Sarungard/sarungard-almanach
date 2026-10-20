@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const SRC = "SarungardShaman";
-const BREW_VERSION = "2.0.0";
+const BREW_VERSION = "2.0.1";
 const PUBLISHED_AT = Math.floor(Date.now() / 1000);
 const CLASS = "Shaman";
 const OUT_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "Sarungard; Shaman.json");
@@ -1438,7 +1438,7 @@ const spells = [
     name: "Electric Discharge", page: 15, level: 1, school: "V",
     range: feet(60), components: { v: true, s: true }, duration: INSTANT,
     entries: ["You unleash a jolt of energy from your hands toward your opponent. Make a ranged spell attack against a creature you can see within range. On a hit, the target takes {@damage 3d6} lightning damage and is {@condition stunned} until the start of its next turn."],
-    higher: "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6}, and the target is stunned until the end of your next turn.",
+    higher: "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@scaledamage 3d6|1-9|1d6} for each slot level above 1st, and the target is stunned until the end of your next turn.",
     lists: [CLASS, "Sorcerer", "Wizard"],
     damageInflict: ["lightning"], conditionInflict: ["stunned"], spellAttack: ["R"]
   }),
@@ -1451,7 +1451,7 @@ const spells = [
       "Make a melee spell attack against a creature. On a hit, that creature takes {@damage 3d8} lightning damage, and if it needs to breathe, it must succeed on a Constitution saving throw. On a failed save, its breath leaves it and it begins suffocating. It can repeat the saving throw at the end of each of its turns, ending the effect on a success.",
       "The spell ends early if the creature becomes incapacitated or is dying."
     ],
-    higher: "When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@dice 1d8}.",
+    higher: "When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@scaledamage 3d8|3-9|1d8} for each slot level above 3rd.",
     lists: [CLASS, "Sorcerer", "Warlock"],
     damageInflict: ["lightning"], savingThrow: ["constitution"], spellAttack: ["M"]
   }),
@@ -1462,7 +1462,7 @@ const spells = [
       "Eye-piercing light erupts from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. A creature takes {@damage 2d6} radiant damage on a failed save, or half as much damage on a successful one.",
       "In addition, for the duration of the spell, you shed bright light in a 5-foot radius and dim light for an additional 10 feet. Creatures standing in the bright light are {@condition blinded} by it."
     ],
-    higher: "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6}.",
+    higher: "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@scaledamage 2d6|1-9|1d6} for each slot level above 1st.",
     lists: [CLASS, "Sorcerer"],
     damageInflict: ["radiant"], savingThrow: ["constitution"], conditionInflict: ["blinded"], miscTags: ["LGT"]
   }),
@@ -1473,7 +1473,7 @@ const spells = [
       "The air explodes around you as you let out an unnatural pressure of air. Each creature within 10 feet of you must make a Constitution saving throw. A creature takes {@damage 8d8} lightning damage on a failed save, or half as much damage on a successful one.",
       "The spell creates a 5-foot-wide ring of black clouds at the edge of the circle. For the duration, whenever a creature enters the cloud or starts its turn there, it must succeed on a Constitution saving throw or become {@condition stunned} for the duration. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
     ],
-    higher: "When you cast this spell using a spell slot of 7th level or higher, the damage increases by {@dice 1d8}.",
+    higher: "When you cast this spell using a spell slot of 7th level or higher, the damage increases by {@scaledamage 8d8|6-9|1d8} for each slot level above 6th.",
     lists: ["Druid", CLASS, "Sorcerer", "Warlock"],
     damageInflict: ["lightning"], savingThrow: ["constitution"], conditionInflict: ["stunned"]
   }),
@@ -1481,7 +1481,7 @@ const spells = [
     name: "Blinding Squall", page: 16, level: 2, school: "C",
     range: feet(60), components: { v: true, s: true, m: true }, duration: timed(1),
     entries: ["You conjure a raging storm around a point you choose within range. Each creature in a 10-foot-radius circle around the chosen point must make a Dexterity saving throw. A creature takes {@damage 2d6} lightning damage on a failed save, or half as much damage on a successful one. Then those creatures must make a Constitution saving throw or be {@condition blinded} until the end of their next turn."],
-    higher: "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d6}.",
+    higher: "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@scaledamage 2d6|2-9|1d6} for each slot level above 2nd.",
     lists: ["Druid", CLASS, "Sorcerer"],
     damageInflict: ["lightning"], savingThrow: ["dexterity", "constitution"], conditionInflict: ["blinded"]
   }),
@@ -1489,7 +1489,7 @@ const spells = [
     name: "Fossil Strike", page: 16, level: 2, school: "C",
     range: feet(60), components: { s: true, m: "a small stone" }, duration: INSTANT,
     entries: ["You summon a globe of mud and oil and hurl it toward your enemies. Choose a point within range. Each creature within 10 feet of that point must make a Dexterity saving throw. A creature takes {@damage 3d8} bludgeoning damage on a failed save, or half as much damage on a successful one. As the globe explodes, oil splatters around, making the affected area difficult terrain."],
-    higher: "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d8}.",
+    higher: "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@scaledamage 3d8|2-9|1d8} for each slot level above 2nd.",
     lists: ["Druid", CLASS, "Sorcerer"],
     damageInflict: ["bludgeoning"], savingThrow: ["dexterity"]
   }),
@@ -1500,7 +1500,7 @@ const spells = [
       "Make a melee spell attack against a creature you can reach. On a hit, the target takes {@damage 2d8} necrotic damage and must succeed on a Constitution saving throw or be decayed by this spell's curse for 1 minute.",
       "If a decayed creature would regain hit points, it takes that much necrotic damage instead. A decayed creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
     ],
-    higher: "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d8}.",
+    higher: "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@scaledamage 2d8|1-9|1d8} for each slot level above 1st.",
     lists: ["Druid", CLASS, "Sorcerer", "Warlock"],
     damageInflict: ["necrotic"], savingThrow: ["constitution"], spellAttack: ["M"]
   }),
