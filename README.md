@@ -1,27 +1,37 @@
-# Shaman (Sarungard) for Foundry VTT dnd5e + Plutonium
+# Sarungard's Almanach
 
-Converted from the revised Shaman brew on Homebrewery (`Shaman Class - Revised.pdf`).
+Sarungard's homebrew for Foundry VTT dnd5e, imported with Plutonium. Converted from the Homebrewery brews.
 
 | File | What it is |
 |------|------------|
-| `Sarungard; Shaman.json` | 5etools homebrew file. Plutonium imports the class, the 6 councils, the focus and fighting style options, and the 15 homebrew spells from it. |
-| `sarungard-shaman/` | Small Foundry module. It is required for the Shaman spell slot table and for Natural Armor. |
-| `build/build-shaman.mjs` | Generator for the JSON. Edit it and run `node build/build-shaman.mjs` to rebuild. |
+| `Sarungard; Shaman.json` | **Shaman** class: the class, the 6 councils, the focus and fighting style options, and the 15 homebrew spells. |
+| `Sarungard; Iceborn.json` | **Iceborn**, a sorcerous origin for the PHB Sorcerer. It uses the Shaman file's frost spells, so load both. |
+| `sarungard-shaman/` | Small Foundry module, required by the Shaman for its spell slot table and Natural Armor. Iceborn doesn't need it. |
+| `build/build-shaman.mjs`, `build/build-iceborn.mjs` | Generators for the two JSON files. Edit one and run it with `node` to rebuild. |
 
-Targets **dnd5e 6.x on Foundry v14** (what The Forge runs when kept on the newest versions). Checked against the dnd5e 6.0.6 source. Homebrew version 2.0.0 is the revised edition; module 1.2.0 goes with it.
+Targets **dnd5e 6.x on Foundry v14** (what The Forge runs when kept on the newest versions). Checked against the dnd5e 6.0.6 source.
+
+## Homebrew links for Plutonium
+
+Add both under **Game Settings → Configure Settings → Plutonium → Open Config Editor → Data Sources → Additional Homebrew Files**, then reload Foundry (F5):
+
+- `https://raw.githubusercontent.com/Sarungard/sarungard-almanach/main/Sarungard%3B%20Shaman.json`
+- `https://raw.githubusercontent.com/Sarungard/sarungard-almanach/main/Sarungard%3B%20Iceborn.json`
+
+Plutonium keeps homebrew in memory only, so this setting is what makes the files load in every session, before anything looks them up. Pick them from the homebrew sources in the importers, not "Custom URL", which would load them a second time.
+
+# Shaman
 
 ## Install
 
 1. Install the companion module from its manifest URL:
-   `https://github.com/Sarungard/sarungard-shaman/releases/latest/download/module.json`
+   `https://github.com/Sarungard/sarungard-almanach/releases/latest/download/module.json`
    - **Foundry:** go to Setup → Add-on Modules → Install Module, and paste it into "Manifest URL".
    - **The Forge:** open forge-vtt.com/bazaar and choose **Install from Manifest**. Paste it, and untick "Install from the Bazaar if the package is found".
    - **Offline:** download `sarungard-shaman.zip` from the latest release and unzip it into `Data/modules/sarungard-shaman/`, or use The Forge's Import Wizard.
 2. Enable **Shaman Class Support (Sarungard)** in the world's module settings.
-3. Register the homebrew with Plutonium: **Game Settings → Configure Settings → Plutonium → Open Config Editor → Data Sources → Additional Homebrew Files**, add
-   `https://raw.githubusercontent.com/Sarungard/sarungard-shaman/main/Sarungard%3B%20Shaman.json`
-   and reload Foundry (F5). Plutonium keeps homebrew in memory only, so this setting is what makes it load in every session, before anything looks the Shaman up.
-4. In Plutonium's Class importer, pick the Shaman from the homebrew sources (not "Custom URL", which would load it a second time) and import.
+3. Register the Shaman homebrew link (see "Homebrew links for Plutonium" above) and reload Foundry.
+4. In Plutonium's Class importer, pick the Shaman from the homebrew sources and import.
    - Plutonium asks for a Shamanic Focus at level 1 and a Fighting Style at level 3.
 5. Plutonium 2.19+ supports dnd5e 6 on Foundry v14. Note that the Plutonium wiki lists The Forge as an unsupported host.
 
@@ -84,6 +94,34 @@ The class item's Spellcasting Progression should read "Shaman (own table, 2/3 wh
 - **Multiclass proficiencies:** the source doesn't say what you gain when multiclassing *into* Shaman. As decided: light armor, shields, and one musical instrument.
 - **Fighting styles:** Blind Fighting and Interception (*Tasha's Cauldron of Everything*) and Tunnel Fighter (UA: *Light, Dark, Underdark!*) are not reproduced here. They are `_copy` links to the official entries. The file declares `TCE` and `UALightDarkUnderdark` as `optionalfeature` dependencies. Without those, Plutonium can't find the entries to copy. `UALightDarkUnderdark` is fetched from the 5etools UA repository. Great Weapon Fighting, Protection and Two-Weapon Fighting are SRD 5.1 text.
 
+# Iceborn (sorcerous origin)
+
+A frost origin for the **PHB Sorcerer** (features at 1st, 6th, 14th and 18th level). Plutonium also copies 2014 origins onto the 2024 Sorcerer, but the sorcery-point links below target the PHB Sorcerer's pool.
+
+## Install
+
+1. Register **both** homebrew links (see "Homebrew links for Plutonium" above): Iceborn's Origin Spells include six of the Shaman file's spells (Cold Outburst, Ice Fan, Winter Blast, Hail Strike, Cryogenic Stasis, Hail Storm).
+2. Reload Foundry, then pick Iceborn as the Sorcerer's subclass in Plutonium's Class importer. The companion module is not needed.
+
+## What is automated
+
+- **Origin Spells:** added at sorcerer levels 1, 3, 5, 7 and 9; they don't count against spells known.
+- **Lingering Chill:** uses = Charisma modifier (minimum 1), back on a short or long rest. One button per effect (slow, no reactions, numbed attack from 6th, brittle cold vulnerability from 14th), each applying a 1-round effect to the target, plus "Regain Use (1 Sorcery Point)".
+- **Arctic Outburst:** cold damage to creatures of your choice within 10 feet; scale it to the sorcery points you just spent (half your sorcerer level, rounded up, + points).
+- **Cold Capsule:** permanent cold resistance; Crystalline Scales rolls the damage reduction (sorcerer level + Charisma modifier) and applies fire vulnerability plus bludgeoning, piercing and slashing resistance until your next turn. Once per short rest, or 2 sorcery points.
+- **Icicle Storm:** Constitution save against your spell save DC for 4d6 + 1d6 per spell level (scale once per spell level above 6th). Once per long rest, or 2 + spell level sorcery points.
+
+## Known approximations
+
+- **Speed, reactions and disadvantage** from Lingering Chill are effect reminders; only the cold vulnerability is applied automatically, and a target's cold resistance has to be removed by hand while it lasts.
+- **Curse of Winter** (any number of targets) means using the Lingering Chill buttons once per target.
+- **Icicle Storm ignores resistances and immunities**: apply its damage by hand as true damage. Its save DC isn't stated in the brew, so it uses your spell save DC.
+
+## Choices made during conversion
+
+- **Cold Capsule:** the brew says "Charisma score"; as decided, it is the Charisma **modifier**.
+- **Lingering Chill:** "minimum of once" added, as decided.
+
 ## License
 
-The Shaman class is © Sarungard and licensed under [CC BY-NC 4.0](LICENSE). It includes SRD 5.1 material by Wizards of the Coast LLC, used under CC BY 4.0 (see [LICENSE](LICENSE)).
+Both the Shaman class and Iceborn are © Sarungard and licensed under [CC BY-NC 4.0](LICENSE). It includes SRD 5.1 material by Wizards of the Coast LLC, used under CC BY 4.0 (see [LICENSE](LICENSE)).

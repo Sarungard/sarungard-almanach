@@ -1,0 +1,754 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "SarungardIceborn",
+				"abbreviation": "ICEB",
+				"full": "Iceborn (Sarungard)",
+				"authors": [
+					"Sarungard"
+				],
+				"convertedBy": [
+					"Claudius"
+				],
+				"version": "1.0.0",
+				"color": "5b8fb9"
+			}
+		],
+		"edition": "classic",
+		"dateAdded": 1792454400,
+		"dateLastModified": 1792482853
+	},
+	"subclass": [
+		{
+			"name": "Iceborn",
+			"shortName": "Iceborn",
+			"source": "SarungardIceborn",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"page": 2,
+			"edition": "classic",
+			"additionalSpells": [
+				{
+					"known": {
+						"1": [
+							"cold outburst|sarungardshaman",
+							"ice knife|xge"
+						],
+						"3": [
+							"ice fan|sarungardshaman",
+							"winter blast|sarungardshaman"
+						],
+						"5": [
+							"hail strike|sarungardshaman",
+							"sleet storm"
+						],
+						"7": [
+							"cryogenic stasis|sarungardshaman",
+							"ice storm"
+						],
+						"9": [
+							"cone of cold",
+							"hail storm|sarungardshaman"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Iceborn|Sorcerer|PHB|Iceborn|SarungardIceborn|1",
+				"Cold Capsule|Sorcerer|PHB|Iceborn|SarungardIceborn|6",
+				"Curse of Winter|Sorcerer|PHB|Iceborn|SarungardIceborn|14",
+				"Icicle Storm|Sorcerer|PHB|Iceborn|SarungardIceborn|18"
+			],
+			"foundrySystem": {
+				"identifier": "iceborn"
+			}
+		}
+	],
+	"subclassFeature": [
+		{
+			"name": "Iceborn",
+			"source": "SarungardIceborn",
+			"page": 2,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 1,
+			"entries": [
+				"A more chilling sorcerous origin for the cool guys.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Spell List|Sorcerer|PHB|Iceborn|SarungardIceborn|1"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Lingering Chill|Sorcerer|PHB|Iceborn|SarungardIceborn|1"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Arctic Outburst|Sorcerer|PHB|Iceborn|SarungardIceborn|1"
+				}
+			]
+		},
+		{
+			"name": "Spell List",
+			"source": "SarungardIceborn",
+			"page": 2,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 1,
+			"header": 1,
+			"entries": [
+				"Starting at 1st level, you learn additional spells when you reach certain levels in this class, as shown on the Origin Spells table. Each of these spells counts as a sorcerer spell for you, but it doesn't count against the number of sorcerer spells you know.",
+				{
+					"type": "table",
+					"caption": "Origin Spells",
+					"colLabels": [
+						"Sorcerer Level",
+						"Spells"
+					],
+					"colStyles": [
+						"col-3 text-center",
+						"col-9"
+					],
+					"rows": [
+						[
+							"1st",
+							"{@spell cold outburst|SarungardShaman|Cold Outburst}, {@spell ice knife|XGE|Ice Knife}"
+						],
+						[
+							"3rd",
+							"{@spell ice fan|SarungardShaman|Ice Fan}, {@spell winter blast|SarungardShaman|Winter Blast}"
+						],
+						[
+							"5th",
+							"{@spell hail strike|SarungardShaman|Hail Strike}, {@spell sleet storm}"
+						],
+						[
+							"7th",
+							"{@spell cryogenic stasis|SarungardShaman|Cryogenic Stasis}, {@spell ice storm}"
+						],
+						[
+							"9th",
+							"{@spell cone of cold}, {@spell hail storm|SarungardShaman|Hail Storm}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"name": "Lingering Chill",
+			"source": "SarungardIceborn",
+			"page": 2,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 1,
+			"header": 1,
+			"entries": [
+				"Starting at 1st level, when you deal cold damage with a spell or sorcerer feature, you can choose one of the creatures that took damage this way and apply one of the following effects to it. You gain more options when you reach certain levels in this class, as shown below:",
+				{
+					"type": "list",
+					"items": [
+						"The target's speed is also reduced by 15 feet until the end of your next turn. If the spell or sorcerer feature already reduces the target's speed, use whichever reduction is greater.",
+						"The target can't take reactions until the end of your next turn.",
+						"{@b (6th Level)} The target has disadvantage on the next attack roll it makes before the end of its next turn.",
+						"{@b (14th Level)} The target has vulnerability to cold damage until the end of your next turn. If it has resistance to cold damage, that resistance is suspended for the duration."
+					]
+				},
+				"You can use this feature a number of times equal to your Charisma modifier (minimum of once). You regain all expended uses when you finish a short or long rest. Additionally, you can expend 1 sorcery point to regain one use of this feature."
+			]
+		},
+		{
+			"name": "Arctic Outburst",
+			"source": "SarungardIceborn",
+			"page": 2,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 1,
+			"header": 1,
+			"entries": [
+				"Starting at 1st level, when you spend sorcery points, you can use your reaction to concentrate the remaining magical energies into an arctic outburst, emanating a cold breeze. If you do, each creature of your choice within 10 feet of you takes cold damage equal to half your sorcerer level (rounded up) + the number of sorcery points spent."
+			]
+		},
+		{
+			"name": "Cold Capsule",
+			"source": "SarungardIceborn",
+			"page": 2,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 6,
+			"entries": [
+				"At 6th level, you gain resistance to cold damage.",
+				"You also gain the ability to defend yourself by momentarily forming crystalline scales on your body. As a reaction when you are hit by an attack and take bludgeoning, piercing, or slashing damage from it, you can reduce that damage by an amount equal to your sorcerer level + your Charisma modifier. Until the start of your next turn, you have vulnerability to fire damage and resistance to bludgeoning, piercing, and slashing damage.",
+				"Once you use this feature, you can't use it again until you finish a short or long rest, unless you spend 2 sorcery points to use it again."
+			]
+		},
+		{
+			"name": "Curse of Winter",
+			"source": "SarungardIceborn",
+			"page": 2,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 14,
+			"entries": [
+				"Starting at 14th level, you can choose any number of creatures instead of one when selecting targets for your Lingering Chill feature."
+			]
+		},
+		{
+			"name": "Icicle Storm",
+			"source": "SarungardIceborn",
+			"page": 2,
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 18,
+			"entries": [
+				"Starting at 18th level, whenever you cast a spell of 6th level or higher, you can use your reaction to emit an icicle storm around one creature the spell targets. Each creature in a 10-foot-radius sphere centered on the target must succeed on a Constitution saving throw or take {@damage 4d6} cold damage plus an extra {@dice 1d6} for each level of the spell. This damage ignores resistances and immunities.",
+				"Once you use this feature, you can't use it again until you finish a long rest, unless you spend sorcery points equal to 2 + the triggering spell's level."
+			]
+		}
+	],
+	"foundrySubclassFeature": [
+		{
+			"name": "Lingering Chill",
+			"source": "SarungardIceborn",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 1,
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"system": {
+				"uses.max": "max(1, @abilities.cha.mod)",
+				"uses.recovery": [
+					{
+						"period": "sr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Chill: Slow",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "You deal cold damage with a spell or sorcerer feature"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "lingeringChillSl"
+						}
+					]
+				},
+				{
+					"name": "Chill: No Reactions",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "You deal cold damage with a spell or sorcerer feature"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "lingeringChillRe"
+						}
+					]
+				},
+				{
+					"name": "Chill: Numb Attack",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "You deal cold damage with a spell or sorcerer feature"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "lingeringChillAt"
+						}
+					],
+					"visibility": {
+						"identifier": "sorcerer",
+						"level": {
+							"min": 6
+						}
+					}
+				},
+				{
+					"name": "Chill: Brittle",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "You deal cold damage with a spell or sorcerer feature"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "1"
+						}
+					},
+					"effects": [
+						{
+							"foundryId": "lingeringChillBr"
+						}
+					],
+					"visibility": {
+						"identifier": "sorcerer",
+						"level": {
+							"min": 14
+						}
+					}
+				},
+				{
+					"name": "Regain Use (1 Sorcery Point)",
+					"type": "utility",
+					"activation": {
+						"type": "special"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "-1"
+							},
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Sorcery Points|Sorcerer|PHB|2"
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					}
+				}
+			],
+			"effects": [
+				{
+					"foundryId": "lingeringChillSl",
+					"name": "Lingering Chill: Slowed",
+					"description": "Speed reduced by 15 feet until the end of the sorcerer's next turn (the greater reduction applies if the spell already slows).",
+					"duration": {
+						"rounds": 1
+					}
+				},
+				{
+					"foundryId": "lingeringChillRe",
+					"name": "Lingering Chill: No Reactions",
+					"description": "Can't take reactions until the end of the sorcerer's next turn.",
+					"duration": {
+						"rounds": 1
+					}
+				},
+				{
+					"foundryId": "lingeringChillAt",
+					"name": "Lingering Chill: Numbed",
+					"description": "Disadvantage on the next attack roll made before the end of its next turn.",
+					"duration": {
+						"rounds": 1
+					}
+				},
+				{
+					"foundryId": "lingeringChillBr",
+					"name": "Lingering Chill: Brittle",
+					"description": "Vulnerable to cold damage until the end of the sorcerer's next turn; cold resistance is suspended (remove it by hand).",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dv.value",
+							"mode": "ADD",
+							"value": "cold"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Arctic Outburst",
+			"source": "SarungardIceborn",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 1,
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"activities": [
+				{
+					"name": "Arctic Outburst",
+					"type": "damage",
+					"activation": {
+						"type": "reaction",
+						"condition": "You spend sorcery points"
+					},
+					"consumption": {
+						"targets": [],
+						"scaling": {
+							"allowed": true,
+							"max": "@classes.sorcerer.levels - 1"
+						}
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"choice": true
+						},
+						"template": {
+							"type": "radius",
+							"size": "10",
+							"units": "ft"
+						}
+					},
+					"damage": {
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "ceil(@classes.sorcerer.levels / 2) + @scaling"
+								},
+								"types": [
+									"cold"
+								]
+							}
+						]
+					},
+					"descriptionChat": "Scale to the number of sorcery points you just spent (1 = no scaling)."
+				}
+			]
+		},
+		{
+			"name": "Cold Capsule",
+			"source": "SarungardIceborn",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 6,
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"system": {
+				"uses.max": "1",
+				"uses.recovery": [
+					{
+						"period": "sr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Crystalline Scales",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "You are hit by an attack and take bludgeoning, piercing, or slashing damage"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"formula": "@classes.sorcerer.levels + @abilities.cha.mod",
+						"name": "Damage Reduction",
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "crystallineScale"
+						}
+					]
+				},
+				{
+					"name": "Crystalline Scales (2 Sorcery Points)",
+					"type": "utility",
+					"activation": {
+						"type": "reaction",
+						"condition": "You are hit by an attack and take bludgeoning, piercing, or slashing damage"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "2",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Sorcery Points|Sorcerer|PHB|2"
+								}
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"formula": "@classes.sorcerer.levels + @abilities.cha.mod",
+						"name": "Damage Reduction",
+						"visible": true
+					},
+					"effects": [
+						{
+							"foundryId": "crystallineScale"
+						}
+					]
+				}
+			],
+			"effects": [
+				{
+					"name": "Cold Capsule: Cold Resistance",
+					"transfer": true,
+					"changes": [
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "cold"
+						}
+					]
+				},
+				{
+					"foundryId": "crystallineScale",
+					"name": "Crystalline Scales",
+					"description": "Vulnerable to fire damage and resistant to bludgeoning, piercing, and slashing damage until the start of your next turn.",
+					"duration": {
+						"rounds": 1
+					},
+					"changes": [
+						{
+							"key": "system.traits.dv.value",
+							"mode": "ADD",
+							"value": "fire"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "bludgeoning"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "piercing"
+						},
+						{
+							"key": "system.traits.dr.value",
+							"mode": "ADD",
+							"value": "slashing"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Icicle Storm",
+			"source": "SarungardIceborn",
+			"className": "Sorcerer",
+			"classSource": "PHB",
+			"subclassShortName": "Iceborn",
+			"subclassSource": "SarungardIceborn",
+			"level": 18,
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"system": {
+				"uses.max": "1",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Icicle Storm",
+					"type": "save",
+					"activation": {
+						"type": "reaction",
+						"condition": "You cast a spell of 6th level or higher"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						],
+						"scaling": {
+							"allowed": true,
+							"max": "3"
+						}
+					},
+					"target": {
+						"template": {
+							"type": "sphere",
+							"size": "10",
+							"units": "ft"
+						}
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						}
+					},
+					"damage": {
+						"onSave": "none",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(9 + @scaling)d6"
+								},
+								"types": [
+									"cold"
+								]
+							}
+						]
+					},
+					"descriptionChat": "Scale up once per spell level above 6th (6th = 10d6, 9th = 13d6). This damage ignores resistances and immunities; apply it as true damage."
+				},
+				{
+					"name": "Icicle Storm (Sorcery Points)",
+					"type": "save",
+					"activation": {
+						"type": "reaction",
+						"condition": "You cast a spell of 6th level or higher"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "8",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Sorcery Points|Sorcerer|PHB|2"
+								},
+								"scaling": {
+									"mode": "amount",
+									"formula": "1"
+								}
+							}
+						],
+						"scaling": {
+							"allowed": true,
+							"max": "3"
+						}
+					},
+					"target": {
+						"template": {
+							"type": "sphere",
+							"size": "10",
+							"units": "ft"
+						}
+					},
+					"save": {
+						"ability": [
+							"con"
+						],
+						"dc": {
+							"calculation": "spellcasting"
+						}
+					},
+					"damage": {
+						"onSave": "none",
+						"parts": [
+							{
+								"custom": {
+									"enabled": true,
+									"formula": "(9 + @scaling)d6"
+								},
+								"types": [
+									"cold"
+								]
+							}
+						]
+					},
+					"descriptionChat": "Scale up once per spell level above 6th (6th = 10d6, 9th = 13d6). This damage ignores resistances and immunities; apply it as true damage."
+				}
+			]
+		}
+	]
+}
