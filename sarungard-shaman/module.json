@@ -1,11 +1,11 @@
 {
   "id": "sarungard-shaman",
   "title": "Shaman Class Support (Sarungard)",
-  "description": "Companion module for the Sarungard Shaman homebrew class: adds the Shaman spell slot progression (custom single-class table, two-thirds of shaman levels when multiclassed) and the Natural Armor rule (Constitution instead of Dexterity while wearing armor).",
-  "version": "1.1.0",
+  "description": "Companion module for the Sarungard Shaman homebrew class: adds the Shaman spell slot progression (custom single-class table, two-thirds of shaman levels when multiclassed) and the Natural Armor rule (Wisdom instead of Dexterity while not wearing heavy armor).",
+  "version": "1.2.0",
   "url": "https://github.com/Sarungard/sarungard-shaman",
   "manifest": "https://github.com/Sarungard/sarungard-shaman/releases/latest/download/module.json",
-  "download": "https://github.com/Sarungard/sarungard-shaman/releases/download/v1.1.0/sarungard-shaman.zip",
+  "download": "https://github.com/Sarungard/sarungard-shaman/releases/download/v1.2.0/sarungard-shaman.zip",
   "license": "https://github.com/Sarungard/sarungard-shaman/blob/main/LICENSE",
   "authors": [
     { "name": "Sarungard" }

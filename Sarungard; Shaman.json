@@ -11,7 +11,7 @@
 				"convertedBy": [
 					"Claudius"
 				],
-				"version": "1.2.0",
+				"version": "2.0.0",
 				"color": "4f6b2f"
 			}
 		],
@@ -27,7 +27,7 @@
 			"SF:SHM": "Shamanic Focus"
 		},
 		"dateAdded": 1791849600,
-		"dateLastModified": 1791979606
+		"dateLastModified": 1792480736
 	},
 	"class": [
 		{
@@ -429,27 +429,30 @@
 			"subclassTitle": "Ancient Council",
 			"classSpells": [
 				"absorb elements|xge",
-				"alarm",
+				"blinding radiance|sarungardshaman",
 				"burning hands",
+				"cold outburst|sarungardshaman",
 				"comprehend languages",
 				"create or destroy water",
 				"cure wounds",
+				"decaying touch|sarungardshaman",
 				"detect evil and good",
 				"detect magic",
 				"earth tremor|xge",
+				"electric discharge|sarungardshaman",
 				"ensnaring strike",
 				"entangle",
+				"faerie fire",
 				"fog cloud",
 				"frost fingers|idrotf",
-				"grease",
 				"ice knife|xge",
-				"identify",
 				"jump",
 				"longstrider",
 				"protection from evil and good",
+				"purify food and drink",
 				"snare|xge",
+				"speak with animals",
 				"thunderwave",
-				"unseen servant",
 				"wild cunning (ua)|uastarterspells",
 				"zephyr strike|xge",
 				"aid",
@@ -457,6 +460,7 @@
 				"augury",
 				"barkskin",
 				"beast sense",
+				"blinding squall|sarungardshaman",
 				"continual flame",
 				"dust devil|xge",
 				"earthbind|xge",
@@ -464,16 +468,18 @@
 				"enlarge/reduce",
 				"flame blade",
 				"flaming sphere",
+				"fossil strike|sarungardshaman",
 				"gust of wind",
+				"ice fan|sarungardshaman",
 				"locate animals or plants",
 				"magic weapon",
 				"misty step",
-				"shatter",
 				"silence",
 				"skywrite|xge",
 				"spike growth",
 				"transmogrify|sarungardshaman",
 				"warding wind|xge",
+				"winter blast|sarungardshaman",
 				"call lightning",
 				"daylight",
 				"elemental weapon",
@@ -482,15 +488,17 @@
 				"fireball",
 				"flame arrows|xge",
 				"gaseous form",
+				"hail strike|sarungardshaman",
 				"haste",
-				"lightning arrow",
 				"lightning bolt",
 				"meld into stone",
 				"plant growth",
 				"remove curse",
+				"slow",
 				"speak with plants",
 				"thunder step|xge",
 				"tidal wave|xge",
+				"vacuum touch|sarungardshaman",
 				"wall of sand|xge",
 				"wall of water|xge",
 				"water breathing",
@@ -499,6 +507,7 @@
 				"conjure minor elementals",
 				"conjure woodland beings",
 				"control water",
+				"cryogenic stasis|sarungardshaman",
 				"divination",
 				"elemental bane|xge",
 				"fire shield",
@@ -521,6 +530,7 @@
 				"dispel evil and good",
 				"far step|xge",
 				"flame strike",
+				"hail storm|sarungardshaman",
 				"immolation|xge",
 				"maelstrom|xge",
 				"steel wind strike|xge",
@@ -530,6 +540,7 @@
 				"wrath of nature|xge",
 				"bones of the earth|xge",
 				"chain lightning",
+				"closed circuit|sarungardshaman",
 				"flesh to stone",
 				"investiture of flame|xge",
 				"investiture of ice|xge",
@@ -537,6 +548,7 @@
 				"investiture of wind|xge",
 				"move earth",
 				"primordial ward|xge",
+				"sunbeam",
 				"wall of ice",
 				"wall of thorns",
 				"wind walk",
@@ -551,27 +563,30 @@
 					"known": {
 						"2": [
 							"absorb elements|xge",
-							"alarm",
+							"blinding radiance|sarungardshaman",
 							"burning hands",
+							"cold outburst|sarungardshaman",
 							"comprehend languages",
 							"create or destroy water",
 							"cure wounds",
+							"decaying touch|sarungardshaman",
 							"detect evil and good",
 							"detect magic",
 							"earth tremor|xge",
+							"electric discharge|sarungardshaman",
 							"ensnaring strike",
 							"entangle",
+							"faerie fire",
 							"fog cloud",
 							"frost fingers|idrotf",
-							"grease",
 							"ice knife|xge",
-							"identify",
 							"jump",
 							"longstrider",
 							"protection from evil and good",
+							"purify food and drink",
 							"snare|xge",
+							"speak with animals",
 							"thunderwave",
-							"unseen servant",
 							"wild cunning (ua)|uastarterspells",
 							"zephyr strike|xge"
 						],
@@ -581,6 +596,7 @@
 							"augury",
 							"barkskin",
 							"beast sense",
+							"blinding squall|sarungardshaman",
 							"continual flame",
 							"dust devil|xge",
 							"earthbind|xge",
@@ -588,16 +604,18 @@
 							"enlarge/reduce",
 							"flame blade",
 							"flaming sphere",
+							"fossil strike|sarungardshaman",
 							"gust of wind",
+							"ice fan|sarungardshaman",
 							"locate animals or plants",
 							"magic weapon",
 							"misty step",
-							"shatter",
 							"silence",
 							"skywrite|xge",
 							"spike growth",
 							"transmogrify|sarungardshaman",
-							"warding wind|xge"
+							"warding wind|xge",
+							"winter blast|sarungardshaman"
 						],
 						"6": [
 							"call lightning",
@@ -608,15 +626,17 @@
 							"fireball",
 							"flame arrows|xge",
 							"gaseous form",
+							"hail strike|sarungardshaman",
 							"haste",
-							"lightning arrow",
 							"lightning bolt",
 							"meld into stone",
 							"plant growth",
 							"remove curse",
+							"slow",
 							"speak with plants",
 							"thunder step|xge",
 							"tidal wave|xge",
+							"vacuum touch|sarungardshaman",
 							"wall of sand|xge",
 							"wall of water|xge",
 							"water breathing",
@@ -627,6 +647,7 @@
 							"conjure minor elementals",
 							"conjure woodland beings",
 							"control water",
+							"cryogenic stasis|sarungardshaman",
 							"divination",
 							"elemental bane|xge",
 							"fire shield",
@@ -651,6 +672,7 @@
 							"dispel evil and good",
 							"far step|xge",
 							"flame strike",
+							"hail storm|sarungardshaman",
 							"immolation|xge",
 							"maelstrom|xge",
 							"steel wind strike|xge",
@@ -662,6 +684,7 @@
 						"15": [
 							"bones of the earth|xge",
 							"chain lightning",
+							"closed circuit|sarungardshaman",
 							"flesh to stone",
 							"investiture of flame|xge",
 							"investiture of ice|xge",
@@ -669,6 +692,7 @@
 							"investiture of wind|xge",
 							"move earth",
 							"primordial ward|xge",
+							"sunbeam",
 							"wall of ice",
 							"wall of thorns",
 							"wind walk"
@@ -1023,6 +1047,95 @@
 			"foundrySystem": {
 				"identifier": "traditions"
 			}
+		},
+		{
+			"name": "Council of Omens",
+			"shortName": "Omens",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"page": 10,
+			"edition": "classic",
+			"additionalSpells": [
+				{
+					"ability": "wis",
+					"prepared": {
+						"2": [
+							"alarm",
+							"gift of alacrity|egw"
+						],
+						"4": [
+							"augury",
+							"warding bond"
+						],
+						"6": [
+							"glyph of warding",
+							"remove curse"
+						],
+						"9": [
+							"death ward",
+							"divination"
+						],
+						"12": [
+							"commune",
+							"contact other plane"
+						]
+					},
+					"innate": {
+						"2": {
+							"daily": {
+								"1": [
+									"augury"
+								]
+							}
+						},
+						"6": {
+							"daily": {
+								"1": [
+									"divination"
+								]
+							}
+						}
+					},
+					"known": {
+						"9": [
+							"guidance",
+							"resistance"
+						]
+					}
+				}
+			],
+			"subclassFeatures": [
+				"Council of Omens|Shaman|SarungardShaman|Omens|SarungardShaman|2",
+				"Shielded by Fate|Shaman|SarungardShaman|Omens|SarungardShaman|5",
+				"Voice of Forthcomings|Shaman|SarungardShaman|Omens|SarungardShaman|9",
+				"Flicker of Fate|Shaman|SarungardShaman|Omens|SarungardShaman|14",
+				"Alter Fate|Shaman|SarungardShaman|Omens|SarungardShaman|20"
+			],
+			"foundrySystem": {
+				"identifier": "omens"
+			},
+			"foundryAdvancement": [
+				{
+					"type": "ScaleValue",
+					"title": "Shielded by Fate Hit Dice",
+					"configuration": {
+						"identifier": "fate-dice",
+						"type": "number",
+						"scale": {
+							"5": {
+								"value": 1
+							},
+							"11": {
+								"value": 2
+							},
+							"17": {
+								"value": 3
+							}
+						}
+					}
+				}
+			]
 		}
 	],
 	"classFeature": [
@@ -1034,7 +1147,7 @@
 			"classSource": "SarungardShaman",
 			"level": 1,
 			"entries": [
-				"When you are wearing armor, you can use your Constitution modifier instead of your Dexterity modifier when calculating your Armor Class."
+				"While you are not wearing heavy armor, you can use your Wisdom modifier instead of your Dexterity modifier when calculating your Armor Class."
 			]
 		},
 		{
@@ -1079,7 +1192,7 @@
 			"classSource": "SarungardShaman",
 			"level": 2,
 			"entries": [
-				"At 2nd level, you choose to identify with a council of shamans: the {@subclass Council of Blood|Shaman|SarungardShaman|Blood|SarungardShaman}, the {@subclass Council of Elements|Shaman|SarungardShaman|Elements|SarungardShaman}, the {@subclass Council of Harvest|Shaman|SarungardShaman|Harvest|SarungardShaman}, the {@subclass Council of Shrouds|Shaman|SarungardShaman|Shrouds|SarungardShaman}, or the {@subclass Council of Traditions|Shaman|SarungardShaman|Traditions|SarungardShaman}. Your choice grants you features at 2nd level and again at 5th, 9th, 14th, and 20th level.",
+				"At 2nd level, you choose to identify with a council of shamans: the {@subclass Council of Blood|Shaman|SarungardShaman|Blood|SarungardShaman}, the {@subclass Council of Elements|Shaman|SarungardShaman|Elements|SarungardShaman}, the {@subclass Council of Harvest|Shaman|SarungardShaman|Harvest|SarungardShaman}, the {@subclass Council of Shrouds|Shaman|SarungardShaman|Shrouds|SarungardShaman}, the {@subclass Council of Traditions|Shaman|SarungardShaman|Traditions|SarungardShaman}, or the {@subclass Council of Omens|Shaman|SarungardShaman|Omens|SarungardShaman}. Your choice grants you features at 2nd level and again at 5th, 9th, 14th, and 20th level.",
 				{
 					"type": "entries",
 					"name": "Ancient Councils",
@@ -1195,8 +1308,15 @@
 			"level": 3,
 			"entries": [
 				"Your link with the spirit realm helps you when you draw power from it.",
-				"Starting at 3rd level, whenever you cast a shaman spell as a ritual, you can use your Resonance to finish it as a full-round action instead, as the spirits of nature help you deliver your magic. You can use your Resonance once.",
-				"Beginning at 6th level, you can use your Resonance twice between rests, and beginning at 12th level, you can use it three times between rests. When you finish a long rest, you regain your expended uses."
+				"Starting at 3rd level, you can use your Resonance to ritual cast a shaman spell as a full-round action instead of taking extended time, as the spirits of nature help you deliver your magic. You can use your Resonance once.",
+				"Beginning at 6th level, you can use your Resonance twice between rests, and beginning at 12th level, you can use it three times between rests. When you finish a long rest, you regain your expended uses.",
+				{
+					"type": "entries",
+					"name": "Full-Round Actions",
+					"entries": [
+						"To take a full-round action, you have to sacrifice all of the resources available to you in a single round: your action, bonus action, reaction, and movement. You can take a full-round action only if you haven't spent any of your action, bonus action, or reaction this turn and you haven't moved during this turn, and after you use the full-round action, your speed is 0 until the end of the current turn."
+					]
+				}
 			]
 		},
 		{
@@ -1606,7 +1726,7 @@
 			"subclassSource": "SarungardShaman",
 			"level": 9,
 			"entries": [
-				"At 9th level, you can expend two uses of your {@classFeature Resonance|Shaman|SarungardShaman|3} to cast the {@spell find familiar} spell. If you cast the spell this way, you can cast it as a ritual and finish it as a full-round action, and you can choose for your familiar to appear in the form of an {@creature air elemental}, an {@creature earth elemental}, a {@creature fire elemental}, or a {@creature water elemental}. While in this form, your familiar can attack as if it were one of those elementals.",
+				"At 9th level, you can expend two uses of your {@classFeature Resonance|Shaman|SarungardShaman|3} to cast the {@spell find familiar} spell. If you cast the spell this way, you can cast it as a ritual and finish it as a full-round action, and you can choose for your familiar to appear in the form of a storm elemental, a crystal elemental, a blazing elemental, or an ice elemental. While in this form, your familiar can attack as if it were one of those elementals.",
 				"Your familiar stays in this form for 2 hours before it changes back to its original form."
 			]
 		},
@@ -1716,7 +1836,7 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"At 2nd level, when you align with this council, you learn how to bind creatures to your Shamanic Focus. Whenever you kill a creature, you can enslave its soul and store it inside your focus.",
+				"At 2nd level, when you align with this council, you learn how to bind creatures to your Shamanic Focus. Whenever you reduce a creature to 0 hit points, you can enslave its soul and store it inside your focus.",
 				"You can't enslave the souls of undead, constructs, or creatures with a challenge rating higher than your proficiency bonus, and you can store a number of souls up to your Wisdom modifier (minimum of 1)."
 			]
 		},
@@ -2017,7 +2137,8 @@
 						"You can't be {@condition blinded}, {@condition charmed}, {@condition deafened}, or {@condition frightened}.",
 						"You gain a flying speed equal to your movement speed, and you can hover.",
 						"You gain resistance to all damage except psychic damage or damage dealt by magical sources.",
-						"You can use your action to spend 1 psionic point to deal {@damage 3d10} psychic damage to a target creature you can see within 60 feet of you."
+						"You can use your action to spend 1 psionic point to deal {@damage 3d10} psychic damage to a target creature you can see within 60 feet of you.",
+						"You can use your action to spend 3 psionic points to cast the {@spell banishment} spell without expending a spell slot. If the target is not native to the Astral Plane, it rolls its saving throw with disadvantage."
 					]
 				},
 				"You remain in this form for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action."
@@ -2117,7 +2238,7 @@
 							"type": "item",
 							"name": "Meditative Stance.",
 							"entries": [
-								"If you cast a shaman spell that requires concentration during your Battle Trance, you maintain your concentration even if you take damage, but the spell immediately ends when your trance ends."
+								"If you cast a shaman spell that requires concentration during your Battle Trance, you can maintain your concentration even if you fail the saving throw for taking damage, but the spell immediately ends when your trance ends."
 							]
 						}
 					]
@@ -2134,7 +2255,8 @@
 			"subclassSource": "SarungardShaman",
 			"level": 9,
 			"entries": [
-				"Starting at 9th level, when you use the {@action Attack} action while your Battle Trance is active, you can make one weapon attack as a bonus action."
+				"Starting at 9th level, immediately after you enter your Battle Trance, you can make a weapon attack.",
+				"During your Battle Trance, when you take the {@action Attack} action with a shaman weapon on your turn, you can make an attack with a shaman weapon as a bonus action, assuming you haven't already taken a bonus action this turn."
 			]
 		},
 		{
@@ -2169,6 +2291,168 @@
 						"You apply all stances; you don't have to choose between them."
 					]
 				}
+			]
+		},
+		{
+			"name": "Council of Omens",
+			"source": "SarungardShaman",
+			"page": 10,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"entries": [
+				"While most shamans try to find harmony in the present or search for the teachings of the past, some of them turn their gaze to broader horizons. A few of them seek guidance from the future. Bone-reading rituals help them see clearly what is yet to come, using that knowledge to their own (or their allies') benefit, eventually mastering fate itself.",
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Council Spells|Shaman|SarungardShaman|Omens|SarungardShaman|2"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Bone-Reading|Shaman|SarungardShaman|Omens|SarungardShaman|2"
+				},
+				{
+					"type": "refSubclassFeature",
+					"subclassFeature": "Instinctive Portents|Shaman|SarungardShaman|Omens|SarungardShaman|2"
+				}
+			]
+		},
+		{
+			"name": "Council Spells",
+			"source": "SarungardShaman",
+			"page": 10,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"When you align with this council, and later at 4th, 6th, 9th, and 12th level, you gain access to the spells listed for that level in the Council of Omens Spells table. Once you gain access to one of these spells, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the shaman spell list, the spell is nonetheless a shaman spell for you.",
+				{
+					"type": "table",
+					"caption": "Council of Omens Spells",
+					"colLabels": [
+						"Shaman Level",
+						"Spells"
+					],
+					"colStyles": [
+						"col-3 text-center",
+						"col-9"
+					],
+					"rows": [
+						[
+							"2nd",
+							"{@spell alarm}, {@spell gift of alacrity|EGW}"
+						],
+						[
+							"4th",
+							"{@spell augury}, {@spell warding bond}"
+						],
+						[
+							"6th",
+							"{@spell glyph of warding}, {@spell remove curse}"
+						],
+						[
+							"9th",
+							"{@spell death ward}, {@spell divination}"
+						],
+						[
+							"12th",
+							"{@spell commune}, {@spell contact other plane}"
+						]
+					]
+				}
+			]
+		},
+		{
+			"name": "Bone-Reading",
+			"source": "SarungardShaman",
+			"page": 10,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"At 2nd level, you learn how to read the bones, whether they mean weal or woe. You gain proficiency with Bonecarver's Tools, and you can designate a set of bones to be your augury. While you are in possession of your augury, you can use it to cast the {@spell augury} spell without using a spell slot. If you cast the spell this way, there is no chance of getting a random reading, regardless of whether it is the first time you cast the spell.",
+				"Once you use this feature, you can't do so again until the next dawn.",
+				"When you reach 6th level in this class, you can also cast {@spell divination} using your augury once per long rest."
+			]
+		},
+		{
+			"name": "Instinctive Portents",
+			"source": "SarungardShaman",
+			"page": 10,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"header": 1,
+			"entries": [
+				"Also at 2nd level, you are able to act quickly on instinct while you can perceive your surroundings. As long as you are not incapacitated, you can add your proficiency bonus to your initiative rolls.",
+				"In addition, immediately after you roll initiative, you can swap your initiative with that of one willing ally you can see who has a lower initiative in the same combat. You can't make this swap if you or the ally is incapacitated, or if you can't see each other.",
+				"You can use this feature a number of times equal to 1 + your Wisdom modifier. You regain all expended uses when you finish a long rest."
+			]
+		},
+		{
+			"name": "Shielded by Fate",
+			"source": "SarungardShaman",
+			"page": 10,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 5,
+			"entries": [
+				"At 5th level, after you finish a long rest, if you are in possession of your augury, you can target a number of other creatures equal to your proficiency bonus and expend and roll one of your Hit Dice. Each target gains temporary hit points equal to the result.",
+				"In addition, after you finish a short rest, you can use an action to expend one use of your {@classFeature Resonance|Shaman|SarungardShaman|3} to use this feature again.",
+				"The number of Hit Dice you spend when using this feature increases by 1 when you reach 11th level (2 Hit Dice) and 17th level (3 Hit Dice)."
+			]
+		},
+		{
+			"name": "Voice of Forthcomings",
+			"source": "SarungardShaman",
+			"page": 10,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"entries": [
+				"At 9th level, you gain proficiency in the Persuasion and Intimidation skills, and you learn the {@spell guidance} and {@spell resistance} cantrips. They count as shaman spells for you, and Wisdom is your spellcasting ability for them.",
+				"In addition, while you aren't incapacitated, creatures that have temporary hit points remaining from your Shielded by Fate feature have the effects of both cantrips applied."
+			]
+		},
+		{
+			"name": "Flicker of Fate",
+			"source": "SarungardShaman",
+			"page": 10,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 14,
+			"entries": [
+				"Starting at 14th level, while you aren't incapacitated, creatures that have temporary hit points remaining from your Shielded by Fate feature take their turns in combat as if they were under the effect of the {@spell haste} spell."
+			]
+		},
+		{
+			"name": "Alter Fate",
+			"source": "SarungardShaman",
+			"page": 10,
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"entries": [
+				"At 20th level, you can forge your own destiny. In your time of need, you can avoid what lies beyond you with the help of what's left behind. When you gain this feature, and once a year after that, you can designate an event you have lived through as your setting point.",
+				"Later, you can use your action to restore reality and set time back to your designated point; however, only you retain any memories of what occurred during the reset time. Everything else is restored according to that point, including possessions, boons, and banes.",
+				"Once you use this feature, you can't use it again until you reach the point in time where you last used it, and there is a 33 percent chance that you can never use this feature again."
 			]
 		}
 	],
@@ -2671,7 +2955,7 @@
 		{
 			"name": "Transmogrify",
 			"source": "SarungardShaman",
-			"page": 13,
+			"page": 15,
 			"level": 2,
 			"school": "T",
 			"time": [
@@ -2728,7 +3012,7 @@
 		{
 			"name": "Erratic Wisp",
 			"source": "SarungardShaman",
-			"page": 13,
+			"page": 15,
 			"level": 3,
 			"school": "T",
 			"time": [
@@ -2773,6 +3057,908 @@
 			"miscTags": [
 				"TP"
 			]
+		},
+		{
+			"name": "Electric Discharge",
+			"source": "SarungardShaman",
+			"page": 15,
+			"level": 1,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You unleash a jolt of energy from your hands toward your opponent. Make a ranged spell attack against a creature you can see within range. On a hit, the target takes {@damage 3d6} lightning damage and is {@condition stunned} until the start of its next turn."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6}, and the target is stunned until the end of your next turn."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"lightning"
+			],
+			"conditionInflict": [
+				"stunned"
+			],
+			"spellAttack": [
+				"R"
+			]
+		},
+		{
+			"name": "Vacuum Touch",
+			"source": "SarungardShaman",
+			"page": 15,
+			"level": 3,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": {
+					"text": "a pinch of gold dust worth 1 gp, which the spell consumes",
+					"cost": 100,
+					"consume": true
+				}
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"Make a melee spell attack against a creature. On a hit, that creature takes {@damage 3d8} lightning damage, and if it needs to breathe, it must succeed on a Constitution saving throw. On a failed save, its breath leaves it and it begins suffocating. It can repeat the saving throw at the end of each of its turns, ending the effect on a success.",
+				"The spell ends early if the creature becomes incapacitated or is dying."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@dice 1d8}."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"lightning"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"spellAttack": [
+				"M"
+			]
+		},
+		{
+			"name": "Blinding Radiance",
+			"source": "SarungardShaman",
+			"page": 15,
+			"level": 1,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "cube",
+				"distance": {
+					"type": "feet",
+					"amount": 15
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"Eye-piercing light erupts from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. A creature takes {@damage 2d6} radiant damage on a failed save, or half as much damage on a successful one.",
+				"In addition, for the duration of the spell, you shed bright light in a 5-foot radius and dim light for an additional 10 feet. Creatures standing in the bright light are {@condition blinded} by it."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6}."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"radiant"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"conditionInflict": [
+				"blinded"
+			],
+			"miscTags": [
+				"LGT"
+			]
+		},
+		{
+			"name": "Closed Circuit",
+			"source": "SarungardShaman",
+			"page": 15,
+			"level": 6,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "radius",
+				"distance": {
+					"type": "feet",
+					"amount": 10
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"The air explodes around you as you let out an unnatural pressure of air. Each creature within 10 feet of you must make a Constitution saving throw. A creature takes {@damage 8d8} lightning damage on a failed save, or half as much damage on a successful one.",
+				"The spell creates a 5-foot-wide ring of black clouds at the edge of the circle. For the duration, whenever a creature enters the cloud or starts its turn there, it must succeed on a Constitution saving throw or become {@condition stunned} for the duration. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 7th level or higher, the damage increases by {@dice 1d8}."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"lightning"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"conditionInflict": [
+				"stunned"
+			]
+		},
+		{
+			"name": "Blinding Squall",
+			"source": "SarungardShaman",
+			"page": 16,
+			"level": 2,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You conjure a raging storm around a point you choose within range. Each creature in a 10-foot-radius circle around the chosen point must make a Dexterity saving throw. A creature takes {@damage 2d6} lightning damage on a failed save, or half as much damage on a successful one. Then those creatures must make a Constitution saving throw or be {@condition blinded} until the end of their next turn."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d6}."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"lightning"
+			],
+			"savingThrow": [
+				"dexterity",
+				"constitution"
+			],
+			"conditionInflict": [
+				"blinded"
+			]
+		},
+		{
+			"name": "Fossil Strike",
+			"source": "SarungardShaman",
+			"page": 16,
+			"level": 2,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"s": true,
+				"m": "a small stone"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You summon a globe of mud and oil and hurl it toward your enemies. Choose a point within range. Each creature within 10 feet of that point must make a Dexterity saving throw. A creature takes {@damage 3d8} bludgeoning damage on a failed save, or half as much damage on a successful one. As the globe explodes, oil splatters around, making the affected area difficult terrain."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d8}."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"bludgeoning"
+			],
+			"savingThrow": [
+				"dexterity"
+			]
+		},
+		{
+			"name": "Decaying Touch",
+			"source": "SarungardShaman",
+			"page": 16,
+			"level": 1,
+			"school": "N",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "touch"
+				}
+			},
+			"components": {
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"Make a melee spell attack against a creature you can reach. On a hit, the target takes {@damage 2d8} necrotic damage and must succeed on a Constitution saving throw or be decayed by this spell's curse for 1 minute.",
+				"If a decayed creature would regain hit points, it takes that much necrotic damage instead. A decayed creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d8}."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Warlock",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"necrotic"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"spellAttack": [
+				"M"
+			]
+		},
+		{
+			"name": "Ice Fan",
+			"source": "SarungardShaman",
+			"page": 16,
+			"level": 2,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You create three fans of ice and hurl them at targets within range. You can hurl them at one target or several. Make a ranged spell attack for each fan. On a hit, the target takes {@damage 1d8} cold damage, and its speed is reduced by 10 feet until the start of your next turn."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 3rd level or higher, you create one additional fan for each slot level above 2nd."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"cold"
+			],
+			"spellAttack": [
+				"R"
+			]
+		},
+		{
+			"name": "Winter Blast",
+			"source": "SarungardShaman",
+			"page": 16,
+			"level": 2,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 90
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a pinch of cinnamon and a cup of water"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You conjure the power of winter cold to unleash on your enemies in a 10-foot-tall cylinder with a 10-foot radius centered on a point you choose within range. Each creature in the cylinder must make a Constitution saving throw. A creature takes {@damage 3d8} cold damage on a failed save, or half as much damage on a successful one.",
+				"Nonmagical susceptible surfaces, such as any liquid, freeze inside the spell's area, becoming difficult terrain."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@scaledamage 3d8|2-9|1d8} for each slot level above 2nd."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"cold"
+			],
+			"savingThrow": [
+				"constitution"
+			],
+			"areaTags": [
+				"Y"
+			]
+		},
+		{
+			"name": "Hail Strike",
+			"source": "SarungardShaman",
+			"page": 16,
+			"level": 3,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 120
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a drop of water and a piece of glass"
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"White crystals of ice plummet to the ground at three different points you can see within range, within 10 feet of each other. Each creature in a 5-foot radius centered on each point you choose must make a Dexterity saving throw. A creature takes {@damage 2d8} cold damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one icy burst can be affected more than once by this spell.",
+				"Nonmagical susceptible surfaces, such as any liquid, freeze inside the spell's area, becoming difficult terrain."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 5th level or higher, the damage increases by {@dice 1d8} for every two slot levels above 3rd."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"cold"
+			],
+			"savingThrow": [
+				"dexterity"
+			]
+		},
+		{
+			"name": "Cryogenic Stasis",
+			"source": "SarungardShaman",
+			"page": 17,
+			"level": 4,
+			"school": "V",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 60
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "round",
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"Choose a creature you can see within range. If the creature is willing, you can freeze it for 1 round. While frozen this way, the creature is {@condition incapacitated}, has a speed of 0, and has resistance to every damage type except fire. At the start of your next turn, the creature regains {@dice 3d8} hit points as the ice melts."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 5th level or higher, the healing increases by {@scaledice 3d8|4-9|1d8} for each slot level above 4th."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"conditionInflict": [
+				"incapacitated"
+			],
+			"miscTags": [
+				"HL"
+			]
+		},
+		{
+			"name": "Cold Outburst",
+			"source": "SarungardShaman",
+			"page": 17,
+			"level": 1,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "point",
+				"distance": {
+					"type": "feet",
+					"amount": 30
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true
+			},
+			"duration": [
+				{
+					"type": "instant"
+				}
+			],
+			"entries": [
+				"You emit an outburst of cold originating from you. Each creature around you within range must succeed on a Constitution saving throw or take {@damage 1d8} cold damage and have its speed reduced by 5 feet until the end of its next turn.",
+				"Nonmagical susceptible surfaces, such as any liquid, freeze inside the spell's area, becoming difficult terrain."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@scaledamage 1d8|1-9|1d8} for each slot level above 1st."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					},
+					{
+						"name": "Wizard",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"cold"
+			],
+			"savingThrow": [
+				"constitution"
+			]
+		},
+		{
+			"name": "Hail Storm",
+			"source": "SarungardShaman",
+			"page": 17,
+			"level": 5,
+			"school": "C",
+			"time": [
+				{
+					"number": 1,
+					"unit": "action"
+				}
+			],
+			"range": {
+				"type": "radius",
+				"distance": {
+					"type": "feet",
+					"amount": 20
+				}
+			},
+			"components": {
+				"v": true,
+				"s": true,
+				"m": "a drop of water"
+			},
+			"duration": [
+				{
+					"type": "timed",
+					"duration": {
+						"type": "minute",
+						"amount": 1
+					},
+					"concentration": true
+				}
+			],
+			"entries": [
+				"You evoke the power of the ancient frost as shards of icy glass rain down. When you cast the spell, and on each of your subsequent turns for the duration, you can use your bonus action to choose two points within range. Each creature within 5 feet of those points must succeed on a Dexterity saving throw or take {@damage 3d8} cold damage.",
+				"Nonmagical susceptible surfaces, such as any liquid, freeze inside the spell's area, becoming difficult terrain."
+			],
+			"entriesHigherLevel": [
+				{
+					"type": "entries",
+					"name": "At Higher Levels",
+					"entries": [
+						"When you cast this spell using a spell slot of 6th level or higher, the damage increases by {@dice 1d8} for every two slot levels above 5th."
+					]
+				}
+			],
+			"classes": {
+				"fromClassList": [
+					{
+						"name": "Druid",
+						"source": "PHB"
+					},
+					{
+						"name": "Shaman",
+						"source": "SarungardShaman"
+					},
+					{
+						"name": "Sorcerer",
+						"source": "PHB"
+					}
+				]
+			},
+			"damageInflict": [
+				"cold"
+			],
+			"savingThrow": [
+				"dexterity"
+			]
 		}
 	],
 	"foundryClassFeature": [
@@ -2816,12 +4002,17 @@
 				{
 					"name": "Natural Armor",
 					"transfer": true,
-					"description": "Requires the Shaman Class Support module: adds the armored-only AC calculation 'armor + Constitution modifier (capped by the armor's Dexterity cap)'. dnd5e uses it whenever it beats the normal armored calculation.",
+					"description": "Requires the Shaman Class Support module: adds two AC calculations, 'armor + Wisdom modifier (capped by the armor's Dexterity cap)' in light or medium armor and '10 + Wisdom modifier' without armor. dnd5e uses them whenever they beat the normal calculation; heavy armor is unaffected.",
 					"changes": [
 						{
 							"key": "system.attributes.ac.calcs",
 							"mode": "ADD",
 							"value": "shamanNatural"
+						},
+						{
+							"key": "system.attributes.ac.calcs",
+							"mode": "ADD",
+							"value": "shamanNaturalUnarmored"
 						}
 					]
 				}
@@ -3450,7 +4641,7 @@
 					"type": "utility",
 					"activation": {
 						"type": "special",
-						"condition": "You kill a creature (not undead or construct) with CR no higher than your proficiency bonus"
+						"condition": "You reduce a creature (not undead or construct) with CR no higher than your proficiency bonus to 0 hit points"
 					},
 					"consumption": {
 						"targets": [
@@ -4238,6 +5429,31 @@
 							}
 						]
 					}
+				},
+				{
+					"name": "Astral Banishment",
+					"type": "cast",
+					"activation": {
+						"type": "action",
+						"override": true,
+						"condition": "While Surface the Shroud is active"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "3",
+								"target": {
+									"prop": "subclassFeature",
+									"uid": "Psionic Reserves|Shaman|SarungardShaman|Shrouds|SarungardShaman|2"
+								}
+							}
+						]
+					},
+					"spell": {
+						"uuid": "@spell[banishment|phb]"
+					},
+					"descriptionChat": "A target not native to the Astral Plane rolls its saving throw with disadvantage."
 				}
 			],
 			"effects": [
@@ -4548,7 +5764,7 @@
 				{
 					"foundryId": "meditativeStance",
 					"name": "Battle Trance: Meditative Stance",
-					"description": "Concentration on a shaman spell cast during the trance is not broken by damage, but the spell ends when the trance ends.",
+					"description": "You can keep concentrating on a shaman spell cast during the trance even if you fail the saving throw for taking damage, but the spell ends when the trance ends.",
 					"duration": {
 						"seconds": 60,
 						"rounds": 10
@@ -4642,6 +5858,216 @@
 							"value": "22"
 						}
 					]
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Instinctive Portents",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 2,
+			"system": {
+				"uses.max": "1 + @abilities.wis.mod",
+				"uses.recovery": [
+					{
+						"period": "lr",
+						"type": "recoverAll"
+					}
+				]
+			},
+			"activities": [
+				{
+					"name": "Swap Initiative",
+					"type": "utility",
+					"activation": {
+						"type": "special",
+						"condition": "Immediately after rolling initiative, with a willing ally you can see who has a lower initiative"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "ally",
+							"count": "1"
+						}
+					}
+				}
+			],
+			"effects": [
+				{
+					"name": "Instinctive Portents",
+					"transfer": true,
+					"description": "Add your proficiency bonus to initiative rolls while you are not incapacitated.",
+					"changes": [
+						{
+							"key": "system.attributes.init.roll.bonus",
+							"mode": "ADD",
+							"value": "@prof"
+						}
+					]
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Shielded by Fate",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 5,
+			"activities": [
+				{
+					"name": "Shielded by Fate",
+					"type": "heal",
+					"activation": {
+						"type": "special",
+						"condition": "After you finish a long rest, holding your augury"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "hitDice",
+								"target": "d8",
+								"value": "@scale.omens.fate-dice"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "@prof"
+						}
+					},
+					"healing": {
+						"custom": {
+							"enabled": true,
+							"formula": "(@scale.omens.fate-dice)d8"
+						},
+						"types": [
+							"temphp"
+						]
+					},
+					"descriptionChat": "Each target gains temporary hit points equal to the rolled Hit Dice."
+				},
+				{
+					"name": "Shielded by Fate (Resonance)",
+					"type": "heal",
+					"activation": {
+						"type": "action",
+						"condition": "After you finish a short rest"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1",
+								"target": {
+									"prop": "classFeature",
+									"uid": "Resonance|Shaman|SarungardShaman|3"
+								}
+							},
+							{
+								"type": "hitDice",
+								"target": "d8",
+								"value": "@scale.omens.fate-dice"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "creature",
+							"count": "@prof"
+						}
+					},
+					"healing": {
+						"custom": {
+							"enabled": true,
+							"formula": "(@scale.omens.fate-dice)d8"
+						},
+						"types": [
+							"temphp"
+						]
+					},
+					"descriptionChat": "Each target gains temporary hit points equal to the rolled Hit Dice."
+				}
+			]
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Voice of Forthcomings",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 9,
+			"entryData": {
+				"skillProficiencies": [
+					{
+						"persuasion": true,
+						"intimidation": true
+					}
+				]
+			}
+		},
+		{
+			"ignoreSrdActivities": true,
+			"ignoreSrdEffects": true,
+			"migrationVersion": 3,
+			"name": "Alter Fate",
+			"source": "SarungardShaman",
+			"className": "Shaman",
+			"classSource": "SarungardShaman",
+			"subclassShortName": "Omens",
+			"subclassSource": "SarungardShaman",
+			"level": 20,
+			"system": {
+				"uses.max": "1"
+			},
+			"activities": [
+				{
+					"name": "Alter Fate",
+					"type": "utility",
+					"activation": {
+						"type": "action"
+					},
+					"consumption": {
+						"targets": [
+							{
+								"type": "itemUses",
+								"value": "1"
+							}
+						]
+					},
+					"target": {
+						"affects": {
+							"type": "self"
+						}
+					},
+					"roll": {
+						"formula": "1d100",
+						"name": "33 or lower: never usable again",
+						"visible": true
+					},
+					"descriptionChat": "Time resets to your designated point; only you remember the reset time. Restore this feature's use by hand when you reach the point where you last used it."
 				}
 			]
 		}

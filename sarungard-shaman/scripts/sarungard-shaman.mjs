@@ -1,6 +1,7 @@
 const PROGRESSION = "shaman";
 const SPELL_METHOD = "spell";
 const NATURAL_ARMOR = "shamanNatural";
+const NATURAL_ARMOR_UNARMORED = "shamanNaturalUnarmored";
 
 const SHAMAN_SLOT_TABLE = [
   [],
@@ -87,7 +88,12 @@ function assignShamanProgression(item) {
 function registerNaturalArmor() {
   CONFIG.DND5E.armorClasses[NATURAL_ARMOR] = {
     label: "Natural Armor (Shaman)",
-    formula: "@attributes.ac.armor + @attributes.ac.clamped.con",
+    formula: "@attributes.ac.armor + @attributes.ac.clamped.wis",
     armored: true
+  };
+  CONFIG.DND5E.armorClasses[NATURAL_ARMOR_UNARMORED] = {
+    label: "Natural Armor (Shaman, unarmored)",
+    formula: "10 + @abilities.wis.mod",
+    armored: false
   };
 }

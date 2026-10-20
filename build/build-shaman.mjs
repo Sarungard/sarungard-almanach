@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const SRC = "SarungardShaman";
-const BREW_VERSION = "1.2.0";
+const BREW_VERSION = "2.0.0";
 const PUBLISHED_AT = Math.floor(Date.now() / 1000);
 const CLASS = "Shaman";
 const OUT_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "Sarungard; Shaman.json");
@@ -56,27 +56,30 @@ const PSIONIC_POINTS = { 2: 2, 5: 4, 10: 6, 14: 8, 17: 10 };
 const SHAMAN_SPELLS_BY_LEVEL = {
   1: [
     "absorb elements|xge",
-    "alarm",
+    "blinding radiance|sarungardshaman",
     "burning hands",
+    "cold outburst|sarungardshaman",
     "comprehend languages",
     "create or destroy water",
     "cure wounds",
+    "decaying touch|sarungardshaman",
     "detect evil and good",
     "detect magic",
     "earth tremor|xge",
+    "electric discharge|sarungardshaman",
     "ensnaring strike",
     "entangle",
+    "faerie fire",
     "fog cloud",
     "frost fingers|idrotf",
-    "grease",
     "ice knife|xge",
-    "identify",
     "jump",
     "longstrider",
     "protection from evil and good",
+    "purify food and drink",
     "snare|xge",
+    "speak with animals",
     "thunderwave",
-    "unseen servant",
     "wild cunning (ua)|uastarterspells",
     "zephyr strike|xge"
   ],
@@ -86,6 +89,7 @@ const SHAMAN_SPELLS_BY_LEVEL = {
     "augury",
     "barkskin",
     "beast sense",
+    "blinding squall|sarungardshaman",
     "continual flame",
     "dust devil|xge",
     "earthbind|xge",
@@ -93,16 +97,18 @@ const SHAMAN_SPELLS_BY_LEVEL = {
     "enlarge/reduce",
     "flame blade",
     "flaming sphere",
+    "fossil strike|sarungardshaman",
     "gust of wind",
+    "ice fan|sarungardshaman",
     "locate animals or plants",
     "magic weapon",
     "misty step",
-    "shatter",
     "silence",
     "skywrite|xge",
     "spike growth",
     "transmogrify|sarungardshaman",
-    "warding wind|xge"
+    "warding wind|xge",
+    "winter blast|sarungardshaman"
   ],
   3: [
     "call lightning",
@@ -113,15 +119,17 @@ const SHAMAN_SPELLS_BY_LEVEL = {
     "fireball",
     "flame arrows|xge",
     "gaseous form",
+    "hail strike|sarungardshaman",
     "haste",
-    "lightning arrow",
     "lightning bolt",
     "meld into stone",
     "plant growth",
     "remove curse",
+    "slow",
     "speak with plants",
     "thunder step|xge",
     "tidal wave|xge",
+    "vacuum touch|sarungardshaman",
     "wall of sand|xge",
     "wall of water|xge",
     "water breathing",
@@ -132,6 +140,7 @@ const SHAMAN_SPELLS_BY_LEVEL = {
     "conjure minor elementals",
     "conjure woodland beings",
     "control water",
+    "cryogenic stasis|sarungardshaman",
     "divination",
     "elemental bane|xge",
     "fire shield",
@@ -156,6 +165,7 @@ const SHAMAN_SPELLS_BY_LEVEL = {
     "dispel evil and good",
     "far step|xge",
     "flame strike",
+    "hail storm|sarungardshaman",
     "immolation|xge",
     "maelstrom|xge",
     "steel wind strike|xge",
@@ -167,6 +177,7 @@ const SHAMAN_SPELLS_BY_LEVEL = {
   6: [
     "bones of the earth|xge",
     "chain lightning",
+    "closed circuit|sarungardshaman",
     "flesh to stone",
     "investiture of flame|xge",
     "investiture of ice|xge",
@@ -174,6 +185,7 @@ const SHAMAN_SPELLS_BY_LEVEL = {
     "investiture of wind|xge",
     "move earth",
     "primordial ward|xge",
+    "sunbeam",
     "wall of ice",
     "wall of thorns",
     "wind walk"
@@ -366,7 +378,7 @@ const optionRefs = names => ({
 const classFeatures = [
   {
     name: "Natural Armor", source: SRC, page: 4, className: CLASS, classSource: SRC, level: 1,
-    entries: ["When you are wearing armor, you can use your Constitution modifier instead of your Dexterity modifier when calculating your Armor Class."]
+    entries: ["While you are not wearing heavy armor, you can use your Wisdom modifier instead of your Dexterity modifier when calculating your Armor Class."]
   },
   {
     name: "Shamanic Focus", source: SRC, page: 4, className: CLASS, classSource: SRC, level: 1,
@@ -375,7 +387,7 @@ const classFeatures = [
   {
     name: "Ancient Council", source: SRC, page: 4, className: CLASS, classSource: SRC, level: 2,
     entries: [
-      `At 2nd level, you choose to identify with a council of shamans: the ${subclassTag("Council of Blood", "Blood")}, the ${subclassTag("Council of Elements", "Elements")}, the ${subclassTag("Council of Harvest", "Harvest")}, the ${subclassTag("Council of Shrouds", "Shrouds")}, or the ${subclassTag("Council of Traditions", "Traditions")}. Your choice grants you features at 2nd level and again at 5th, 9th, 14th, and 20th level.`,
+      `At 2nd level, you choose to identify with a council of shamans: the ${subclassTag("Council of Blood", "Blood")}, the ${subclassTag("Council of Elements", "Elements")}, the ${subclassTag("Council of Harvest", "Harvest")}, the ${subclassTag("Council of Shrouds", "Shrouds")}, the ${subclassTag("Council of Traditions", "Traditions")}, or the ${subclassTag("Council of Omens", "Omens")}. Your choice grants you features at 2nd level and again at 5th, 9th, 14th, and 20th level.`,
       section("Ancient Councils", [
         "Though shamans are often members of small tribes or larger hordes, they are also part of another society. This society spans the land, ignoring political borders, and connects shamans through their rituals and thus through the spirits. At a local scale, shamans are organized into councils, Ancient Councils that share and preserve the same heritage over generations."
       ])
@@ -412,8 +424,11 @@ const classFeatures = [
     name: "Resonance", source: SRC, page: 5, className: CLASS, classSource: SRC, level: 3,
     entries: [
       "Your link with the spirit realm helps you when you draw power from it.",
-      "Starting at 3rd level, whenever you cast a shaman spell as a ritual, you can use your Resonance to finish it as a full-round action instead, as the spirits of nature help you deliver your magic. You can use your Resonance once.",
-      "Beginning at 6th level, you can use your Resonance twice between rests, and beginning at 12th level, you can use it three times between rests. When you finish a long rest, you regain your expended uses."
+      "Starting at 3rd level, you can use your Resonance to ritual cast a shaman spell as a full-round action instead of taking extended time, as the spirits of nature help you deliver your magic. You can use your Resonance once.",
+      "Beginning at 6th level, you can use your Resonance twice between rests, and beginning at 12th level, you can use it three times between rests. When you finish a long rest, you regain your expended uses.",
+      section("Full-Round Actions", [
+        "To take a full-round action, you have to sacrifice all of the resources available to you in a single round: your action, bonus action, reaction, and movement. You can take a full-round action only if you haven't spent any of your action, bonus action, or reaction this turn and you haven't moved during this turn, and after you use the full-round action, your speed is 0 until the end of the current turn."
+      ])
     ]
   },
   ...[4, 8, 12, 16, 19].map(level => ({
@@ -630,6 +645,30 @@ const subclasses = [
     name: "Council of Traditions", shortName: "Traditions", source: SRC, className: CLASS, classSource: SRC, page: 9, edition: "classic",
     subclassFeatures: [scf("Council of Traditions", "Traditions", 2), scf("Battle Meditation", "Traditions", 5), scf("Emboldening Trance", "Traditions", 9), scf("Relentless Trance", "Traditions", 14), scf("Ancient Teachings", "Traditions", 20)],
     foundrySystem: { identifier: "traditions" }
+  },
+  {
+    name: "Council of Omens", shortName: "Omens", source: SRC, className: CLASS, classSource: SRC, page: 10, edition: "classic",
+    additionalSpells: [{
+      ability: "wis",
+      prepared: {
+        2: ["alarm", "gift of alacrity|egw"],
+        4: ["augury", "warding bond"],
+        6: ["glyph of warding", "remove curse"],
+        9: ["death ward", "divination"],
+        12: ["commune", "contact other plane"]
+      },
+      innate: {
+        2: { daily: { 1: ["augury"] } },
+        6: { daily: { 1: ["divination"] } }
+      },
+      known: { 9: ["guidance", "resistance"] }
+    }],
+    subclassFeatures: [scf("Council of Omens", "Omens", 2), scf("Shielded by Fate", "Omens", 5), scf("Voice of Forthcomings", "Omens", 9), scf("Flicker of Fate", "Omens", 14), scf("Alter Fate", "Omens", 20)],
+    foundrySystem: { identifier: "omens" },
+    foundryAdvancement: [{
+      type: "ScaleValue", title: "Shielded by Fate Hit Dice",
+      configuration: { identifier: "fate-dice", type: "number", scale: { 5: { value: 1 }, 11: { value: 2 }, 17: { value: 3 } } }
+    }]
   }
 ];
 
@@ -643,6 +682,14 @@ const TRANCE_UID = scf("Battle Trance", "Traditions", 2);
 const RESONANCE_UID = cf("Resonance", 3);
 const fromSouls = (value = "1") => linkedUses("subclassFeature", SOULS_UID, value);
 const fromPsi = value => linkedUses("subclassFeature", PSI_UID, value);
+const fateShieldActivity = (name, activation, extraTargets) => ({
+  name, type: "heal",
+  activation,
+  consumption: { targets: [...extraTargets, { type: "hitDice", target: "d8", value: "@scale.omens.fate-dice" }] },
+  target: { affects: { type: "creature", count: "@prof" } },
+  healing: { custom: { enabled: true, formula: "(@scale.omens.fate-dice)d8" }, types: ["temphp"] },
+  descriptionChat: "Each target gains temporary hit points equal to the rolled Hit Dice."
+});
 
 const subclassFeatures = [
   subclassHeader("Council of Blood", "Blood", 6,
@@ -692,7 +739,7 @@ const subclassFeatures = [
     `Whenever you cast a spell that deals cold, fire, lightning, or thunder damage, you can expend any number of uses of your {@classFeature Resonance|${CLASS}|${SRC}|3} to make that spell ignore resistance to the damage types listed above. The spell's level can't be higher than twice the number of Resonance uses you expended.`
   ]),
   subFeature("Elemental Resonance", "Elements", 9, 7, [
-    `At 9th level, you can expend two uses of your {@classFeature Resonance|${CLASS}|${SRC}|3} to cast the {@spell find familiar} spell. If you cast the spell this way, you can cast it as a ritual and finish it as a full-round action, and you can choose for your familiar to appear in the form of an {@creature air elemental}, an {@creature earth elemental}, a {@creature fire elemental}, or a {@creature water elemental}. While in this form, your familiar can attack as if it were one of those elementals.`,
+    `At 9th level, you can expend two uses of your {@classFeature Resonance|${CLASS}|${SRC}|3} to cast the {@spell find familiar} spell. If you cast the spell this way, you can cast it as a ritual and finish it as a full-round action, and you can choose for your familiar to appear in the form of a storm elemental, a crystal elemental, a blazing elemental, or an ice elemental. While in this form, your familiar can attack as if it were one of those elementals.`,
     "Your familiar stays in this form for 2 hours before it changes back to its original form."
   ]),
   subFeature("Improved Elemental Familiar", "Elements", 14, 7, [
@@ -720,7 +767,7 @@ const subclassFeatures = [
     "There are shamans who seek power through the spirits of the deceased. Those bound to the Council of Harvest are often considered evil by others. Their goal is to gather power by enslaving the souls of fallen people and using them as weapons of destruction. They are not necessarily ill-intentioned, but they are certainly fascinated by the sheer power the dead can provide, and when the opportunity arises, these twisted mediums don't shy away from using souls as their instruments of destruction.",
     ["Bounded Spirits", "Soul Drain", "Harvester's Grimoire"]),
   subFeature("Bounded Spirits", "Harvest", 2, 7, [
-    "At 2nd level, when you align with this council, you learn how to bind creatures to your Shamanic Focus. Whenever you kill a creature, you can enslave its soul and store it inside your focus.",
+    "At 2nd level, when you align with this council, you learn how to bind creatures to your Shamanic Focus. Whenever you reduce a creature to 0 hit points, you can enslave its soul and store it inside your focus.",
     "You can't enslave the souls of undead, constructs, or creatures with a challenge rating higher than your proficiency bonus, and you can store a number of souls up to your Wisdom modifier (minimum of 1)."
   ]),
   subFeature("Soul Drain", "Harvest", 2, 7, [
@@ -801,7 +848,8 @@ const subclassFeatures = [
       "You can't be {@condition blinded}, {@condition charmed}, {@condition deafened}, or {@condition frightened}.",
       "You gain a flying speed equal to your movement speed, and you can hover.",
       "You gain resistance to all damage except psychic damage or damage dealt by magical sources.",
-      "You can use your action to spend 1 psionic point to deal {@damage 3d10} psychic damage to a target creature you can see within 60 feet of you."
+      "You can use your action to spend 1 psionic point to deal {@damage 3d10} psychic damage to a target creature you can see within 60 feet of you.",
+      "You can use your action to spend 3 psionic points to cast the {@spell banishment} spell without expending a spell slot. If the target is not native to the Astral Plane, it rolls its saving throw with disadvantage."
     ]),
     "You remain in this form for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action."
   ]),
@@ -824,11 +872,12 @@ const subclassFeatures = [
   subFeature("Battle Meditation", "Traditions", 5, 9, [
     "Starting at 5th level, you can use your Battle Trance to help you focus your concentration on a spell you cast. You gain the following option to choose from when entering your trance:",
     list([
-      named("Meditative Stance.", "If you cast a shaman spell that requires concentration during your Battle Trance, you maintain your concentration even if you take damage, but the spell immediately ends when your trance ends.")
+      named("Meditative Stance.", "If you cast a shaman spell that requires concentration during your Battle Trance, you can maintain your concentration even if you fail the saving throw for taking damage, but the spell immediately ends when your trance ends.")
     ])
   ]),
   subFeature("Emboldening Trance", "Traditions", 9, 9, [
-    "Starting at 9th level, when you use the {@action Attack} action while your Battle Trance is active, you can make one weapon attack as a bonus action."
+    "Starting at 9th level, immediately after you enter your Battle Trance, you can make a weapon attack.",
+    "During your Battle Trance, when you take the {@action Attack} action with a shaman weapon on your turn, you can make an attack with a shaman weapon as a bonus action, assuming you haven't already taken a bonus action this turn."
   ]),
   subFeature("Relentless Trance", "Traditions", 14, 9, [
     "Starting at 14th level, whenever you kill a creature while your Battle Trance is active, you can use a bonus action to reset the duration of your Battle Trance as if you had just used the feature this turn. If you reset the duration this way, you can't choose another stance."
@@ -840,6 +889,51 @@ const subclassFeatures = [
       "You gain a bonus to your AC equal to your Wisdom modifier (minimum of +1).",
       "You apply all stances; you don't have to choose between them."
     ])
+  ]),
+
+  subclassHeader("Council of Omens", "Omens", 10,
+    "While most shamans try to find harmony in the present or search for the teachings of the past, some of them turn their gaze to broader horizons. A few of them seek guidance from the future. Bone-reading rituals help them see clearly what is yet to come, using that knowledge to their own (or their allies') benefit, eventually mastering fate itself.",
+    ["Council Spells", "Bone-Reading", "Instinctive Portents"]),
+  subFeature("Council Spells", "Omens", 2, 10, [
+    "When you align with this council, and later at 4th, 6th, 9th, and 12th level, you gain access to the spells listed for that level in the Council of Omens Spells table. Once you gain access to one of these spells, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the shaman spell list, the spell is nonetheless a shaman spell for you.",
+    {
+      type: "table", caption: "Council of Omens Spells",
+      colLabels: ["Shaman Level", "Spells"], colStyles: ["col-3 text-center", "col-9"],
+      rows: [
+        ["2nd", "{@spell alarm}, {@spell gift of alacrity|EGW}"],
+        ["4th", "{@spell augury}, {@spell warding bond}"],
+        ["6th", "{@spell glyph of warding}, {@spell remove curse}"],
+        ["9th", "{@spell death ward}, {@spell divination}"],
+        ["12th", "{@spell commune}, {@spell contact other plane}"]
+      ]
+    }
+  ]),
+  subFeature("Bone-Reading", "Omens", 2, 10, [
+    "At 2nd level, you learn how to read the bones, whether they mean weal or woe. You gain proficiency with Bonecarver's Tools, and you can designate a set of bones to be your augury. While you are in possession of your augury, you can use it to cast the {@spell augury} spell without using a spell slot. If you cast the spell this way, there is no chance of getting a random reading, regardless of whether it is the first time you cast the spell.",
+    "Once you use this feature, you can't do so again until the next dawn.",
+    "When you reach 6th level in this class, you can also cast {@spell divination} using your augury once per long rest."
+  ]),
+  subFeature("Instinctive Portents", "Omens", 2, 10, [
+    "Also at 2nd level, you are able to act quickly on instinct while you can perceive your surroundings. As long as you are not incapacitated, you can add your proficiency bonus to your initiative rolls.",
+    "In addition, immediately after you roll initiative, you can swap your initiative with that of one willing ally you can see who has a lower initiative in the same combat. You can't make this swap if you or the ally is incapacitated, or if you can't see each other.",
+    "You can use this feature a number of times equal to 1 + your Wisdom modifier. You regain all expended uses when you finish a long rest."
+  ]),
+  subFeature("Shielded by Fate", "Omens", 5, 10, [
+    "At 5th level, after you finish a long rest, if you are in possession of your augury, you can target a number of other creatures equal to your proficiency bonus and expend and roll one of your Hit Dice. Each target gains temporary hit points equal to the result.",
+    `In addition, after you finish a short rest, you can use an action to expend one use of your {@classFeature Resonance|${CLASS}|${SRC}|3} to use this feature again.`,
+    "The number of Hit Dice you spend when using this feature increases by 1 when you reach 11th level (2 Hit Dice) and 17th level (3 Hit Dice)."
+  ]),
+  subFeature("Voice of Forthcomings", "Omens", 9, 10, [
+    "At 9th level, you gain proficiency in the Persuasion and Intimidation skills, and you learn the {@spell guidance} and {@spell resistance} cantrips. They count as shaman spells for you, and Wisdom is your spellcasting ability for them.",
+    "In addition, while you aren't incapacitated, creatures that have temporary hit points remaining from your Shielded by Fate feature have the effects of both cantrips applied."
+  ]),
+  subFeature("Flicker of Fate", "Omens", 14, 10, [
+    "Starting at 14th level, while you aren't incapacitated, creatures that have temporary hit points remaining from your Shielded by Fate feature take their turns in combat as if they were under the effect of the {@spell haste} spell."
+  ]),
+  subFeature("Alter Fate", "Omens", 20, 10, [
+    "At 20th level, you can forge your own destiny. In your time of need, you can avoid what lies beyond you with the help of what's left behind. When you gain this feature, and once a year after that, you can designate an event you have lived through as your setting point.",
+    "Later, you can use your action to restore reality and set time back to your designated point; however, only you retain any memories of what occurred during the reset time. Everything else is restored according to that point, including possessions, boons, and banes.",
+    "Once you use this feature, you can't use it again until you reach the point in time where you last used it, and there is a 33 percent chance that you can never use this feature again."
   ])
 ];
 
@@ -867,8 +961,11 @@ const foundryClassFeature = [
   classSide("Natural Armor", 1, {
     effects: [{
       name: "Natural Armor", transfer: true,
-      description: "Requires the Shaman Class Support module: adds the armored-only AC calculation 'armor + Constitution modifier (capped by the armor's Dexterity cap)'. dnd5e uses it whenever it beats the normal armored calculation.",
-      changes: [{ key: "system.attributes.ac.calcs", mode: "ADD", value: "shamanNatural" }]
+      description: "Requires the Shaman Class Support module: adds two AC calculations, 'armor + Wisdom modifier (capped by the armor's Dexterity cap)' in light or medium armor and '10 + Wisdom modifier' without armor. dnd5e uses them whenever they beat the normal calculation; heavy armor is unaffected.",
+      changes: [
+        { key: "system.attributes.ac.calcs", mode: "ADD", value: "shamanNatural" },
+        { key: "system.attributes.ac.calcs", mode: "ADD", value: "shamanNaturalUnarmored" }
+      ]
     }]
   }),
   classSide("Resonance", 3, {
@@ -1009,7 +1106,7 @@ const foundrySubclassFeature = [
     system: { "uses.max": "max(1, @abilities.wis.mod)" },
     activities: [{
       name: "Enslave Soul", type: "utility",
-      activation: { type: "special", condition: "You kill a creature (not undead or construct) with CR no higher than your proficiency bonus" },
+      activation: { type: "special", condition: "You reduce a creature (not undead or construct) with CR no higher than your proficiency bonus to 0 hit points" },
       consumption: { targets: [ownUses("-1")] },
       target: { affects: { type: "creature", count: "1" } }
     }]
@@ -1186,6 +1283,13 @@ const foundrySubclassFeature = [
         ...range(60),
         target: { affects: { type: "creature", count: "1" } },
         damage: { parts: [{ number: 3, denomination: 10, types: ["psychic"] }] }
+      },
+      {
+        name: "Astral Banishment", type: "cast",
+        activation: { type: "action", override: true, condition: "While Surface the Shroud is active" },
+        consumption: { targets: [fromPsi("3")] },
+        spell: { uuid: "@spell[banishment|phb]" },
+        descriptionChat: "A target not native to the Astral Plane rolls its saving throw with disadvantage."
       }
     ],
     effects: [{
@@ -1225,7 +1329,7 @@ const foundrySubclassFeature = [
       stanceEffect("overwhelmingStan", "Battle Trance: Overwhelming Stance", "Add your proficiency bonus to damage when you attack with a shaman weapon (automated for all melee weapon attacks; remove it by hand for non-shaman weapons).", [OVERWHELMING_CHANGE]),
       stanceEffect("parryingStance00", "Battle Trance: Parrying Stance", "Use your reaction to give an attack against you disadvantage if it does not have advantage."),
       stanceEffect("agileStance00000", "Battle Trance: Agile Stance", "Use your bonus action to take the Dash or Disengage action."),
-      stanceEffect("meditativeStance", "Battle Trance: Meditative Stance", "Concentration on a shaman spell cast during the trance is not broken by damage, but the spell ends when the trance ends."),
+      stanceEffect("meditativeStance", "Battle Trance: Meditative Stance", "You can keep concentrating on a shaman spell cast during the trance even if you fail the saving throw for taking damage, but the spell ends when the trance ends."),
       stanceEffect("ancientTeachTran", "Battle Trance: All Stances", "All stances apply at once, and you gain a bonus to AC equal to your Wisdom modifier (minimum +1).", [
         OVERWHELMING_CHANGE,
         { key: "system.attributes.ac.bonus", mode: "ADD", value: "+max(1, @abilities.wis.mod)" }
@@ -1250,40 +1354,216 @@ const foundrySubclassFeature = [
         { key: "system.abilities.wis.max", mode: "UPGRADE", value: "22" }
       ]
     }]
+  }),
+
+  subclassSide("Instinctive Portents", "Omens", 2, {
+    system: usesSystem("1 + @abilities.wis.mod", "lr"),
+    activities: [{
+      name: "Swap Initiative", type: "utility",
+      activation: { type: "special", condition: "Immediately after rolling initiative, with a willing ally you can see who has a lower initiative" },
+      consumption: { targets: [ownUses()] },
+      target: { affects: { type: "ally", count: "1" } }
+    }],
+    effects: [{
+      name: "Instinctive Portents", transfer: true,
+      description: "Add your proficiency bonus to initiative rolls while you are not incapacitated.",
+      changes: [{ key: "system.attributes.init.roll.bonus", mode: "ADD", value: "@prof" }]
+    }]
+  }),
+  subclassSide("Shielded by Fate", "Omens", 5, {
+    activities: [
+      fateShieldActivity("Shielded by Fate", { type: "special", condition: "After you finish a long rest, holding your augury" }, []),
+      fateShieldActivity("Shielded by Fate (Resonance)", { type: "action", condition: "After you finish a short rest" }, [linkedUses("classFeature", RESONANCE_UID, "1")])
+    ]
+  }),
+  subclassSide("Voice of Forthcomings", "Omens", 9, {
+    entryData: { skillProficiencies: [{ persuasion: true, intimidation: true }] }
+  }),
+  subclassSide("Alter Fate", "Omens", 20, {
+    system: { "uses.max": "1" },
+    activities: [{
+      name: "Alter Fate", type: "utility",
+      activation: { type: "action" },
+      consumption: { targets: [ownUses()] },
+      target: { affects: { type: "self" } },
+      roll: { formula: "1d100", name: "33 or lower: never usable again", visible: true },
+      descriptionChat: "Time resets to your designated point; only you remember the reset time. Restore this feature's use by hand when you reach the point where you last used it."
+    }]
   })
 ];
 
+const FREEZING_SURFACES = "Nonmagical susceptible surfaces, such as any liquid, freeze inside the spell's area, becoming difficult terrain.";
+const ACTION = [{ number: 1, unit: "action" }];
+const feet = amount => ({ type: "point", distance: { type: "feet", amount } });
+const selfArea = (type, amount) => ({ type, distance: { type: "feet", amount } });
+const TOUCH = { type: "point", distance: { type: "touch" } };
+const INSTANT = [{ type: "instant" }];
+const timed = (amount, type = "minute", concentration = false) => [{ type: "timed", duration: { type, amount }, ...(concentration ? { concentration: true } : {}) }];
+const higherLevels = text => [{ type: "entries", name: "At Higher Levels", entries: [text] }];
+const spellLists = (...names) => ({
+  fromClassList: names.map(name => (name === CLASS ? { name: CLASS, source: SRC } : { name, source: "PHB" }))
+});
+const homebrewSpell = ({ name, page, level, school, time = ACTION, range, components, duration, entries, higher, lists, ...tags }) => ({
+  name, source: SRC, page, level, school, time, range, components, duration, entries,
+  ...(higher ? { entriesHigherLevel: higherLevels(higher) } : {}),
+  classes: spellLists(...lists),
+  ...tags
+});
+
 const spells = [
-  {
-    name: "Transmogrify", source: SRC, page: 13, level: 2, school: "T",
+  homebrewSpell({
+    name: "Transmogrify", page: 15, level: 2, school: "T",
     time: [{ number: 1, unit: "reaction", condition: "which you take when you see a creature within 60 feet of you casting a spell that deals damage" }],
-    range: { type: "point", distance: { type: "feet", amount: 60 } },
-    components: { s: true },
-    duration: [{ type: "instant" }],
+    range: feet(60), components: { s: true }, duration: INSTANT,
     entries: [
       "Your spell twists the original spell's energy. If the creature is casting a spell of 2nd level or lower, choose acid, cold, fire, lightning, or thunder. The spell deals damage of the chosen type instead of its original type. If the spell deals more than one type of damage, the first type to occur is replaced.",
       "If it is casting a spell of 3rd level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a success, choose acid, cold, fire, lightning, or thunder. The spell deals damage of the chosen type instead of its original type. If the spell deals more than one type of damage, the first type to occur is replaced."
     ],
-    entriesHigherLevel: [{
-      type: "entries", name: "At Higher Levels",
-      entries: ["When you cast this spell using a spell slot of 3rd level or higher, the interrupted spell has its first damage type changed if its level is less than or equal to the level of the spell slot you used."]
-    }],
-    classes: { fromClassList: [{ name: CLASS, source: SRC }, { name: "Sorcerer", source: "PHB" }] },
+    higher: "When you cast this spell using a spell slot of 3rd level or higher, the interrupted spell has its first damage type changed if its level is less than or equal to the level of the spell slot you used.",
+    lists: [CLASS, "Sorcerer"],
     miscTags: ["SGT"]
-  },
-  {
-    name: "Erratic Wisp", source: SRC, page: 13, level: 3, school: "T",
+  }),
+  homebrewSpell({
+    name: "Erratic Wisp", page: 15, level: 3, school: "T",
     time: [{ number: 1, unit: "bonus" }],
-    range: { type: "point", distance: { type: "touch" } },
-    components: { v: true, s: true, m: "a pinch of moth dust" },
-    duration: [{ type: "timed", duration: { type: "minute", amount: 1 }, concentration: true }],
+    range: TOUCH, components: { v: true, s: true, m: "a pinch of moth dust" }, duration: timed(1, "minute", true),
     entries: [
       "You touch a willing creature and make its body unstable, swirling in clouds. For the duration, after the target takes damage, it teleports to a random spot around itself. To determine the direction, roll a {@dice d8} and assign a direction to each die face. To determine the distance, roll a {@dice d6} and multiply it by 5, then choose the closest unoccupied space in the given direction and distance. The chosen space must be on a surface or in a liquid that can support the target without the target having to squeeze.",
       "The target can dismiss this spell as an action."
     ],
-    classes: { fromClassList: [{ name: CLASS, source: SRC }] },
+    lists: [CLASS],
     miscTags: ["TP"]
-  }
+  }),
+  homebrewSpell({
+    name: "Electric Discharge", page: 15, level: 1, school: "V",
+    range: feet(60), components: { v: true, s: true }, duration: INSTANT,
+    entries: ["You unleash a jolt of energy from your hands toward your opponent. Make a ranged spell attack against a creature you can see within range. On a hit, the target takes {@damage 3d6} lightning damage and is {@condition stunned} until the start of its next turn."],
+    higher: "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6}, and the target is stunned until the end of your next turn.",
+    lists: [CLASS, "Sorcerer", "Wizard"],
+    damageInflict: ["lightning"], conditionInflict: ["stunned"], spellAttack: ["R"]
+  }),
+  homebrewSpell({
+    name: "Vacuum Touch", page: 15, level: 3, school: "V",
+    range: TOUCH,
+    components: { v: true, s: true, m: { text: "a pinch of gold dust worth 1 gp, which the spell consumes", cost: 100, consume: true } },
+    duration: timed(1),
+    entries: [
+      "Make a melee spell attack against a creature. On a hit, that creature takes {@damage 3d8} lightning damage, and if it needs to breathe, it must succeed on a Constitution saving throw. On a failed save, its breath leaves it and it begins suffocating. It can repeat the saving throw at the end of each of its turns, ending the effect on a success.",
+      "The spell ends early if the creature becomes incapacitated or is dying."
+    ],
+    higher: "When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@dice 1d8}.",
+    lists: [CLASS, "Sorcerer", "Warlock"],
+    damageInflict: ["lightning"], savingThrow: ["constitution"], spellAttack: ["M"]
+  }),
+  homebrewSpell({
+    name: "Blinding Radiance", page: 15, level: 1, school: "V",
+    range: selfArea("cube", 15), components: { v: true, s: true }, duration: timed(1, "minute", true),
+    entries: [
+      "Eye-piercing light erupts from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. A creature takes {@damage 2d6} radiant damage on a failed save, or half as much damage on a successful one.",
+      "In addition, for the duration of the spell, you shed bright light in a 5-foot radius and dim light for an additional 10 feet. Creatures standing in the bright light are {@condition blinded} by it."
+    ],
+    higher: "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d6}.",
+    lists: [CLASS, "Sorcerer"],
+    damageInflict: ["radiant"], savingThrow: ["constitution"], conditionInflict: ["blinded"], miscTags: ["LGT"]
+  }),
+  homebrewSpell({
+    name: "Closed Circuit", page: 15, level: 6, school: "C",
+    range: selfArea("radius", 10), components: { v: true, s: true, m: true }, duration: timed(1, "minute", true),
+    entries: [
+      "The air explodes around you as you let out an unnatural pressure of air. Each creature within 10 feet of you must make a Constitution saving throw. A creature takes {@damage 8d8} lightning damage on a failed save, or half as much damage on a successful one.",
+      "The spell creates a 5-foot-wide ring of black clouds at the edge of the circle. For the duration, whenever a creature enters the cloud or starts its turn there, it must succeed on a Constitution saving throw or become {@condition stunned} for the duration. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+    ],
+    higher: "When you cast this spell using a spell slot of 7th level or higher, the damage increases by {@dice 1d8}.",
+    lists: ["Druid", CLASS, "Sorcerer", "Warlock"],
+    damageInflict: ["lightning"], savingThrow: ["constitution"], conditionInflict: ["stunned"]
+  }),
+  homebrewSpell({
+    name: "Blinding Squall", page: 16, level: 2, school: "C",
+    range: feet(60), components: { v: true, s: true, m: true }, duration: timed(1),
+    entries: ["You conjure a raging storm around a point you choose within range. Each creature in a 10-foot-radius circle around the chosen point must make a Dexterity saving throw. A creature takes {@damage 2d6} lightning damage on a failed save, or half as much damage on a successful one. Then those creatures must make a Constitution saving throw or be {@condition blinded} until the end of their next turn."],
+    higher: "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d6}.",
+    lists: ["Druid", CLASS, "Sorcerer"],
+    damageInflict: ["lightning"], savingThrow: ["dexterity", "constitution"], conditionInflict: ["blinded"]
+  }),
+  homebrewSpell({
+    name: "Fossil Strike", page: 16, level: 2, school: "C",
+    range: feet(60), components: { s: true, m: "a small stone" }, duration: INSTANT,
+    entries: ["You summon a globe of mud and oil and hurl it toward your enemies. Choose a point within range. Each creature within 10 feet of that point must make a Dexterity saving throw. A creature takes {@damage 3d8} bludgeoning damage on a failed save, or half as much damage on a successful one. As the globe explodes, oil splatters around, making the affected area difficult terrain."],
+    higher: "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@dice 1d8}.",
+    lists: ["Druid", CLASS, "Sorcerer"],
+    damageInflict: ["bludgeoning"], savingThrow: ["dexterity"]
+  }),
+  homebrewSpell({
+    name: "Decaying Touch", page: 16, level: 1, school: "N",
+    range: TOUCH, components: { s: true }, duration: timed(1),
+    entries: [
+      "Make a melee spell attack against a creature you can reach. On a hit, the target takes {@damage 2d8} necrotic damage and must succeed on a Constitution saving throw or be decayed by this spell's curse for 1 minute.",
+      "If a decayed creature would regain hit points, it takes that much necrotic damage instead. A decayed creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+    ],
+    higher: "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@dice 1d8}.",
+    lists: ["Druid", CLASS, "Sorcerer", "Warlock"],
+    damageInflict: ["necrotic"], savingThrow: ["constitution"], spellAttack: ["M"]
+  }),
+  homebrewSpell({
+    name: "Ice Fan", page: 16, level: 2, school: "V",
+    range: feet(120), components: { v: true, s: true }, duration: INSTANT,
+    entries: ["You create three fans of ice and hurl them at targets within range. You can hurl them at one target or several. Make a ranged spell attack for each fan. On a hit, the target takes {@damage 1d8} cold damage, and its speed is reduced by 10 feet until the start of your next turn."],
+    higher: "When you cast this spell using a spell slot of 3rd level or higher, you create one additional fan for each slot level above 2nd.",
+    lists: ["Druid", CLASS, "Sorcerer"],
+    damageInflict: ["cold"], spellAttack: ["R"]
+  }),
+  homebrewSpell({
+    name: "Winter Blast", page: 16, level: 2, school: "C",
+    range: feet(90), components: { v: true, s: true, m: "a pinch of cinnamon and a cup of water" }, duration: INSTANT,
+    entries: [
+      "You conjure the power of winter cold to unleash on your enemies in a 10-foot-tall cylinder with a 10-foot radius centered on a point you choose within range. Each creature in the cylinder must make a Constitution saving throw. A creature takes {@damage 3d8} cold damage on a failed save, or half as much damage on a successful one.",
+      FREEZING_SURFACES
+    ],
+    higher: "When you cast this spell using a spell slot of 3rd level or higher, the damage increases by {@scaledamage 3d8|2-9|1d8} for each slot level above 2nd.",
+    lists: ["Druid", CLASS, "Sorcerer", "Wizard"],
+    damageInflict: ["cold"], savingThrow: ["constitution"], areaTags: ["Y"]
+  }),
+  homebrewSpell({
+    name: "Hail Strike", page: 16, level: 3, school: "C",
+    range: feet(120), components: { v: true, s: true, m: "a drop of water and a piece of glass" }, duration: INSTANT,
+    entries: [
+      "White crystals of ice plummet to the ground at three different points you can see within range, within 10 feet of each other. Each creature in a 5-foot radius centered on each point you choose must make a Dexterity saving throw. A creature takes {@damage 2d8} cold damage on a failed save, or half as much damage on a successful one. A creature in the area of more than one icy burst can be affected more than once by this spell.",
+      FREEZING_SURFACES
+    ],
+    higher: "When you cast this spell using a spell slot of 5th level or higher, the damage increases by {@dice 1d8} for every two slot levels above 3rd.",
+    lists: [CLASS, "Sorcerer", "Wizard"],
+    damageInflict: ["cold"], savingThrow: ["dexterity"]
+  }),
+  homebrewSpell({
+    name: "Cryogenic Stasis", page: 17, level: 4, school: "V",
+    range: feet(60), components: { v: true, s: true }, duration: timed(1, "round"),
+    entries: ["Choose a creature you can see within range. If the creature is willing, you can freeze it for 1 round. While frozen this way, the creature is {@condition incapacitated}, has a speed of 0, and has resistance to every damage type except fire. At the start of your next turn, the creature regains {@dice 3d8} hit points as the ice melts."],
+    higher: "When you cast this spell using a spell slot of 5th level or higher, the healing increases by {@scaledice 3d8|4-9|1d8} for each slot level above 4th.",
+    lists: ["Druid", CLASS, "Sorcerer"],
+    conditionInflict: ["incapacitated"], miscTags: ["HL"]
+  }),
+  homebrewSpell({
+    name: "Cold Outburst", page: 17, level: 1, school: "C",
+    range: feet(30), components: { v: true, s: true }, duration: INSTANT,
+    entries: [
+      "You emit an outburst of cold originating from you. Each creature around you within range must succeed on a Constitution saving throw or take {@damage 1d8} cold damage and have its speed reduced by 5 feet until the end of its next turn.",
+      FREEZING_SURFACES
+    ],
+    higher: "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@scaledamage 1d8|1-9|1d8} for each slot level above 1st.",
+    lists: ["Druid", CLASS, "Sorcerer", "Wizard"],
+    damageInflict: ["cold"], savingThrow: ["constitution"]
+  }),
+  homebrewSpell({
+    name: "Hail Storm", page: 17, level: 5, school: "C",
+    range: selfArea("radius", 20), components: { v: true, s: true, m: "a drop of water" }, duration: timed(1, "minute", true),
+    entries: [
+      "You evoke the power of the ancient frost as shards of icy glass rain down. When you cast the spell, and on each of your subsequent turns for the duration, you can use your bonus action to choose two points within range. Each creature within 5 feet of those points must succeed on a Dexterity saving throw or take {@damage 3d8} cold damage.",
+      FREEZING_SURFACES
+    ],
+    higher: "When you cast this spell using a spell slot of 6th level or higher, the damage increases by {@dice 1d8} for every two slot levels above 5th.",
+    lists: ["Druid", CLASS, "Sorcerer"],
+    damageInflict: ["cold"], savingThrow: ["dexterity"]
+  })
 ];
 
 const homebrew = {
